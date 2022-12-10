@@ -3,7 +3,7 @@
  */
 
 /* Access functions to test from scripts.js */
-const { game } = require("../scripts");
+const { game, text, } = require("../scripts");
 
 /* Creates the document for testing purposes */
 beforeAll(() => {
@@ -24,4 +24,9 @@ describe("Game Object contains correct keys", () => {
     test("currentGame key exists", () => {
         expect("currentGame" in game).toBe(true);
     });
+    /* Check compPlayer is set to empty */
+    test("compPlayer is set to empty", () => {
+        expect("compText" in game).toEqual(text);
+    });
 });
+
