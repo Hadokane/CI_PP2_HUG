@@ -1,16 +1,33 @@
-/* --------- Header style */
-h2{
-    margin: 16px;
-    padding: 16px;
+/* --------- Game Window style */
+#game-window{
+    background-color: antiquewhite;
+    height: fit-content;
+    width: auto;
+    padding: 2em;
+}
+
+/* --------- Computer Player Window style */
+#comp-player{
     background-color: yellowgreen;
     color: green;
     text-align: center;
-    text-decoration: underline;
+    margin-bottom: 32px;
+    width: auto;
+    padding: 2em;
 }
 
-/* --------- Game Window style */
-.game-window{
-    margin: 16px;
-    padding: 128px;
-    background-color: antiquewhite;
+h2,
+#comp-text{
+    font-size: 2em;
+    font-weight: bold;
 }
+
+/* --------- Button style */
+.btn{
+    background-color: green;
+    color:chartreuse;
+    border-radius: 15%;
+    text-align: center;
+    margin-bottom: 32px;
+}
+

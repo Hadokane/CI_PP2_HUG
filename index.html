@@ -14,9 +14,29 @@
     <title>Human Usefulness Generator</title>
 </head>
 <body>
-    <h2>Hello World!</h2>
-    <div class="game-window"></div>
-</body>
+    <div id="game-window" class="container-fluid text-center">
+        <!-- Computer Players Text Box -->
+        <div id="comp-player">
+                <span id="comp-text">Hello World!</span>  
+        </div>
+        <!-- Buttons for player choices -->
+        <div class="row row-cols-3">
+            <div class="col">
+                <button class="btn" id="btn1" >btn1</button>
+            </div>
+            <div class="col">
+                <button class="btn" id="btn2" >btn2</button>
+            </div>
+            <div class="col">
+                <button class="btn" id="btn3" >btn3</button>
+            </div>
+        </div>
+        <!-- Score Card, to be hidden in final version -->
+        <div class="score-card">
+            FAIL SCORE: <span id="score-card">0</span>
+        </div>
+    </div>
+
 <!-- jQuery Javascript -->
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 <!-- Bootstrap Javascript -->
