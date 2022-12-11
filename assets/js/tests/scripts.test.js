@@ -3,7 +3,7 @@
  */
 
 /* Access functions to test from scripts.js */
-const { game, text, } = require("../scripts");
+const { game, text, updateText, } = require("../scripts");
 
 /* Creates the document for testing purposes */
 beforeAll(() => {
@@ -24,9 +24,16 @@ describe("Game Object contains correct keys", () => {
     test("currentGame key exists", () => {
         expect("currentGame" in game).toBe(true);
     });
-    /* Check compPlayer is set to empty */
-    test("compPlayer is set to empty", () => {
-        expect("compText" in game).toEqual(text);
-    });
+    /* Check innerHTML is set to empty */
+    test('Toggle innerHtml of an element', () =>{
+        document.body.innerHTML =
+                    '<div>' +
+                    '  <div id="comp-text" >Hello</div>' +
+                    '</div>';
+        var text = document.getElementById("comp-text");
+        var newText = "new text";
+        text.innerText = newText;
+        expect(text.innerText).toEqual(newText);
+        });
 });
 

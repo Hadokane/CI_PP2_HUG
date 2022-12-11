@@ -2,10 +2,16 @@
 var btn1 = document.getElementById('btn1');
 var btn2 = document.getElementById('btn2');
 var btn3 = document.getElementById('btn3');
+var text = document.getElementById('comp-text');
 
-/* Setting innerText to an object for mainpulation later */
-let text = "HI!";
-document.getElementById('comp-text').innerText = text;
+/**
+ * Sets the innerText of var text to a callable function.
+ * Used to change the computer players text throughout the game.
+ * Updates the current game.text being displayed.
+ *  */ 
+function updateText() {
+    text.innerText = game.text;
+};
 
 /* Initalises the game */
 let game = {
@@ -19,7 +25,8 @@ let levelOne = {
     
 }
 
-
+/* Calling updateText Function */
+updateText();
 
 /* Exports functions for the test file to access */
-module.exports = { game, text };
+module.exports = { game, text, updateText, };
