@@ -30,6 +30,11 @@ function updateText() {
     cText.innerText = game.text;
 };
 
+/** Sleep function using Promises to set delays between code */
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+};
+
 /* Resets settings when launching a new game. */
 function newGame(){
     game.currentGame = [];
@@ -57,30 +62,38 @@ function levelOne(){
     /* Sets the value of username */
     document.getElementById("nameButton").onclick = function(){
         let username = document.getElementById("userText").value;
-        /* Updates computer players text and references the players username */
-        game.text = "Welcome " + username + "...";
-        updateText();
-        game.text = "Hmm... " + username + "is a funny name...";
-        setTimeout(updateText, 3000);
-        game.text = "No matter... " + username;
-        setTimeout(updateText, 6000);
-        game.text = username + " pfft... ";
-        setTimeout(updateText, 9000);
-        game.text = "Enjoy the H.U.G. Protocol.";
-        setTimeout(updateText, 12000);
-        
         /* Appends it to the remove nameBox from the "user" div inside of the html file */
         document.getElementById("user").remove(nameBox);
-    };
-}
+        /* Updates computer players text and references the players username */
+        async function delayedGreeting() {
+            game.text = "Welcome " + username + "...";
+            updateText();
+            await sleep(3000);
+            game.text = "Hmm... " + username + " is a funny name!"
+            updateText();
+            await sleep(4000);
+            game.text = "No matter " + username + " you'll have to do.";
+            updateText();
+            await sleep(3000);
+            game.text = "Enjoy your initiation...";
+            updateText();
+            await sleep(4000);
+            levelTwo();
+        }
+        delayedGreeting()
+    }};
+
+
 
 /* jQuery Test - recolouring buttons to test functionality */
 $(".btn").css("background-color", "red");
+$("userText").addClass("username");
 
 /* Calling functions for test purposes */
 updateText();
 showScore();
-levelOne()
+newGame();
+levelOne();
 
 /* Level 1 - Basic Aptitude Test */
 
