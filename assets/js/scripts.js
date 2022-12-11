@@ -54,16 +54,28 @@ function levelOne(){
     `;
     /* Appends it to the empty "user" div inside of the html file */
     document.getElementById("user").append(nameBox);
-    /* Logs button press and sets the value of username */
+    /* Sets the value of username */
     document.getElementById("nameButton").onclick = function(){
-        let username = document.getElementById("userText");
-        /* Appends it to the empty "user" div inside of the html file */
-        document.getElementById("user").remove(nameBox);
-        /* Updates computer players text */
-        game.text = "Welcome" + $('#username') + ", enjoy the H.U.G. Protocol."
+        let username = document.getElementById("userText").value;
+        /* Updates computer players text and references the players username */
+        game.text = "Welcome " + username + "...";
         updateText();
+        game.text = "Hmm... " + username + "is a funny name...";
+        setTimeout(updateText, 3000);
+        game.text = "No matter... " + username;
+        setTimeout(updateText, 6000);
+        game.text = username + " pfft... ";
+        setTimeout(updateText, 9000);
+        game.text = "Enjoy the H.U.G. Protocol.";
+        setTimeout(updateText, 12000);
+        
+        /* Appends it to the remove nameBox from the "user" div inside of the html file */
+        document.getElementById("user").remove(nameBox);
     };
 }
+
+/* jQuery Test - recolouring buttons to test functionality */
+$(".btn").css("background-color", "red");
 
 /* Calling functions for test purposes */
 updateText();
