@@ -56,6 +56,7 @@ label,
     font-family: 'VT323', monospace;
     font-weight: 400;
     text-transform: capitalize;
+    font-size: 1.25em;
 }
 
 /* --------- Color and font family of the username text box */

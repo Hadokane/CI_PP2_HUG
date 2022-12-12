@@ -103,7 +103,7 @@ function levelThree(){
     game.currentGame = [];
     game.failScore = 66;
     async function delayedGreeting() {
-        game.text = "Your second test, " + username + ", is 'Basic addition.'"
+        game.text = "Your second test " + username + ", is 'Basic addition.'"
         await sleep(3000);
         game.text = "Surely even you can handle this one."
         updateText();
@@ -112,13 +112,37 @@ function levelThree(){
     delayedGreeting()
 }
 
+function getQuestion(){
+
+}
+
+function checkAnswer(){
+
+}
+
+function displayAdditionQuestion(){
+
+}
+
+function displaySubtractionQuestion(){
+
+}
+
+function displayMultiplicationQuestion(){
+
+}
+
+
+
+
+
+
+
+
 /* jQuery Test - recolouring buttons to test functionality */
 $(".btn").addClass("btn-red");
 
 /* Calling functions for test purposes */
-levelOne();
+levelThree();
 updateText();
 showScore();
-
-/* Exports functions for the test file to access */
-module.exports = { game, updateText, newGame, };
