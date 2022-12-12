@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=], initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- Favicon -->
@@ -19,23 +19,24 @@
         <div id="comp-player">
                 <span id="comp-text">Hello World!</span>  
         </div>
-        <!-- Enter Username Text Box -->
+        <!-- Users Game Box -->
         <div id="user" class="container-fluid text-center">
             <!-- username field generates here during levelOne -->
+            <!-- Math Question field generates here during levelThree -->
         </div>
         <!-- Buttons for player choices -->
         <div id="buttons" class="row row-cols-3">
             <div class="col">
-                <button class="btn" id="btn1" >btn1</button>
+                <button class="btn" id="btn1" data-type="btn1">btn1</button>
             </div>
             <div class="col">
-                <button class="btn" id="btn2" >btn2</button>
+                <button class="btn" id="btn2" data-type="btn2">btn2</button>
             </div>
             <div class="col">
-                <button class="btn" id="btn3" >btn3</button>
+                <button class="btn" id="btn3" data-type="btn3">btn3</button>
             </div>
         </div>
-        <!-- Score Card, to be hidden in final version -->
+        <!-- Fail Score Tracker -->
         <div class="score-card">
             FAIL SCORE: <span id="score">0</span>
         </div>

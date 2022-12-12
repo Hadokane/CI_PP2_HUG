@@ -5,13 +5,14 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
+    width: 100%;
+    height: auto;
 }
 
 /* --------- Game Window style */
 #game-window{
     background-color: antiquewhite;
     height: fit-content;
-    width: auto;
     padding: 2em;
 }
 
@@ -21,16 +22,23 @@ body {
     color: green;
     text-align: center;
     margin-bottom: 32px;
-    width: auto;
     padding: 2em;
     box-shadow: 5px 5px;
-    font-family: 'Roboto', sans-serif;
 }
 
 /* --------- Text styling */
 label,
 #comp-text{
     font-size: 2em;
+}
+
+#math-question{
+    font-size: 3em;
+    background-color: aquamarine;
+    color: black;
+    text-align: center;
+    padding: 1em;
+    box-shadow: 5px 5px;
 }
 
 /* --------- Button style */
@@ -60,7 +68,7 @@ label,
 }
 
 /* --------- Color and font family of the username text box */
-#user-text{
+.user-text{
     font-family: 'Gloria Hallelujah', cursive;
     color: red;
 }

@@ -64,3 +64,6 @@ https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/ - diff
 
 https://www.sitepoint.com/delay-sleep-pause-wait/ - explained the premise of a sleep function and the use of promises to stagger my code for the automated chat box. Allowing for a more user friendly experience by reducing the number of button presses required to progress for the user. Creating the illusion of a sentient AI presence.
 
+https://www.youtube.com/watch?v=GUEB9FogoP8 - Good tutorial on animations, couldnt get working.
+
+https://code-boxx.com/allow-one-click-javascript/ - Remove onclick from button idea.
