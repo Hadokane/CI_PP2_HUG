@@ -19,9 +19,9 @@ function showScore () {
     document.getElementById("score").innerText = game.failScore;
 }
 
-/* Adds 1 to the score */
-function updateScore (){
-    game.failScore++;
+/* Adds num to the current game.failScore */
+function updateScore (num){
+    game.failScore = game.failScore + num;
 }
 
 /**
@@ -29,10 +29,10 @@ function updateScore (){
  * Used to change the computer players text throughout the game.
  * Updates the current game.text being displayed.
  * Known Bug - Allows user to input HTML, should fix.
- *  */ 
+ *  */
 function updateText() {
     cText.innerHTML = game.text;
-};
+}
 
 /** Sleep function using Promises to set delays between code */
 function sleep(ms) {
@@ -74,7 +74,7 @@ function levelOne(){
         document.getElementById("user").remove(nameBox);
         /* Updates computer players text and references the players username */
         async function delayedGreeting() {
-            game.text = "Welcome " + username + "...";
+            game.text = "Welcome " + username + ".";
             updateText();
             await sleep(3000);
             game.text = "Hmm... " + username + " is a funny name!"
