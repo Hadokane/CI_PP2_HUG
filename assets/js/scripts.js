@@ -56,6 +56,7 @@ function levelOne(){
         <br>
         <input type="text" id="user-text">
         <br>
+        <br>
         <button type="button" id="nameButton" class="btn">submit</button>
     `;
     /* Appends it to the empty "user" div inside of the html file */
@@ -64,8 +65,8 @@ function levelOne(){
     document.getElementById("nameButton").onclick = function(){
         /* Sets the value of userText to an object */
         let userString = document.getElementById("user-text").value;
-        /*Converts the above object into a string */
-        let username = "<div id='username-style'>" + JSON.stringify(userString) + "</div>";
+        /*Converts the above object into a string, wraps in a span */
+        let username = "<span id='username-style'>" + JSON.stringify(userString) + "</span>";
         /* Appends it to the remove nameBox from the "user" div inside of the html file */
         document.getElementById("user").remove(nameBox);
         /* Updates computer players text and references the players username */
@@ -100,6 +101,7 @@ $(".btn").addClass("btn-red");
 levelOne();
 updateText();
 showScore();
+levelTwo();
 
 
 /* Level 1 - Basic Aptitude Test */
