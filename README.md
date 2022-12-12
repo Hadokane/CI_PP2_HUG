@@ -55,3 +55,12 @@ It has been tested on a variety of devices and screen resolutions, from mobiles 
 ---
 
 1. [User Experience (UX)](#user-experience---ux)
+
+HELPFUL LINKS:
+
+https://stackoverflow.com/questions/11813806/javascript-get-a-functions-variables-value-within-another-function - make username global for access elsewhere.
+
+https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/ - difference of var, let, const
+
+https://www.sitepoint.com/delay-sleep-pause-wait/ - explained the premise of a sleep function and the use of promises to stagger my code for the automated chat box. Allowing for a more user friendly experience by reducing the number of button presses required to progress for the user. Creating the illusion of a sentient AI presence.
+
