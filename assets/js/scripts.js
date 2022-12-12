@@ -25,9 +25,10 @@ function updateScore (){
  * Sets the innerText of var text to a callable function.
  * Used to change the computer players text throughout the game.
  * Updates the current game.text being displayed.
+ * Known Bug - Allows user to input HTML, should fix.
  *  */ 
 function updateText() {
-    cText.innerText = game.text;
+    cText.innerHTML = game.text;
 };
 
 /** Sleep function using Promises to set delays between code */
@@ -38,7 +39,7 @@ function sleep(ms) {
 /* Resets settings when launching a new game. */
 function newGame(){
     game.currentGame = [];
-    game.failScore = 0;
+    game.failScore = 12;
     game.text = "Welcome New Candidate to the H.U.G. Protocol."
 }
 
@@ -53,15 +54,18 @@ function levelOne(){
     nameBox.innerHTML = `
         <label>Enter Your Name:</label>
         <br>
-        <input type="text" id="userText">
+        <input type="text" id="user-text">
         <br>
         <button type="button" id="nameButton" class="btn">submit</button>
     `;
     /* Appends it to the empty "user" div inside of the html file */
     document.getElementById("user").append(nameBox);
-    /* Sets the value of username */
+    /* Launches the following function when the button is clicked */
     document.getElementById("nameButton").onclick = function(){
-        let username = document.getElementById("userText").value;
+        /* Sets the value of userText to an object */
+        let userString = document.getElementById("user-text").value;
+        /*Converts the above object into a string */
+        let username = "<div id='username-style'>" + JSON.stringify(userString) + "</div>";
         /* Appends it to the remove nameBox from the "user" div inside of the html file */
         document.getElementById("user").remove(nameBox);
         /* Updates computer players text and references the players username */
@@ -71,29 +75,32 @@ function levelOne(){
             await sleep(3000);
             game.text = "Hmm... " + username + " is a funny name!"
             updateText();
-            await sleep(4000);
+            await sleep(3000);
             game.text = "No matter " + username + " you'll have to do.";
             updateText();
-            await sleep(3000);
-            game.text = "Enjoy your initiation...";
-            updateText();
-            await sleep(4000);
-            levelTwo();
+            // await sleep(3000);
+            // game.text = "Enjoy your initiation...";
+            // updateText();
+            // await sleep(3000);
+            // levelTwo();
         }
         delayedGreeting()
     }};
 
-
+function levelTwo(){
+    game.currentGame = [];
+    game.failScore = 15;
+    game.text = "Welcome " + username + ", let's begin with a few simple questions.";
+};
 
 /* jQuery Test - recolouring buttons to test functionality */
-$(".btn").css("background-color", "red");
-$("userText").addClass("username");
+$(".btn").addClass("btn-red");
 
 /* Calling functions for test purposes */
+levelOne();
 updateText();
 showScore();
-newGame();
-levelOne();
+
 
 /* Level 1 - Basic Aptitude Test */
 
