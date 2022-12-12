@@ -55,11 +55,18 @@ label,
     font-style: italic;
     font-family: 'VT323', monospace;
     font-weight: 400;
+    text-transform: capitalize;
 }
-
 
 /* --------- Color and font family of the username text box */
 #user-text{
     font-family: 'Gloria Hallelujah', cursive;
     color: red;
 }
+
+/* --------- Animation Test */
+h1 {
+    padding: 16px;
+    font-size: 32px;
+    text-align: center;
+}  

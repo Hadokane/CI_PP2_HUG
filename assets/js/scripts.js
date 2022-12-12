@@ -4,7 +4,7 @@ var btn2 = document.getElementById('btn2');
 var btn3 = document.getElementById('btn3');
 var cText = document.getElementById('comp-text');
 var userString;
-/* Providing default value */
+/* Providing default value for testing */
 var username = "<span id='username-style'>" + "Steve" + "</span>";
 
 /* Initalises the game */
@@ -57,7 +57,7 @@ function levelOne(){
     nameBox.innerHTML = `
         <label>Enter Your Name:</label>
         <br>
-        <input type="text" id="user-text">
+        <input type="text" id="user-text" maxlength="10">
         <br>
         <br>
         <button type="button" id="nameButton" class="btn">submit</button>
@@ -119,8 +119,6 @@ $(".btn").addClass("btn-red");
 levelOne();
 updateText();
 showScore();
-
-
 
 /* Exports functions for the test file to access */
 module.exports = { game, updateText, newGame, };
