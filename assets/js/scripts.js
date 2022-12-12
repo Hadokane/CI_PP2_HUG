@@ -1,9 +1,11 @@
-/* Setting HTML elements to variables */
+/* Setting HTML elements to global variables */
 var btn1 = document.getElementById('btn1');
 var btn2 = document.getElementById('btn2');
 var btn3 = document.getElementById('btn3');
 var cText = document.getElementById('comp-text');
-var username;
+var userString;
+/* Providing default value */
+var username = "<span id='username-style'>" + "Steve" + "</span>";
 
 /* Initalises the game */
 let game = {
@@ -43,7 +45,8 @@ function newGame(){
     game.failScore = 12;
     game.text = "Welcome New Candidate to the H.U.G. Protocol."
 }
-/**Creates a username text field for the player to interact with.
+
+/** Creates a username text field for the player to interact with.
  * Saves the username on button click. 
  * Removes the button now that data is set. 
  */
@@ -64,7 +67,7 @@ function levelOne(){
     /* Launches the following function when the button is clicked */
     document.getElementById("nameButton").onclick = function(){
         /* Sets the value of userText to an object */
-        let userString = document.getElementById("user-text").value;
+        userString = document.getElementById("user-text").value;
         /* Converts the above object into a string, wraps it in a span */
         username = "<span id='username-style'>" + JSON.stringify(userString) + "</span>";
         /* Appends it to the remove nameBox from the "user" div inside of the html file */
@@ -88,10 +91,25 @@ function levelOne(){
         delayedGreeting()
     }}
 
+/** Level 1 - Basic Aptitude Test (Questions Round) */
 function levelTwo(){
-        game.currentGame = [];
-        game.failScore = 42;
-        game.text = "Your first test" + username + " during the H.U.G. Protocol.";
+    game.currentGame = [];
+    game.failScore = 42;
+    game.text = "Your first test " + username + " during the H.U.G. Protocol.";
+}
+
+/** (Maths Round) */
+function levelThree(){
+    game.currentGame = [];
+    game.failScore = 66;
+    async function delayedGreeting() {
+        game.text = "Your second test, " + username + ", is 'Basic addition.'"
+        await sleep(3000);
+        game.text = "Surely even you can handle this one."
+        updateText();
+        await sleep(3000);
+    }
+    delayedGreeting()
 }
 
 /* jQuery Test - recolouring buttons to test functionality */
@@ -102,7 +120,7 @@ levelOne();
 updateText();
 showScore();
 
-/* Level 1 - Basic Aptitude Test */
+
 
 /* Exports functions for the test file to access */
 module.exports = { game, updateText, newGame, };
