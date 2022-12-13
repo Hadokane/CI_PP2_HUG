@@ -207,13 +207,24 @@ function checkAnswer(){
     let isCorrect = userAnswer === calculateAnswer[0];
     // Shows correct/incorrect text based on user answer. Advances game.
     if (isCorrect) {
-        game.text = "Good job!";
-        updateText();
-        nextQuestion();
+        async function delayedCorrect() {
+            game.text = "Adequate work " + username +".";
+            updateText();
+            await sleep(2000);
+            game.text = "Again!";
+            updateText();
+            nextQuestion();
+        }
+        delayedCorrect();
     } else {
+        // adds +1 to failScore
         setScore(1);
+        // async function to cycle through text before loading the next round.
         async function delayedWrong() {
-            game.text = `Hmmm... yes... the correct answer would have been a more boring choice.`
+            game.text = `Hmmm... yes... the <strong>correct answer</strong> would have been a more <em>boring</em> choice.`
+            updateText();
+            await sleep(3000);
+            game.text = "Try this next one."
             updateText();
             nextQuestion();
         };
