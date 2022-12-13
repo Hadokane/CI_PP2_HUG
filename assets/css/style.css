@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Roboto:wght@100;300;400;500;700;900&family=VT323&display=swap');
 
 /* --------- Body style */
+h2,
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -27,8 +28,11 @@ body {
 }
 
 /* --------- Text styling */
-label,
-#comp-text{
+#h2{
+    font-size: 1em;
+}
+
+label{
     font-size: 2em;
 }
 
@@ -72,6 +76,3 @@ label,
     font-family: 'Gloria Hallelujah', cursive;
     color: red;
 }
-
-/* --------- Animation Test */
-

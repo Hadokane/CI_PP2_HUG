@@ -46,10 +46,15 @@ function setScore(newScore){
  * Sets the innerText of var text to a callable function.
  * Used to change the computer players text throughout the game.
  * Updates the current game.text being displayed.
+ * Added HTML <h2> wrapper to enable animations to effect it
  * Known Bug - Allows user to input HTML, should fix.
  *  */
 function updateText() {
-    cText.innerHTML = game.text;
+    cText.innerHTML = "<h2 class ='animate__animated animate__fadeInUp'>" + game.text + "</div>";
+}
+
+function removeClass(){
+    $( "h2" ).removeClass("animate__fadeInUp");
 }
 
 /** Sleep function using Promises to set delays between code */
@@ -158,12 +163,16 @@ function runMathGame(){
     // Appends it to the empty "user" div inside of the html file
     document.getElementById("user").append(mathBox);
     // Add animate class then remove it.
-    document.getElementById("math-question").classList.add("animate__fadeInDown");
+    document.getElementById("math-question").classList.add("animate__heartBeat");
     // Calls a function to set the numbers of the question
     displayAdditionQuestion(num1, num2);
     // Assigns the submit answer button a function
     document.getElementById("btn-math").onclick = function(){
+        // Removes button's animation class
+        document.getElementById("math-question").classList.remove("animate__heartBeat");
+        // Removes button's click property to prevent spam/double clicking.
         document.getElementById("btn-math").onclick = "";
+        // Runs the checkAnswer function.
         checkAnswer();
     }
 };
@@ -177,6 +186,7 @@ function nextQuestion(){
     document.getElementById("btn-math").onclick = function(){
         // disables onclick function to prevent spamming
         document.getElementById("btn-math").onclick = "";
+        document.getElementById("math-question").classList.remove("animate__heartBeat");
         checkAnswer();
 }
 };
@@ -216,6 +226,7 @@ function checkAnswer(){
             await sleep(2000);
             game.text = "Again!";
             updateText();
+            document.getElementById("math-question").classList.add("animate__heartBeat");
             nextQuestion();
         }
         delayedCorrect();
@@ -229,6 +240,7 @@ function checkAnswer(){
             await sleep(3000);
             game.text = "Try this next one."
             updateText();
+            document.getElementById("math-question").classList.add("animate__heartBeat");
             nextQuestion();
         };
         delayedWrong();
