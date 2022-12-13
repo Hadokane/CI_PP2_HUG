@@ -31,6 +31,7 @@ var username = "<span id='username-style'>" + "Steve" + "</span>";
 // Initalises the game
 let game = {
     failScore: 10,
+    mathScore: 0,
     currentGame: [],
     text: "THIS IS WORKING!",
 };
@@ -42,6 +43,10 @@ function setScore(newScore){
     document.getElementById("score").innerText = game.failScore;
 }
 
+function setMathScore(newMathScore){
+    game.mathScore = game.mathScore + newMathScore;
+}
+
 /**
  * Sets the innerText of var text to a callable function.
  * Used to change the computer players text throughout the game.
@@ -51,10 +56,6 @@ function setScore(newScore){
  *  */
 function updateText() {
     cText.innerHTML = "<h2 class ='animate__animated animate__fadeInUp'>" + game.text + "</div>";
-}
-
-function removeClass(){
-    $( "h2" ).removeClass("animate__fadeInUp");
 }
 
 /** Sleep function using Promises to set delays between code */
@@ -164,8 +165,8 @@ function runMathGame(){
     document.getElementById("user").append(mathBox);
     // Add animate class then remove it.
     document.getElementById("math-question").classList.add("animate__heartBeat");
-    // Calls a function to set the numbers of the question
-    displayAdditionQuestion(num1, num2);
+    // Calls a function to set the operators of the question
+    displayQuestion(num1, num2, "+");
     // Assigns the submit answer button a function
     document.getElementById("btn-math").onclick = function(){
         // Removes button's animation class
@@ -181,7 +182,18 @@ function nextQuestion(){
     // Generates a random number * 10, rounded to nearest integer. Won't return 0.
     let num1 = Math.floor(Math.random() * 10) + 1;
     let num2 = Math.floor(Math.random() * 10) + 1;
-    displayAdditionQuestion(num1, num2);
+    // Choses the operand based on number of correct questions
+    if (game.mathScore === 1){
+        displayQuestion(num1, num2, "x");
+    } else if (game.mathScore === 2) {
+        displayQuestion(num1, num2, "-");
+    } else if (game.mathScore === 3) {
+        alert("You a smarty pants!");
+        // Add code to launch next section of the game here.
+    } else {
+        displayQuestion(num1, num2, "+");
+    }''
+    
     // Assigns the submit answer button a function
     document.getElementById("btn-math").onclick = function(){
         // disables onclick function to prevent spamming
@@ -206,7 +218,7 @@ function correctAnswer(){
     } else if (operator === "-") {
         return [operand1 - operand2];
     } else {
-    alert ("There has been an error in the protocol. Abort mission.")
+    alert ("There has been an error in the protocol. Abort mission.");
     }
 };
 
@@ -221,6 +233,7 @@ function checkAnswer(){
     // Shows correct/incorrect text based on user answer. Advances game.
     if (isCorrect) {
         async function delayedCorrect() {
+            setMathScore(1);
             game.text = "Adequate work " + username +".";
             updateText();
             await sleep(2000);
@@ -228,7 +241,7 @@ function checkAnswer(){
             updateText();
             document.getElementById("math-question").classList.add("animate__heartBeat");
             nextQuestion();
-        }
+        };
         delayedCorrect();
     } else {
         // adds +1 to failScore
@@ -247,8 +260,9 @@ function checkAnswer(){
     }
 };
 
-function displayAdditionQuestion(operand1, operand2) {
+function displayQuestion(operand1, operand2, operator) {
     document.getElementById("operand1").textContent = operand1;
     document.getElementById("operand2").textContent = operand2;
-    document.getElementById("operator").textContent = "+";
+    document.getElementById("operator").textContent = operator;
+    operator = "+";
 };
