@@ -14,9 +14,8 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     }
     /* Calling functions for test purposes */
-    runMathGame()
-    updateText();
-    setScore(3); //Adds 3 to the game.failScore
+    updateText(); // Displays game.text in the HTML Div
+    setScore(3); // Adds 3 to the game.failScore
 });
 
 // Setting HTML elements to global variables
@@ -30,22 +29,11 @@ var username = "<span id='username-style'>" + "Steve" + "</span>";
 
 // Initalises the game
 let game = {
-    failScore: 10,
-    mathScore: 0,
+    failScore: 10, // set so that once reaches 10 you are rejected. Ends the game.
+    mathScore: 0, // Used to advance the questions in level3
     currentGame: [],
-    text: "THIS IS WORKING!",
+    text: "THIS IS WORKING!", // Test text, set to empty in release.
 };
-
-/** Adds num to the current game.failScore.
- * Can put (0) to initalise the score */
-function setScore(newScore){
-    game.failScore = game.failScore + newScore;
-    document.getElementById("score").innerText = game.failScore;
-}
-
-function setMathScore(newMathScore){
-    game.mathScore = game.mathScore + newMathScore;
-}
 
 /**
  * Sets the innerText of var text to a callable function.
@@ -58,17 +46,38 @@ function updateText() {
     cText.innerHTML = "<h2 class ='animate__animated animate__fadeInUp'>" + game.text + "</div>";
 }
 
-/** Sleep function using Promises to set delays between code */
+/** Adds newScore to the current game.failScore value.
+ * Can put (0) to initalise the score */
+function setScore(newScore){
+    game.failScore = game.failScore + newScore;
+    document.getElementById("score").innerText = game.failScore;
+}
+
+/** Updates the game.mathScore data by the value of newMathScore.
+ * Can put (0) to initalise the score
+ */
+function setMathScore(newMathScore){
+    game.mathScore = game.mathScore + newMathScore;
+}
+
+/** Sleep function using Promises to set delays between code.
+ * Used mainly for the purpose of displaying automated text for the computer player.
+ */
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 };
 
-/** Resets settings when launching a new game. */
+/** Resets settings and Launches a new game.
+ * Make callable via a button and the first function called on Page load in final.
+ */
 function newGame(){
     game.currentGame = [];
     game.failScore = 8;
     game.text = "Welcome New Candidate to the H.U.G. Protocol."
+    // Add button here, that onClick loads levelOne.
 }
+
+////////////////////////////////////////////////////////////////////////
 
 /** Level 1 - Creates a username text field for the player to interact with.
  * Saves the username on button click. 
@@ -114,6 +123,8 @@ function levelOne(){
         delayedGreeting()
     }}
 
+////////////////////////////////////////////////////////////////////////
+
 /** Level 2 - Basic Aptitude Test (Questions Round) */
 function levelTwo(){
     game.currentGame = [];
@@ -121,16 +132,20 @@ function levelTwo(){
     game.text = "Your first test " + username + " during the H.U.G. Protocol.";
 }
 
+
+////////////////////////////////////////////////////////////////////////
+
 /** (Maths Round) */
 function levelThree(){
-    game.currentGame = [];
-    game.failScore = 66;
+    game.currentGame = []; // for test
+    game.failScore = 66; // for test
     async function delayedGreeting() {
         game.text = "Your second test " + username + ", is 'Basic addition.'"
         await sleep(3000);
         game.text = "Surely even you can handle this one."
         updateText();
         await sleep(3000);
+        // Load a clickable button to run the following.
         runMathGame();
     }
     delayedGreeting()
@@ -266,3 +281,5 @@ function displayQuestion(operand1, operand2, operator) {
     document.getElementById("operator").textContent = operator;
     operator = "+";
 };
+
+////////////////////////////////////////////////////////////////////////
