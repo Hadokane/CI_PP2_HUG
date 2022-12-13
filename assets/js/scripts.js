@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
     /* Calling functions for test purposes */
     updateText(); // Displays game.text in the HTML Div
     setScore(3); // Adds 3 to the game.failScore
+    levelTwo();
 });
 
 // Setting HTML elements to global variables
@@ -90,7 +91,7 @@ function levelOne(){
     nameBox.innerHTML = `
         <label>Enter Your Name:</label>
         <br>
-        <input type="text" class="user-text" maxlength="10">
+        <input type="text" id="username-btn" class="user-text" maxlength="10">
         <br>
         <br>
         <button type="button" id="nameButton" class="btn">submit</button>
@@ -100,7 +101,7 @@ function levelOne(){
     /* Launches the following function when the button is clicked */
     document.getElementById("nameButton").onclick = function(){
         /* Sets the value of userText to an object */
-        userString = document.getElementById("user-text").value;
+        userString = document.getElementById("username-btn").value;
         /* Converts the above object into a string, wraps it in a span */
         username = "<span id='username-style'>" + JSON.stringify(userString) + "</span>";
         /* Removes nameBox from the "user" div inside of the html file */
@@ -119,6 +120,7 @@ function levelOne(){
             game.text = "Enjoy your initiation...";
             updateText();
             await sleep(3000);
+            levelTwo();
         }
         delayedGreeting()
     }}
@@ -129,10 +131,32 @@ function levelOne(){
 function levelTwo(){
     game.currentGame = [];
     game.failScore = 42;
-    game.text = "Your first test " + username + " during the H.U.G. Protocol.";
+    /* Updates computer players text and references the players username */
+    async function delayedGreeting() {
+        game.text = "Initalising <em>[Human Usefulness Generator]</em>..."
+        updateText();
+        await sleep(3000);
+        game.text = "Welcome " + username + " to your first test.";
+        updateText();
+        await sleep(3000);
+        game.text = "This is the <em>[Basic Aptitude Module]</em>.";
+        updateText();
+        await sleep(3000);
+        game.text = "You will be asked a series of important questions.";
+        updateText();
+        await sleep(3000);
+        game.text = "Answer honestly... Your future membership depends on it.";
+        updateText();
+        // Loads the questions section
+        await sleep(3000);
+        runQuestionGame();
+    }
+    delayedGreeting();
 }
 
-
+function runQuestionGame(){
+    alert("Run Question Game working!")
+}
 ////////////////////////////////////////////////////////////////////////
 
 /** (Maths Round) */
@@ -140,7 +164,11 @@ function levelThree(){
     game.currentGame = []; // for test
     game.failScore = 66; // for test
     async function delayedGreeting() {
-        game.text = "Your second test " + username + ", is 'Basic addition.'"
+        game.text = "This is the <em>[Basic Equation Module]</em>."
+        updateText();
+        await sleep(3000);
+        game.text = "Your second test " + username + ", will be to combine the following numbers."
+        updateText();
         await sleep(3000);
         game.text = "Surely even you can handle this one."
         updateText();
@@ -248,6 +276,7 @@ function checkAnswer(){
     // Shows correct/incorrect text based on user answer. Advances game.
     if (isCorrect) {
         async function delayedCorrect() {
+            // adds to the game.mathScore to update the operand and advance the game.
             setMathScore(1);
             game.text = "Adequate work " + username +".";
             updateText();
@@ -283,3 +312,8 @@ function displayQuestion(operand1, operand2, operator) {
 };
 
 ////////////////////////////////////////////////////////////////////////
+
+// Keep cursor still game.
+// Array section - replace a member game.
+// Sacrifice fruit section.
+// End messages. Reward certificate.
