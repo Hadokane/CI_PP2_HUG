@@ -139,9 +139,9 @@ function runMathGame(){
     let num2 = Math.floor(Math.random() * 10) + 1;
     // Creates an input box for the user to enter their username 
     let mathBox = document.createElement("div");
-    // Sets the innerHTML of the newly created div object 
+    // Sets the innerHTML of the newly created div object, uses external animate class.
     mathBox.innerHTML = `
-        <div id="math-question">
+        <div id="math-question" class="animate__animated">
             <span id="operand1"> 0 </span>
             <span id="operator"> x </span>
             <span id="operand2"> 0 </span>
@@ -157,6 +157,8 @@ function runMathGame(){
         `;
     // Appends it to the empty "user" div inside of the html file
     document.getElementById("user").append(mathBox);
+    // Add animate class then remove it.
+    document.getElementById("math-question").classList.add("animate__fadeInDown");
     // Calls a function to set the numbers of the question
     displayAdditionQuestion(num1, num2);
     // Assigns the submit answer button a function
