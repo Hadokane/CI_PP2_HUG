@@ -161,7 +161,7 @@ function runMathGame(){
     displayAdditionQuestion(num1, num2);
     // Assigns the submit answer button a function
     document.getElementById("btn-math").onclick = function(){
-        userMathAnswer = parseInt(document.getElementById("answer-box").value);
+        document.getElementById("btn-math").onclick = "";
         checkAnswer();
     }
 };
@@ -173,7 +173,8 @@ function nextQuestion(){
     displayAdditionQuestion(num1, num2);
     // Assigns the submit answer button a function
     document.getElementById("btn-math").onclick = function(){
-        userMathAnswer = parseInt(document.getElementById("answer-box").value);
+        // disables onclick function to prevent spamming
+        document.getElementById("btn-math").onclick = "";
         checkAnswer();
 }
 };
