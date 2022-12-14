@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
     updateText(); // Displays game.text in the HTML Div
     setScore(3); // Adds 3 to the game.failScore
     // runHubWorld();
-    newGame();
+    enterName();
 });
 
 // Setting HTML elements to global variables
@@ -130,7 +130,7 @@ function enterName(){
             /* Converts the above object into a string, wraps it in a span */
             username = "<span id='username-style'>" + JSON.stringify(userString) + "</span>";
             /* Removes nameBox from the "user" div inside of the html file */
-            document.getElementById("user").remove(nameBox);
+            nameBox.remove();
             /* Updates computer players text and references the players username */
             async function delayedGreeting() {
             game.text = "Welcome " + username + ".";
@@ -352,7 +352,6 @@ function levelIntroMath(){
         await sleep(4000);
         game.text = "Surely even you can handle this one."
         updateText();
-        await sleep(3000);
         runMathGame();
     }
     delayedGreeting()
@@ -361,7 +360,6 @@ function levelIntroMath(){
 /** Generates 2 random numbers.
  * Adds necessary UI elements to div. */
 function runMathGame(){
-    game.text = "runMathGame in effect."
     // Generates a random number * 10, rounded to nearest integer. Won't return 0.
     let num1 = Math.floor(Math.random() * 10) + 1;
     let num2 = Math.floor(Math.random() * 10) + 1;
