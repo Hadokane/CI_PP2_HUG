@@ -499,24 +499,17 @@ function checkAnswer(){
 ////////////////////////////////////////////////////////////////////////
 
 function finalProtocol() {
+    // TEST
+    game.text = "FINAL PROTOCOL!"
+    updateText();
+    
     // Array data for cards
     let members = {
         firstname: ["Jim", "Pam", "Steve", "Urkle", "Johnny", "Benjamin", "Hooper", "Eleanor", "Marge", "Big", "Naruto", "Myuzaki", "Ronald", "Bjorn", "Golden", "Max", "Julia", "Mr.", "Mrs.", "Senior",],
         lastname: ["Stevenson", "Bjornson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubador", "The Great", "Power", "Radaghast",],
         skill: ["East-End Bartender", "Computer Scientist", "Full-Time Dungeon Master", "Weekend Dog Walker", "Middle School Teacher", "Developer of Indie RPG'S", "Airsoft Enthusiast", "Owns a Katana Collection", "Drives a '67 Chevrolet Impala", "Has Been To France Twice", "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fanfiction", "Has Eaten a Glass of Water With Chopsticks"],
     }
-
-    // For loops iterate data and console.log it
-    for (let i = 0; i < members.firstname.length; i++) {
-        console.log(members.firstname[i]);
-    }
-    for (let i = 0; i < members.lastname.length; i++) {
-        console.log(members.lastname[i]);
-    }
-    for (let i = 0; i < members.skill.length; i++) {
-        console.log(members.skill[i]);
-    }
-   
+    
     // Developing a random function for array selection // i < 8 as want 8 cards to display
     for (let i = 0; i < 8; i++) {
         // Generates a random number each time the code is ran, within confines of array.length
@@ -538,11 +531,24 @@ function finalProtocol() {
             console.log(randomSkill);
             console.log(namerSkill);
             console.log(members.skill);
+        // Creates a card with the new information on it and displays it
+        card = document.createElement("div");
+        card.innerHTML = `
+            <div class="card text-center ">
+            <img class="card-img-top" src="assets/images/img_avatar1.png" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">John Doe</h4>
+                    <p class="card-text">Some example text.</p>
+                    <a href="#" class="stretched-link">Kill?</a>
+                </div>
+            </div>
+        `;
+        document.getElementById("user").append(card);
     };
 }
 
 
-// Keep cursor still game.
 // Array section - replace a member game.
-// Sacrifice fruit section.
+// Keep cursor still game.
+// Maze to fruit section.
 // End messages. Reward certificate.
