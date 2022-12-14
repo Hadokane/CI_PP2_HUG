@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
     updateText(); // Displays game.text in the HTML Div
     setScore(3); // Adds 3 to the game.failScore
     // runHubWorld();
-    enterName()
+    newGame();
 });
 
 // Setting HTML elements to global variables
@@ -26,13 +26,12 @@ var btn2 = document.getElementById('btn2');
 var btn3 = document.getElementById('btn3');
 var cText = document.getElementById('comp-text');
 var userString;
-// Providing default value for testing
-// var username = "<span id='username-style'>" + "Steve" + "</span>";
-var username = "";
+// Providing default value for testing, set to "" when testing is done
+var username = "<span id='username-style'>" + "Steve" + "</span>";
 
 // Initalises the game
 let game = {
-    failScore: 10, // set so that once reaches 10 you are rejected. Ends the game.
+    failScore: 0, // set so that once reaches 10 you are rejected. Ends the game.
     mathScore: 0, // Used to advance the questions in math game
     text: "THIS IS WORKING!", // Test text, set to empty in release.
 };
@@ -69,6 +68,8 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 };
 
+////////////////////////////////////////////////////////////////////////
+
 /** Resets settings and Launches a new game.
  * Make callable via a button and the first function called on Page load in final.
  */
@@ -76,6 +77,7 @@ function newGame(){
     game.text = "Welcome New Candidate to the H.U.G. Protocol."
     updateText(); // Displays the update to the game.text
     setScore(8); // Adds 8 to score
+
     // Creates the start game button
     let startBtn = document.createElement("div");
     // Sets the innerHTML of the newly created div object
@@ -84,11 +86,12 @@ function newGame(){
     `;
     /* Appends it to the empty "user" div inside of the html file */
     document.getElementById("user").append(startBtn);
+
     /* Launches the following function when the button is clicked */
     document.getElementById("startBtn").onclick = function(){
         /* Removes nameBox from the "user" div inside of the html file */
-        document.getElementById("user").remove(startBtn);
-        enterName();
+        startBtn.remove();
+        enterName(); // runs enterName
     }
 }
 
@@ -101,11 +104,12 @@ function newGame(){
 function enterName(){
     game.text = "Enter your name below."
     updateText(); // Displays the update to the game.text
+
     /* Creates an input box for the user to enter their username */
     let nameBox = document.createElement("div");
     /* Sets the innerHTML of the newly created div object */
     nameBox.innerHTML = `
-        <label></label>
+        <label>NAME HERE:</label>
         <br>
         <input type="text" id="username-btn" class="user-text" maxlength="10">
         <br>
@@ -114,10 +118,10 @@ function enterName(){
     `;
     /* Appends it to the empty "user" div inside of the html file */
     document.getElementById("user").append(nameBox);
+    
     /* Launches the following function when the button is clicked */
     document.getElementById("nameButton").onclick = function(){
         if (document.getElementById("username-btn").value === ""){
-            alert("SHIT!")
             game.text = "We don't accept the 'nameless' here."
             updateText();
         } else {
@@ -135,7 +139,7 @@ function enterName(){
             game.text = "Hmm... " + username + " is a funny name!"
             updateText();
             await sleep(3000);
-            game.text = "No matter " + username + " you'll have to do.";
+            game.text = "Don't believe we've ever had a " + username + " before.";
             updateText();
             await sleep(3000);
             game.text = "Enjoy your initiation...";
@@ -493,7 +497,6 @@ function checkAnswer(){
         delayedWrong();
     }
 };
-
 
 ////////////////////////////////////////////////////////////////////////
 
