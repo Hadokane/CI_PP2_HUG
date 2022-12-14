@@ -375,19 +375,31 @@ function runMathGame(){
     }
 };
 
+// Takes in 2 numbers and an operator string to create a question. Called elsewhere.
+function displayQuestion(operand1, operand2, operator) {
+    document.getElementById("operand1").textContent = operand1;
+    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operator").textContent = operator;
+    operator = "+";
+};
+
+// Generates two random numbers and passes them into display question. Advances the game./
 function nextQuestion(){
     // Generates a random number * 10, rounded to nearest integer. Won't return 0.
     let num1 = Math.floor(Math.random() * 10) + 1;
     let num2 = Math.floor(Math.random() * 10) + 1;
+
     // Choses the operand based on number of correct questions
     if (game.mathScore === 1){
         displayQuestion(num1, num2, "x");
     } else if (game.mathScore === 2) {
         displayQuestion(num1, num2, "-");
     } else if (game.mathScore === 3) {
-        // remove math window.
-
-        showTextNode(42); // On completion, progresses the game in the hubWorld.
+        // Removes the mathbox child elements from the user div.
+        while (document.getElementById("user").firstChild) {
+            document.getElementById("user").removeChild(document.getElementById("user").firstChild)
+        }
+        showTextNode(42); // On completion of math game, this loads the (specified) level back in the hub world.
     } else {
         displayQuestion(num1, num2, "+");
     }''
@@ -400,7 +412,7 @@ function nextQuestion(){
         document.getElementById("math-question").classList.remove("animate__heartBeat");
         // runs checkAnswer function
         checkAnswer();
-}
+    }
 };
 
 /** Reads the 2 random numbers and operator. 
@@ -433,7 +445,7 @@ function checkAnswer(){
     // Shows correct/incorrect text based on user answer. Advances game.
     if (isCorrect) {
         async function delayedCorrect() {
-            // adds to the game.mathScore to update the operand and advance the game.
+            // adds to the game.mathScore to update the operands and advance the game.
             setMathScore(1);
             game.text = "Adequate work " + username +".";
             updateText();
@@ -461,12 +473,6 @@ function checkAnswer(){
     }
 };
 
-function displayQuestion(operand1, operand2, operator) {
-    document.getElementById("operand1").textContent = operand1;
-    document.getElementById("operand2").textContent = operand2;
-    document.getElementById("operator").textContent = operator;
-    operator = "+";
-};
 
 ////////////////////////////////////////////////////////////////////////
 
