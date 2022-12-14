@@ -501,7 +501,7 @@ function checkAnswer(){
 function finalProtocol() {
     // Array data for cards
     let members = {
-    firstname: ["Jim", "Pam", "Steve", "Urkle", "Johnny", "Benjamin", "Hooper", "Eleanor", "Marge", "Lil' Big Money", "Naruto", "Myuzaki", "Ronald", "Bjorn", "Golden Boy", "Max", "Julia", "Mr.", "Mrs.", "Senior",],
+    firstname: ["Jim", "Pam", "Steve", "Urkle", "Johnny", "Benjamin", "Hooper", "Eleanor", "Marge", "Big", "Naruto", "Myuzaki", "Ronald", "Bjorn", "Golden", "Max", "Julia", "Mr.", "Mrs.", "Senior",],
     lastname: ["Stevenson", "Bjornson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubador", "The Great", "Power", "Radaghast",],
     skill: ["East-End Bartender", "Computer Scientist", "Full-Time Dungeon Master", "Weekend Dog Walker", "Middle School Teacher", "Developer of Indie RPG'S", "Airsoft Enthusiast", "Owns a Katana Collection", "Drives a '67 Chevrolet Impala", "Has Been To France Twice", "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fanfiction", "Has Eaten a Glass of Water With Chopsticks"],
     }
@@ -516,16 +516,18 @@ function finalProtocol() {
     for (let i = 0; i < members.skill.length; i++) {
     console.log(members.skill[i]);
     }
-
-    // Goal, slice a random thing off each list to populate 4-8 onscreen cards of data.
+   
     // Developing a random function for array selection
-    let randomFirstname = Math.floor(Math.random() * members.firstname.length); // create a random number between 0 and the max array length
-
     for (let i = 0; i < 8; i++) {
-        members.firstname.splice(randomFirstname, 1);
+        // Generates a random number each time the code is ran, within confines of array.length
+        let randomArrayNumber = Math.floor(Math.random() * members.firstname.length); // create a random number between 0 and the max array length
+        // Uses random number to pick an item on the array
+        members.firstname.splice(randomArrayNumber, 1);
+        console.log(randomArrayNumber);
         console.log(members.firstname[i]);
         console.log(members.firstname);
-        }
+        // Creates a card with this information on it each time
+        };
 }
 
 
