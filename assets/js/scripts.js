@@ -192,7 +192,12 @@ function selectOption(option) {
     const nextTextNodeId = option.nextText
     // checks to see if a function has been called.
     if (nextTextNodeId === -1){
-        runMathGame(); // change to levelThree
+        // Removes buttons before loading game.
+        while (document.getElementById("option-buttons").firstChild) {
+            document.getElementById("option-buttons").removeChild(document.getElementById("option-buttons").firstChild)
+        }
+        // change to levelIntroMath
+        levelIntroMath(); 
     }
     // checks the state, updates the state if setState present, overwrites state.
     state = Object.assign(state, option.setState)
@@ -310,7 +315,7 @@ const textNodes = [
 ////////////////////////////////////////////////////////////////////////
 
 /** (Maths Round) */
-function levelThree(){
+function levelIntroMath(){
     game.currentGame = []; // for test
     game.failScore = 66; // for test
     async function delayedGreeting() {
@@ -377,25 +382,24 @@ function nextQuestion(){
     let num2 = Math.floor(Math.random() * 10) + 1;
     // Choses the operand based on number of correct questions
     if (game.mathScore === 1){
-        // displayQuestion(num1, num2, "x");
-        alert("You a smarty pants!");
-        showTextNode(42);
+        displayQuestion(num1, num2, "x");
     } else if (game.mathScore === 2) {
         displayQuestion(num1, num2, "-");
     } else if (game.mathScore === 3) {
-        alert("You a smarty pants!");
-        showTextNode(42);
+        // remove math window.
 
-        // Add code to launch next section of the game here.
+        showTextNode(42); // On completion, progresses the game in the hubWorld.
     } else {
         displayQuestion(num1, num2, "+");
     }''
     
-    // Assigns the submit answer button a function
+    // Assigns the submit answer button an onClick function
     document.getElementById("btn-math").onclick = function(){
         // disables onclick function to prevent spamming
         document.getElementById("btn-math").onclick = "";
+        // removes animation class so that it can be re-added elsewhere to play again.
         document.getElementById("math-question").classList.remove("animate__heartBeat");
+        // runs checkAnswer function
         checkAnswer();
 }
 };
