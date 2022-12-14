@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function(){
     /* Calling functions for test purposes */
     updateText(); // Displays game.text in the HTML Div
     setScore(3); // Adds 3 to the game.failScore
-    runHubWorld();
+    // runHubWorld();
+    enterName()
 });
 
 // Setting HTML elements to global variables
@@ -26,7 +27,8 @@ var btn3 = document.getElementById('btn3');
 var cText = document.getElementById('comp-text');
 var userString;
 // Providing default value for testing
-var username = "<span id='username-style'>" + "Steve" + "</span>";
+// var username = "<span id='username-style'>" + "Steve" + "</span>";
+var username = "";
 
 // Initalises the game
 let game = {
@@ -71,10 +73,23 @@ function sleep(ms) {
  * Make callable via a button and the first function called on Page load in final.
  */
 function newGame(){
-    game.failScore = 8;
     game.text = "Welcome New Candidate to the H.U.G. Protocol."
-    // Add button here, that onClick loads enterName().
-    enterName()
+    updateText(); // Displays the update to the game.text
+    setScore(8); // Adds 8 to score
+    // Creates the start game button
+    let startBtn = document.createElement("div");
+    // Sets the innerHTML of the newly created div object
+    startBtn.innerHTML = `
+        <button type="button" id="startBtn" class="btn">Begin Assessment</button>
+    `;
+    /* Appends it to the empty "user" div inside of the html file */
+    document.getElementById("user").append(startBtn);
+    /* Launches the following function when the button is clicked */
+    document.getElementById("startBtn").onclick = function(){
+        /* Removes nameBox from the "user" div inside of the html file */
+        document.getElementById("user").remove(startBtn);
+        enterName();
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -84,11 +99,13 @@ function newGame(){
  * Removes the button now that data is set. 
  */
 function enterName(){
+    game.text = "Enter your name below."
+    updateText(); // Displays the update to the game.text
     /* Creates an input box for the user to enter their username */
     let nameBox = document.createElement("div");
     /* Sets the innerHTML of the newly created div object */
     nameBox.innerHTML = `
-        <label>Enter Your Name:</label>
+        <label></label>
         <br>
         <input type="text" id="username-btn" class="user-text" maxlength="10">
         <br>
