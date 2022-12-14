@@ -533,6 +533,7 @@ function finalProtocol() {
             console.log(members.skill);
         // Creates a card with the new information on it and displays it
         card = document.createElement("div");
+        card.addClassName //move that upper div out into the world
         card.innerHTML = `
             <div class="card text-center ">
             <img class="card-img-top" src="assets/images/img_avatar1.png" alt="Card image">

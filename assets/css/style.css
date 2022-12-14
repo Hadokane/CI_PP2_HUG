@@ -32,6 +32,7 @@ body {
     font-size: 1em;
 }
 
+/* --------- Label */
 label{
     font-size: 2em;
 }
@@ -76,4 +77,22 @@ label{
 .user-text{
     font-family: 'Gloria Hallelujah', cursive;
     color: red;
+}
+
+/* --------- Card effects */
+.card {
+    margin: 15px;
+    box-shadow: 2px 2px;
+}
+
+/* --------- Focus effects */
+.card:focus,
+.user-text:focus {
+    outline: 3px solid red;
+}
+
+/* --------- Hover effects */
+.card:hover {
+    outline: 3px solid red;
+    box-shadow: 6px 6px;
 }
