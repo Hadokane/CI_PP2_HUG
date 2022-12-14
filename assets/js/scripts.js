@@ -537,8 +537,8 @@ function finalProtocol() {
             <div class="card text-center ">
             <img class="card-img-top" src="assets/images/img_avatar1.png" alt="Card image">
                 <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text.</p>
+                    <h4 class="card-title">${namerFirst} ${namerLast}</h4>
+                    <p class="card-text">${namerSkill}.</p>
                     <a href="#" class="stretched-link">Kill?</a>
                 </div>
             </div>
