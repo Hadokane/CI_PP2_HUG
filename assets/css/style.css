@@ -47,12 +47,13 @@ label{
 
 /* --------- Button style */
 .btn{
-    background-color: green;
-    color:chartreuse;
+    background-color: rebeccapurple;
+    color:white;
     border-radius: 15%;
     text-align: center;
     margin-bottom: 32px;
     box-shadow: 2px 2px;
+    margin: 0.6em;
 }
 
 /* --------- Button recolor with jQuery */

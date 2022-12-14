@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
     /* Calling functions for test purposes */
     updateText(); // Displays game.text in the HTML Div
     setScore(3); // Adds 3 to the game.failScore
-    levelTwo();
+    runQuestionGame();
 });
 
 // Setting HTML elements to global variables
@@ -128,9 +128,11 @@ function levelOne(){
 ////////////////////////////////////////////////////////////////////////
 
 /** Level 2 - Basic Aptitude Test (Questions Round) */
+
+// Keeps track of player items.
+let state = {};
+
 function levelTwo(){
-    game.currentGame = [];
-    game.failScore = 42;
     /* Updates computer players text and references the players username */
     async function delayedGreeting() {
         game.text = "Initalising <em>[Human Usefulness Generator]</em>..."
@@ -155,8 +157,156 @@ function levelTwo(){
 }
 
 function runQuestionGame(){
-    alert("Run Question Game working!")
+    state = {}; // sets players starting items
+    game.currentGame = []; // redundant function now.
+    setScore(42); // sets the fail score.
+    showTextNode(1); // shows initial text from node 1 of the array.
 }
+
+function showTextNode(textNodeIndex){
+    // sets const equal to the id of the textNodes array.
+    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+    // Sets inner text of element equal to textNodes.text, wrapped in <h2> tags for css styles
+    cText.innerHTML = "<h2>" + textNode.text + "</h2>";
+    // Removes the button child elements from the options-buttons div - if present - when not called by the question. Removes the questions buttons.
+    while (document.getElementById("option-buttons").firstChild) {
+        document.getElementById("option-buttons").removeChild(document.getElementById("option-buttons").firstChild)
+    }
+    // Creates the buttons needed for each question after removal finishes.
+    textNode.options.forEach(option => {
+        if (showOption(option)) {
+            const button = document.createElement("button")
+            button.innerText = option.text // Sets buttons text to match the text nodes options Text
+            button.classList.add("btn") // Adds CSS styles
+            // onClick the button runs the selectOption function.
+            button.addEventListener("click", () => selectOption(option))
+            document.getElementById("option-buttons").appendChild(button)
+        }
+    })
+
+}
+
+// Called by showTextNode if loop. Finds the option and updates the players state if item acquired.
+function selectOption(option) {
+    // finds the next textNode specified in text
+    const nextTextNodeId = option.nextText
+    // checks to see if a function has been called.
+    if (nextTextNodeId === -1){
+        runMathGame(); // change to levelThree
+    }
+    // checks the state, updates the state if setState present, overwrites state.
+    state = Object.assign(state, option.setState)
+    // Shows the nextTextNode
+    showTextNode(nextTextNodeId)
+}
+
+// Called by showTextNode if loop.  
+function showOption(option) {
+    // if no state is required (null) returns ture or if requiredstate is met returns true, showing hidden options.
+    return option.requiredState == null || option.requiredState(state);
+}
+
+// 
+const textNodes = [
+    { // Initial hub area, allows travel to other zones.
+        id: 1,
+        text: "The H.U.G. Protocol requires your digital conciousness to continue. <br><br> Proceed?",
+        options: [
+            {
+                text: "Walk into the light.",
+                setState: { noBadge: true }, // Sets starting inventory for the player.          
+                nextText: 2, // advances to id: 2
+            }
+        ]
+    },
+    { // Initial hub area, allows travel to other zones.
+        id: 2,
+        text: "Welcome to the hub " + username + ". Where would you like to go?",
+        options: [
+            {
+                text: "Left",
+                requiredState: (currentState) => currentState.noBadge, // requires noBadge to show            
+                nextText: 3, // advances to id: 2
+            },
+            {
+                text: "Left (With Badge)",
+                requiredState: (currentState) => currentState.mathBadge, // requires mathBadge to show. state{} read. Does it have what is required? Show Option Function reads it.
+                nextText: 77, // runs mathGame
+            },
+            {
+                text: "Left (With BigBrain)",
+                requiredState: (currentState) => currentState.bigBrain, // requires bigBrain
+                nextText: 13, // runs mathGame
+            },
+            {
+                text: "Forward",
+                nextText: 13,
+            },
+            {
+                text: "Right",
+                nextText: 13,
+            },
+        ]
+    },
+    { // If chosing left above.
+        id: 3,
+        text: "You reach a dark room filled with blood.",
+        options: [
+            {
+            text: "gross!",
+            nextText: 4,
+            },
+            {
+            text: "cool!",
+            nextText: 5,
+            },
+        ]
+    },
+    { // If chosing left above.
+        id: 4,
+        text: "Smells bad bro.",
+        options: [
+            {
+            text: "grab math badge!",
+            setState: { mathBadge: true, noBadge: false }, // gives you badge, removes no_badge property; Sets state to true for mathBadge.
+            nextText: 2, // Returns to Hub
+            },
+        ]
+    },
+    { // If chosing left above.
+        id: 77,
+        text: "You see a math console plugged in. Run Protocol?",
+        options: [
+            {
+            text: "Flee in fear!",
+            setState: { mathBadge: true, noBadge: false }, // gives you badge, removes no_badge property; Sets state to true for mathBadge.
+            nextText: 2, // Returns to Hub
+            },
+            {
+            text: "Run Math Protocol!",
+            setState: { mathBadge: true, noBadge: false }, // gives you badge, removes no_badge property; Sets state to true for mathBadge.
+            nextText: -1, // Runs Math Game
+            },
+        ]
+    },
+    { // After completing Math Game.
+        id: 42,
+        text: "Protocol Complete. Good job " + username,
+        options: [
+            {
+            text: "Place hand on console!",
+            setState: { bigBrain: true, }, // gives you badge, removes no_badge property; Sets state to true for mathBadge.
+            nextText: 2, // Returns to Hub
+            },
+        ]
+    },
+    { // If chosing left above.
+        id: 5,
+        text: "Indeed.",
+        nextText: 2, // Returns to Hub
+    },
+]
+
 ////////////////////////////////////////////////////////////////////////
 
 /** (Maths Round) */
@@ -227,11 +377,15 @@ function nextQuestion(){
     let num2 = Math.floor(Math.random() * 10) + 1;
     // Choses the operand based on number of correct questions
     if (game.mathScore === 1){
-        displayQuestion(num1, num2, "x");
+        // displayQuestion(num1, num2, "x");
+        alert("You a smarty pants!");
+        showTextNode(42);
     } else if (game.mathScore === 2) {
         displayQuestion(num1, num2, "-");
     } else if (game.mathScore === 3) {
         alert("You a smarty pants!");
+        showTextNode(42);
+
         // Add code to launch next section of the game here.
     } else {
         displayQuestion(num1, num2, "+");
