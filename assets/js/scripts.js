@@ -211,7 +211,7 @@ function showOption(option) {
     return option.requiredState == null || option.requiredState(state);
 }
 
-// 
+// The games many text options that populate the hub world.
 const textNodes = [
     { // Initial hub area, allows travel to other zones.
         id: 1,
@@ -319,16 +319,15 @@ function levelIntroMath(){
     game.currentGame = []; // for test
     game.failScore = 66; // for test
     async function delayedGreeting() {
-        game.text = "This is the <em>[Basic Equation Module]</em>."
+        game.text = "Welcome to the <em>[Basic Equation Module]</em>."
         updateText();
         await sleep(3000);
-        game.text = "Your second test " + username + ", will be to combine the following numbers."
+        game.text = "Here " + username + " we will test your ability to combine basic numbers."
         updateText();
-        await sleep(3000);
+        await sleep(4000);
         game.text = "Surely even you can handle this one."
         updateText();
         await sleep(3000);
-        // Load a clickable button to run the following.
         runMathGame();
     }
     delayedGreeting()
