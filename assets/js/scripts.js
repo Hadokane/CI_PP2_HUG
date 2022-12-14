@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
     /* Calling functions for test purposes */
     updateText(); // Displays game.text in the HTML Div
     setScore(3); // Adds 3 to the game.failScore
-    runQuestionGame();
+    runHubWorld();
 });
 
 // Setting HTML elements to global variables
@@ -31,8 +31,7 @@ var username = "<span id='username-style'>" + "Steve" + "</span>";
 // Initalises the game
 let game = {
     failScore: 10, // set so that once reaches 10 you are rejected. Ends the game.
-    mathScore: 0, // Used to advance the questions in level3
-    currentGame: [],
+    mathScore: 0, // Used to advance the questions in math game
     text: "THIS IS WORKING!", // Test text, set to empty in release.
 };
 
@@ -72,10 +71,10 @@ function sleep(ms) {
  * Make callable via a button and the first function called on Page load in final.
  */
 function newGame(){
-    game.currentGame = [];
     game.failScore = 8;
     game.text = "Welcome New Candidate to the H.U.G. Protocol."
-    // Add button here, that onClick loads levelOne.
+    // Add button here, that onClick loads enterName().
+    enterName()
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -84,7 +83,7 @@ function newGame(){
  * Saves the username on button click. 
  * Removes the button now that data is set. 
  */
-function levelOne(){
+function enterName(){
     /* Creates an input box for the user to enter their username */
     let nameBox = document.createElement("div");
     /* Sets the innerHTML of the newly created div object */
@@ -120,10 +119,11 @@ function levelOne(){
             game.text = "Enjoy your initiation...";
             updateText();
             await sleep(3000);
-            levelTwo();
+            levelIntroHub();
         }
         delayedGreeting()
-    }}
+    }
+}
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -132,7 +132,7 @@ function levelOne(){
 // Keeps track of player items.
 let state = {};
 
-function levelTwo(){
+function levelIntroHub(){
     /* Updates computer players text and references the players username */
     async function delayedGreeting() {
         game.text = "Initalising <em>[Human Usefulness Generator]</em>..."
@@ -151,14 +151,13 @@ function levelTwo(){
         updateText();
         // Loads the questions section
         await sleep(3000);
-        runQuestionGame();
+        runHubWorld();
     }
     delayedGreeting();
 }
 
-function runQuestionGame(){
+function runHubWorld(){
     state = {}; // sets players starting items
-    game.currentGame = []; // redundant function now.
     setScore(42); // sets the fail score.
     showTextNode(1); // shows initial text from node 1 of the array.
 }
@@ -316,7 +315,6 @@ const textNodes = [
 
 /** (Maths Round) */
 function levelIntroMath(){
-    game.currentGame = []; // for test
     game.failScore = 66; // for test
     async function delayedGreeting() {
         game.text = "Welcome to the <em>[Basic Equation Module]</em>."
