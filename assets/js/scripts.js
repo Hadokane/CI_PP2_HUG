@@ -500,29 +500,29 @@ function checkAnswer(){
 
 function finalProtocol() {
         // Array data for cards
-    let firstname = ["Jim", "Pam", "Steve", "Urkle", "Johnny", "Benjamin", "Hooper", "Eleanor", "Johnny", "Marge", "Lil' Big Money", "Naruto", "Myuzaki", "Ronald", "Bjorn", "Golden Boy", "Max", "Julia", "Mr.", "Mrs.", "Senior",]
-
-    let lastname = ["Stevenson", "Bjornson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubador", "The Great", "Power", "Radaghast",]
-
-    let skill = ["East-End Bartender", "Computer Scientist", "Full-Time Dungeon Master", "Weekend Dog Walker", "Middle School Teacher", "Developer of Indie RPG'S", "Airsoft Enthusiast", "Owns a Katana Collection", "Drives a '67 Chevrolet Impala", "Has Been To France Twice", "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fanfiction", "Has Eaten a Glass of Water With Chopsticks"]
+    let members = {
+    firstname: ["Jim", "Pam", "Steve", "Urkle", "Johnny", "Benjamin", "Hooper", "Eleanor", "Johnny", "Marge", "Lil' Big Money", "Naruto", "Myuzaki", "Ronald", "Bjorn", "Golden Boy", "Max", "Julia", "Mr.", "Mrs.", "Senior",],
+    lastname: ["Stevenson", "Bjornson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubador", "The Great", "Power", "Radaghast",],
+    skill: ["East-End Bartender", "Computer Scientist", "Full-Time Dungeon Master", "Weekend Dog Walker", "Middle School Teacher", "Developer of Indie RPG'S", "Airsoft Enthusiast", "Owns a Katana Collection", "Drives a '67 Chevrolet Impala", "Has Been To France Twice", "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fanfiction", "Has Eaten a Glass of Water With Chopsticks"],
+    }
 
     // For loops iterate data and console.log it
-    for (let i = 0; i < firstname.length; i++) {
-    console.log(firstname[i]);
+    for (let i = 0; i < members.firstname.length; i++) {
+    console.log(members.firstname[i]);
     }
-    for (let i = 0; i < lastname.length; i++) {
-    console.log(lastname[i]);
+    for (let i = 0; i < members.lastname.length; i++) {
+    console.log(members.lastname[i]);
     }
-    for (let i = 0; i < skill.length; i++) {
-    console.log(skill[i]);
+    for (let i = 0; i < members.skill.length; i++) {
+    console.log(members.skill[i]);
     }
 
     // Goal, slice a random thing off each list to populate 4-8 onscreen cards of data.
     // removes one item starting at index [3]
-    console.log(firstname);
-    let personOneCard = firstname.splice(0,1); // removes the first element
+    console.log(members.firstname);
+    let personOneCard = members.firstname.splice(0,1); // removes the first element
     console.log(personOneCard);
-    console.log(firstname);
+    console.log(members.firstname);
 
 }
 
