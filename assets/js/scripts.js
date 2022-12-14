@@ -501,33 +501,44 @@ function checkAnswer(){
 function finalProtocol() {
     // Array data for cards
     let members = {
-    firstname: ["Jim", "Pam", "Steve", "Urkle", "Johnny", "Benjamin", "Hooper", "Eleanor", "Marge", "Big", "Naruto", "Myuzaki", "Ronald", "Bjorn", "Golden", "Max", "Julia", "Mr.", "Mrs.", "Senior",],
-    lastname: ["Stevenson", "Bjornson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubador", "The Great", "Power", "Radaghast",],
-    skill: ["East-End Bartender", "Computer Scientist", "Full-Time Dungeon Master", "Weekend Dog Walker", "Middle School Teacher", "Developer of Indie RPG'S", "Airsoft Enthusiast", "Owns a Katana Collection", "Drives a '67 Chevrolet Impala", "Has Been To France Twice", "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fanfiction", "Has Eaten a Glass of Water With Chopsticks"],
+        firstname: ["Jim", "Pam", "Steve", "Urkle", "Johnny", "Benjamin", "Hooper", "Eleanor", "Marge", "Big", "Naruto", "Myuzaki", "Ronald", "Bjorn", "Golden", "Max", "Julia", "Mr.", "Mrs.", "Senior",],
+        lastname: ["Stevenson", "Bjornson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubador", "The Great", "Power", "Radaghast",],
+        skill: ["East-End Bartender", "Computer Scientist", "Full-Time Dungeon Master", "Weekend Dog Walker", "Middle School Teacher", "Developer of Indie RPG'S", "Airsoft Enthusiast", "Owns a Katana Collection", "Drives a '67 Chevrolet Impala", "Has Been To France Twice", "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fanfiction", "Has Eaten a Glass of Water With Chopsticks"],
     }
 
     // For loops iterate data and console.log it
     for (let i = 0; i < members.firstname.length; i++) {
-    console.log(members.firstname[i]);
+        console.log(members.firstname[i]);
     }
     for (let i = 0; i < members.lastname.length; i++) {
-    console.log(members.lastname[i]);
+        console.log(members.lastname[i]);
     }
     for (let i = 0; i < members.skill.length; i++) {
-    console.log(members.skill[i]);
+        console.log(members.skill[i]);
     }
    
-    // Developing a random function for array selection
+    // Developing a random function for array selection // i < 8 as want 8 cards to display
     for (let i = 0; i < 8; i++) {
         // Generates a random number each time the code is ran, within confines of array.length
-        let randomArrayNumber = Math.floor(Math.random() * members.firstname.length); // create a random number between 0 and the max array length
+        let randomFname = Math.floor(Math.random() * members.firstname.length); // create a random number between 0 and the max array length
         // Uses random number to pick an item on the array
-        members.firstname.splice(randomArrayNumber, 1);
-        console.log(randomArrayNumber);
-        console.log(members.firstname[i]);
-        console.log(members.firstname);
-        // Creates a card with this information on it each time
-        };
+        let namerFirst = members.firstname.splice(randomFname, 1);
+            console.log(randomFname);
+            console.log(namerFirst);
+            console.log(members.firstname);
+        // Generates a random last name
+        let randomLname = Math.floor(Math.random() * members.lastname.length); 
+        let namerLast = members.lastname.splice(randomLname, 1);
+            console.log(randomLname);
+            console.log(namerLast);
+            console.log(members.lastname);
+        // Generates a random skill
+        let randomSkill = Math.floor(Math.random() * members.skill.length); 
+        let namerSkill = members.skill.splice(randomSkill, 1);
+            console.log(randomSkill);
+            console.log(namerSkill);
+            console.log(members.skill);
+    };
 }
 
 
