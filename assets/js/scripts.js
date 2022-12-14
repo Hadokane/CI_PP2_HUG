@@ -499,7 +499,7 @@ function checkAnswer(){
 ////////////////////////////////////////////////////////////////////////
 
 function finalProtocol() {
-        // Array data for cards
+    // Array data for cards
     let members = {
     firstname: ["Jim", "Pam", "Steve", "Urkle", "Johnny", "Benjamin", "Hooper", "Eleanor", "Johnny", "Marge", "Lil' Big Money", "Naruto", "Myuzaki", "Ronald", "Bjorn", "Golden Boy", "Max", "Julia", "Mr.", "Mrs.", "Senior",],
     lastname: ["Stevenson", "Bjornson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubador", "The Great", "Power", "Radaghast",],
@@ -519,12 +519,18 @@ function finalProtocol() {
 
     // Goal, slice a random thing off each list to populate 4-8 onscreen cards of data.
     // removes one item starting at index [3]
+    console.log(members.firstname); // logs full array
+    let personOneCard = members.firstname.splice(0,1); // starts at index 0, removes 1 element.
+    console.log(personOneCard); // Removes Jim
+    console.log(members.firstname); // logs array without Jim
+    
+    // Developing a random function for array selection
+    let randomArrayNumber = Math.floor(Math.random() * members.firstname.length); // create a random number between 0 and the max array length
+    let example = members.firstname.splice(randomArrayNumber, 1); // pick that random number and splice it from the array
+    console.log(example);
     console.log(members.firstname);
-    let personOneCard = members.firstname.splice(0,1); // removes the first element
-    console.log(personOneCard);
-    console.log(members.firstname);
-
 }
+
 
 // Keep cursor still game.
 // Array section - replace a member game.
