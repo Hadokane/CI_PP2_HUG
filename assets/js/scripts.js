@@ -116,14 +116,19 @@ function enterName(){
     document.getElementById("user").append(nameBox);
     /* Launches the following function when the button is clicked */
     document.getElementById("nameButton").onclick = function(){
-        /* Sets the value of userText to an object */
-        userString = document.getElementById("username-btn").value;
-        /* Converts the above object into a string, wraps it in a span */
-        username = "<span id='username-style'>" + JSON.stringify(userString) + "</span>";
-        /* Removes nameBox from the "user" div inside of the html file */
-        document.getElementById("user").remove(nameBox);
-        /* Updates computer players text and references the players username */
-        async function delayedGreeting() {
+        if (document.getElementById("username-btn").value === ""){
+            alert("SHIT!")
+            game.text = "We don't accept the 'nameless' here."
+            updateText();
+        } else {
+             /* Sets the value of userText to an object */
+            userString = document.getElementById("username-btn").value;
+            /* Converts the above object into a string, wraps it in a span */
+            username = "<span id='username-style'>" + JSON.stringify(userString) + "</span>";
+            /* Removes nameBox from the "user" div inside of the html file */
+            document.getElementById("user").remove(nameBox);
+            /* Updates computer players text and references the players username */
+            async function delayedGreeting() {
             game.text = "Welcome " + username + ".";
             updateText();
             await sleep(3000);
@@ -137,8 +142,9 @@ function enterName(){
             updateText();
             await sleep(3000);
             levelIntroHub();
+            }
+            delayedGreeting()
         }
-        delayedGreeting()
     }
 }
 
