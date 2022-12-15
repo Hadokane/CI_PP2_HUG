@@ -16,12 +16,12 @@
     <title>Human Usefulness Generator</title>
 </head>
 <body>
+    <!-- Computer Players Text Box -->
+    <div id="comp-player">
+        <span id="comp-text"></span>
+    </div>
     <!-- Game Window -->
     <div id="game-window" class="container-fluid text-center">
-        <!-- Computer Players Text Box -->
-        <div id="comp-player">
-            <span id="comp-text"></span>
-        </div>
         <!-- Users Game Box -->
         <div id="user" class="container-fluid text-center">
             <!-- Username field generates here-->
@@ -34,17 +34,18 @@
         <div id="final-cards" class="d-flex flex-fill row justify-content-center">
             <!-- Array Cards generate here-->
         </div>
-        <!-- Spacing -->
-        <hr>
-        <footer>
-            <!-- Fail Score Tracker -->
-            <div class="score-card">
-                FAIL SCORE: <span id="score">0</span>
-            </div>
-            <!-- Quit Button Div -->
-            <div id="quit-btn-div" class="col">
-                <!-- Quit Button generates here -->
-            </div>
+    </div>
+    <!-- Spacing -->
+    <hr>
+    <!-- Game Footer -->
+    <footer id="game-footer" class="container-fluid text-center fixed-bottom">
+        <!-- Fail Score Tracker -->
+        <div class="score-card">
+            FAIL SCORE: <span id="score">0</span>
+        </div>
+        <!-- Quit Button Div -->
+        <div id="quit-btn-div" class="col">
+            <!-- Quit Button generates here -->
         </div>
     </footer>
     <!-- jQuery Javascript -->
