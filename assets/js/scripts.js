@@ -500,7 +500,7 @@ function checkAnswer(){
 
 function finalProtocol() {
     // TEST
-    game.text = "FINAL PROTOCOL!"
+    game.text = "The Final Assessment."
     updateText();
     
     // Array data for cards
@@ -508,8 +508,36 @@ function finalProtocol() {
         firstname: ["Jim", "Pam", "Steve", "Urkle", "Johnny", "Benjamin", "Hooper", "Eleanor", "Marge", "Big", "Naruto", "Myuzaki", "Ronald", "Bjorn", "Golden", "Max", "Julia", "Mr.", "Mrs.", "Senior",],
         lastname: ["Stevenson", "Bjornson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubador", "The Great", "Power", "Radaghast",],
         skill: ["East-End Bartender", "Computer Scientist", "Full-Time Dungeon Master", "Weekend Dog Walker", "Middle School Teacher", "Developer of Indie RPG'S", "Airsoft Enthusiast", "Owns a Katana Collection", "Drives a '67 Chevrolet Impala", "Has Been To France Twice", "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fanfiction", "Has Eaten a Glass of Water With Chopsticks"],
+        avatar: [
+            "assets/images/avatar/av1", 
+            "assets/images/avatar/av2", 
+            "assets/images/avatar/av3", 
+            "assets/images/avatar/av4",
+            "assets/images/avatar/av5",
+            "assets/images/avatar/av6",
+            "assets/images/avatar/av7",
+            "assets/images/avatar/av8",
+            "assets/images/avatar/av9",
+            "assets/images/avatar/av10",
+            "assets/images/avatar/av11",
+            "assets/images/avatar/av12",
+            "assets/images/avatar/av13", 
+            "assets/images/avatar/av14", 
+            "assets/images/avatar/av15", 
+            "assets/images/avatar/av16",
+            "assets/images/avatar/av17",
+            "assets/images/avatar/av18",
+            "assets/images/avatar/av19",
+            "assets/images/avatar/av20",
+            "assets/images/avatar/av21",
+            "assets/images/avatar/av22",
+            "assets/images/avatar/av23",
+            "assets/images/avatar/av24",
+        ]
     }
-    
+    console.log(members.avatar);
+    console.log(members.avatar[0]);
+    console.log(members.avatar[2]);
     // Developing a random function for array selection // i < 8 as want 8 cards to display
     for (let i = 0; i < 8; i++) {
         // Generates a random number each time the code is ran, within confines of array.length
@@ -531,6 +559,12 @@ function finalProtocol() {
             console.log(randomSkill);
             console.log(namerSkill);
             console.log(members.skill);
+        // Generates a random avatar image
+        let randomAv = Math.floor(Math.random() * members.avatar.length); 
+        let namerAv = members.avatar.splice(randomAv, 1);
+            console.log(randomAv);
+            console.log(namerAv);
+            console.log(members.avatar);
         // Creates a card with the new information on it and displays it
         card = document.createElement("div");
         // Adds column sizing to the parent div to hold the cards
@@ -540,11 +574,13 @@ function finalProtocol() {
         // Sets cards innerHTML
         card.innerHTML = `
             <div class="card text-center h-100">
-                <img class="card-img-top" src="assets/images/img_avatar1.png" alt="Card image">
+                <img class="card-img-top" src="assets/images/avatar/av1.png" alt="Card image">
                 <div class="card-body">
                     <h3 class="card-title">${namerFirst} ${namerLast}</h3>
                     <p class="card-text">${namerSkill}.</p>
-                    <a href="#" class="stretched-link">Replace?</a>
+                </div>
+                <div class="card-footer bg-transparent border-danger">
+                        <a href="#" class="stretched-link h-100">Replace?</a>
                 </div>
             </div>
         `;

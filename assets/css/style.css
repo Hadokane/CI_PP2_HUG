@@ -112,7 +112,7 @@ p{
     font-weight: normal;
 }
 
-.card-body a {
+.card-footer a {
     color: red;
     font-size: 1em;
 }
