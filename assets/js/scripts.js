@@ -1,23 +1,21 @@
 // Waits for the DOM to finish loading before running the game.
 document.addEventListener("DOMContentLoaded", function(){
-    let buttons = document.getElementsByTagName("button");
-    // Looks through buttons array and stores each element in the button variable
-    for (let button of buttons) {
-        button.addEventListener("click", function() {
-            // looks through the buttons data-type and displays an alert of which button has been pressed.
-            if (this.getAttribute("data-type") === "submit") {
-                alert("You clicked Submit!");
-            } else {
-                let btnName = this.getAttribute("data-type");
-                alert(`You clicked ${btnName}`);
-            }
-        });
-    }
-    /* Calling functions for test purposes */
+
+    // Creates a quit button that resets the game.
+    quitBtn = document.createElement("button");
+    quitBtn.innerHTML= `<em>[End Protocol]<em>`;
+    quitBtn.classList.add("btn", "btn-block");
+    document.getElementById("quit-btn-div").append(quitBtn);
+
+    // Replay button launches a new game.
+    quitBtn.addEventListener("click", () => window.location.reload());
+
+    // Calling functions for test purposes
     updateText(); // Displays game.text in the HTML Div
-    setScore(3); // Adds 3 to the game.failScore
-    // runHubWorld();
-    finalProtocol();
+    setScore(0); // Adds 0 to the game.failScore
+
+    // runs a newGame();
+    newGame();
 });
 
 // Setting HTML elements to global variables
@@ -611,14 +609,51 @@ function finalProtocol() {
                  await sleep(3000);
                  document.getElementById("sacrifice-card").remove(sacrifice);
                  runEnding(); // change to correct place
-            }
+            };
             delayedOutro();
         });
     }
 }
 
 function runEnding(){
-
+            // Creates the users card
+            userCard = document.createElement("div");
+            // Adds column sizing to the parent div to hold the cards
+            userCard.classList.add("build"); 
+            // Sets cards innerHTML
+            userCard.innerHTML = `
+                <div class="card text-center h-100">
+                    <div class="card-body h-100">
+                        <h3 class="card-title">${username}</h3>
+                        <p class="card-text">Newest member of the H.U.G. Protocol</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-danger">
+                            <a href="#" class="stretched-link h-100">Digital Conscious Uploaded</a>
+                    </div>
+                </div>
+            `;
+            document.getElementById("sacrifice-card").append(userCard);
+            async function delayedEnd(){
+                game.text = `Congratulations! ${username} You have successfully passed the H.U.G. Protocol`;
+                updateText();
+                await sleep(3000);
+                game.text = "We have stored the Digital ID of your Conscious";
+                updateText();
+                await sleep(3000);
+                game.text = "Thank you for your time.";
+                updateText();
+                await sleep(3000);
+                game.text = "You are now authorised to recruit further members.";
+                updateText();
+                // Creates the replay button
+                replayBtn = document.createElement("button");
+                replayBtn.innerHTML= `<em>[Begin Protocol]<em>`;
+                replayBtn.classList.add("btn", "btn-block");
+                document.getElementById("user").append(replayBtn);
+                // Replay button launches a new game.
+                replayBtn.addEventListener("click", () => window.location.reload());
+            }
+            delayedEnd();
 }
 
 // Array section - replace a member game.
