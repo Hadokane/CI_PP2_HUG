@@ -509,62 +509,47 @@ function finalProtocol() {
         lastname: ["Stevenson", "Bjornson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubador", "The Great", "Power", "Radaghast",],
         skill: ["East-End Bartender", "Computer Scientist", "Full-Time Dungeon Master", "Weekend Dog Walker", "Middle School Teacher", "Developer of Indie RPG'S", "Airsoft Enthusiast", "Owns a Katana Collection", "Drives a '67 Chevrolet Impala", "Has Been To France Twice", "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fanfiction", "Has Eaten a Glass of Water With Chopsticks"],
         avatar: [
-            "assets/images/avatar/av1", 
-            "assets/images/avatar/av2", 
-            "assets/images/avatar/av3", 
-            "assets/images/avatar/av4",
-            "assets/images/avatar/av5",
-            "assets/images/avatar/av6",
-            "assets/images/avatar/av7",
-            "assets/images/avatar/av8",
-            "assets/images/avatar/av9",
-            "assets/images/avatar/av10",
-            "assets/images/avatar/av11",
-            "assets/images/avatar/av12",
-            "assets/images/avatar/av13", 
-            "assets/images/avatar/av14", 
-            "assets/images/avatar/av15", 
-            "assets/images/avatar/av16",
-            "assets/images/avatar/av17",
-            "assets/images/avatar/av18",
-            "assets/images/avatar/av19",
-            "assets/images/avatar/av20",
-            "assets/images/avatar/av21",
-            "assets/images/avatar/av22",
-            "assets/images/avatar/av23",
-            "assets/images/avatar/av24",
+            "assets/images/avatar/av1.png", 
+            "assets/images/avatar/av2.png", 
+            "assets/images/avatar/av3.png", 
+            "assets/images/avatar/av4.png",
+            "assets/images/avatar/av5.png",
+            "assets/images/avatar/av6.png",
+            "assets/images/avatar/av7.png",
+            "assets/images/avatar/av8.png",
+            "assets/images/avatar/av9.png",
+            "assets/images/avatar/av10.png",
+            "assets/images/avatar/av11.png",
+            "assets/images/avatar/av12.png",
+            "assets/images/avatar/av13.png", 
+            "assets/images/avatar/av14.png", 
+            "assets/images/avatar/av15.png", 
+            "assets/images/avatar/av16.png",
+            "assets/images/avatar/av17.png",
+            "assets/images/avatar/av18.png",
+            "assets/images/avatar/av19.png",
+            "assets/images/avatar/av20.png",
+            "assets/images/avatar/av21.png",
+            "assets/images/avatar/av22.png",
+            "assets/images/avatar/av23.png",
+            "assets/images/avatar/av24.png",
         ]
     }
-    console.log(members.avatar);
-    console.log(members.avatar[0]);
-    console.log(members.avatar[2]);
     // Developing a random function for array selection // i < 8 as want 8 cards to display
     for (let i = 0; i < 8; i++) {
         // Generates a random number each time the code is ran, within confines of array.length
         let randomFname = Math.floor(Math.random() * members.firstname.length); // create a random number between 0 and the max array length
         // Uses random number to pick an item on the array
         let namerFirst = members.firstname.splice(randomFname, 1);
-            console.log(randomFname);
-            console.log(namerFirst);
-            console.log(members.firstname);
         // Generates a random last name
         let randomLname = Math.floor(Math.random() * members.lastname.length); 
         let namerLast = members.lastname.splice(randomLname, 1);
-            console.log(randomLname);
-            console.log(namerLast);
-            console.log(members.lastname);
         // Generates a random skill
         let randomSkill = Math.floor(Math.random() * members.skill.length); 
         let namerSkill = members.skill.splice(randomSkill, 1);
-            console.log(randomSkill);
-            console.log(namerSkill);
-            console.log(members.skill);
         // Generates a random avatar image
         let randomAv = Math.floor(Math.random() * members.avatar.length); 
         let namerAv = members.avatar.splice(randomAv, 1);
-            console.log(randomAv);
-            console.log(namerAv);
-            console.log(members.avatar);
         // Creates a card with the new information on it and displays it
         card = document.createElement("div");
         // Adds column sizing to the parent div to hold the cards
@@ -574,7 +559,7 @@ function finalProtocol() {
         // Sets cards innerHTML
         card.innerHTML = `
             <div class="card text-center h-100">
-                <img class="card-img-top" src="assets/images/avatar/av1.png" alt="Card image">
+                <img class="card-img-top" src=${namerAv} alt="Card image h-100">
                 <div class="card-body">
                     <h3 class="card-title">${namerFirst} ${namerLast}</h3>
                     <p class="card-text">${namerSkill}.</p>
@@ -586,10 +571,20 @@ function finalProtocol() {
         `;
         document.getElementById("final-cards").append(card);
     };
-}
 
+    // Set cards equal to all card class divs on display.   
+    let cards = document.getElementsByClassName("card");
+    // onClick destroys the card, removes it's own handler and then advances the game.   
+    for (let card of cards) {
+        card.addEventListener("click", function destroy() {
+            // looks through the buttons data-type and displays an alert of which card has been pressed.
+            alert("Hello World!");
+            card.removeEventListener("click", destroy); // removes the class. (Only working on the card that was clicked)
+        });
+    };
+}
 
 // Array section - replace a member game.
 // Keep cursor still game.
 // Maze to fruit section.
-// End messages. Reward certificate.
+// End game.
