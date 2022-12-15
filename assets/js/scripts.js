@@ -577,9 +577,16 @@ function finalProtocol() {
     // onClick destroys the card, removes it's own handler and then advances the game.   
     for (let card of cards) {
         card.addEventListener("click", function destroy() {
-            // looks through the buttons data-type and displays an alert of which card has been pressed.
-            alert("Hello World!");
-            card.removeEventListener("click", destroy); // removes the class. (Only working on the card that was clicked)
+            // Copy the selected card into a new div to display
+            let sarcrifice = card;
+            document.getElementById("sacrifice-card").append(sarcrifice);
+            // Removes other cards from the div
+            document.getElementById("final-cards").remove(card); // clears other cards
+            // Removes event listener from the selected card
+            card.removeEventListener("click", destroy);
+            // set timer - play scream and fade to black and white - animate away
+            
+            // load end message
         });
     };
 }
