@@ -1,14 +1,9 @@
 // Waits for the DOM to finish loading before running the game.
 document.addEventListener("DOMContentLoaded", function(){
-
-    // Creates a quit button that resets the game.
-    quitBtn = document.createElement("button");
-    quitBtn.innerHTML= `<em>[End Protocol]<em>`;
-    quitBtn.classList.add("btn", "btn-block");
-    document.getElementById("quit-btn-div").append(quitBtn);
-
-    // Replay button launches a new game.
-    quitBtn.addEventListener("click", () => window.location.reload());
+    
+    // Quit button launches a new game.
+    generateQuitBtn();
+    quitBtn.addEventListener("click", () => areYouSure());
 
     // Calling functions for test purposes
     updateText(); // Displays game.text in the HTML Div
@@ -19,9 +14,6 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 // Setting HTML elements to global variables
-var btn1 = document.getElementById('btn1');
-var btn2 = document.getElementById('btn2');
-var btn3 = document.getElementById('btn3');
 var cText = document.getElementById('comp-text');
 var userString;
 // Providing default value for testing, set to "" when testing is done
@@ -65,6 +57,50 @@ function setMathScore(newMathScore){
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 };
+
+// Creates a quit button that resets the game.
+function generateQuitBtn(){
+    // generates the button
+        quitBtn = document.createElement("button");
+        quitBtn.innerHTML= `<em>[End Protocol]<em>`;
+        quitBtn.classList.add("btn", "btn-block");
+        document.getElementById("quit-btn-div").append(quitBtn);
+        
+}  
+
+// Toggles visibility of the quit button
+function toggleQuitBtn(){
+    if (quitBtn.style.display === "none") {
+        quitBtn.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+};
+
+// Checks if the user is sure they want to quit.
+function areYouSure(){
+    
+    quitBtn.style.display = "none";
+    // Creates No Button
+    noBtn = document.createElement("button");
+    noBtn.innerHTML= `<em>[Continue the test!]<em>`;
+    noBtn.classList.add("btn", "btn-block", "btn-success");
+    // Creates yes Button
+    yesBtn = document.createElement("button");
+    yesBtn.innerHTML= `<em>[Quit?]<em>`;
+    yesBtn.classList.add("btn", "btn-block", "btn-danger");
+    // remove quitBtn and adds yesBtn and noBtn
+    document.getElementById("quit-btn-div").append(noBtn);
+    document.getElementById("quit-btn-div").append(yesBtn);
+    // Reloads the generateQuitBtn and removes these two if "No"
+    noBtn.addEventListener("click", () => {
+        toggleQuitBtn()
+        document.getElementById("quit-btn-div").removeChild(yesBtn);
+        document.getElementById("quit-btn-div").removeChild(noBtn);
+    });
+    // Quits the game by reloading the window if "Yes"
+    yesBtn.addEventListener("click", () => window.location.reload());
+}
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -656,7 +692,4 @@ function runEnding(){
             delayedEnd();
 }
 
-// Array section - replace a member game.
-// Keep cursor still game.
 // Maze to fruit section.
-// End game.
