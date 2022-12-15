@@ -79,20 +79,40 @@ label{
     color: red;
 }
 
-/* --------- Card effects */
+/* --------- Card Style */
 .card {
-    margin: 15px;
     box-shadow: 2px 2px;
+    transition: 0.25s ease;
+    /* --------- card class h-100, fills entire div, scaling it down allows for space between the cards while keeping the sizes relative. */
+    scale: 95%; 
 }
 
 /* --------- Focus effects */
 .card:focus,
 .user-text:focus {
-    outline: 3px solid red;
+    outline: 2px solid red;
 }
 
 /* --------- Hover effects */
 .card:hover {
-    outline: 3px solid red;
-    box-shadow: 6px 6px;
+    transform: scale(1.05);
+    outline: 2px solid red;
+    box-shadow: 5px 5px 15px;
+    z-index: 1;
+}
+
+h3{
+    font-size: 1.75em;
+    font-weight: bold;
+}
+
+p{
+    font-size: 1.25em;
+    font-style: oblique;
+    font-weight: normal;
+}
+
+.card-body a {
+    color: red;
+    font-size: 1em;
 }

@@ -533,18 +533,22 @@ function finalProtocol() {
             console.log(members.skill);
         // Creates a card with the new information on it and displays it
         card = document.createElement("div");
-        card.addClassName //move that upper div out into the world
+        // Adds column sizing to the parent div to hold the cards
+        card.classList.add("col-sm-6"); 
+        card.classList.add("col-md-4" ); 
+        card.classList.add("col-lg-3" ); 
+        // Sets cards innerHTML
         card.innerHTML = `
-            <div class="card text-center ">
-            <img class="card-img-top" src="assets/images/img_avatar1.png" alt="Card image">
+            <div class="card text-center h-100">
+                <img class="card-img-top" src="assets/images/img_avatar1.png" alt="Card image">
                 <div class="card-body">
-                    <h4 class="card-title">${namerFirst} ${namerLast}</h4>
+                    <h3 class="card-title">${namerFirst} ${namerLast}</h3>
                     <p class="card-text">${namerSkill}.</p>
-                    <a href="#" class="stretched-link">Kill?</a>
+                    <a href="#" class="stretched-link">Replace?</a>
                 </div>
             </div>
         `;
-        document.getElementById("user").append(card);
+        document.getElementById("final-cards").append(card);
     };
 }
 
