@@ -535,7 +535,7 @@ function finalProtocol() {
             "assets/images/avatar/av24.png",
         ]
     }
-    // Developing a random function for array selection // i < 8 as want 8 cards to display
+    // Developing a random function for array selection // i < 8 as I want 8 cards to display
     for (let i = 0; i < 8; i++) {
         // Generates a random number each time the code is ran, within confines of array.length
         let randomFname = Math.floor(Math.random() * members.firstname.length); // create a random number between 0 and the max array length
@@ -553,9 +553,7 @@ function finalProtocol() {
         // Creates a card with the new information on it and displays it
         card = document.createElement("div");
         // Adds column sizing to the parent div to hold the cards
-        card.classList.add("col-sm-6"); 
-        card.classList.add("col-md-4" ); 
-        card.classList.add("col-lg-3" ); 
+        card.classList.add("col-sm-6", "col-md-4", "col-lg-3"); 
         // Sets cards innerHTML
         card.innerHTML = `
             <div class="card text-center h-100">
@@ -612,11 +610,15 @@ function finalProtocol() {
                  // Loads the questions section
                  await sleep(3000);
                  document.getElementById("sacrifice-card").remove(sacrifice);
-                 runHubWorld(); // change to correct place
+                 runEnding(); // change to correct place
             }
             delayedOutro();
         });
     }
+}
+
+function runEnding(){
+
 }
 
 // Array section - replace a member game.
