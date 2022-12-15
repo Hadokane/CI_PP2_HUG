@@ -559,8 +559,8 @@ function finalProtocol() {
         // Sets cards innerHTML
         card.innerHTML = `
             <div class="card text-center h-100">
-                <img class="card-img-top" src=${namerAv} alt="Card image h-100">
-                <div class="card-body">
+                <img class="card-img-top" src=${namerAv} alt="Card image">
+                <div class="card-body h-100">
                     <h3 class="card-title">${namerFirst} ${namerLast}</h3>
                     <p class="card-text">${namerSkill}.</p>
                 </div>
@@ -578,17 +578,45 @@ function finalProtocol() {
     for (let card of cards) {
         card.addEventListener("click", function destroy() {
             // Copy the selected card into a new div to display
-            let sarcrifice = card;
-            document.getElementById("sacrifice-card").append(sarcrifice);
+            let sacrifice = card;
+            // Add a class to trigger the black and white animation 
+            sacrifice.classList.add('destroy'); 
+            document.getElementById("sacrifice-card").append(sacrifice);
             // Removes other cards from the div
             document.getElementById("final-cards").remove(card); // clears other cards
             // Removes event listener from the selected card
             card.removeEventListener("click", destroy);
-            // set timer - play scream and fade to black and white - animate away
-            
+            // create and set volume of audio
+            let destroySoundF = new Audio("assets/sounds/destroyF.mp3");
+            let destroySoundM = new Audio("assets/sounds/destroyM.mp3");
+            destroySoundM.volume = 0.1;
+            destroySoundF.volume = 0.1;
+            // Select one of the above sounds to play at random
+            let x = Math.round(Math.random());
+            console.log(x);
+            if (x === 1){
+                destroySoundF.play();
+            } else {
+                destroySoundM.play();
+            };
             // load end message
+            async function delayedOutro(){
+                game.text = "You actually did it...";
+                updateText();
+                await sleep(3000);
+                game.text = `${username}... you're a monster.`;
+                updateText();
+                await sleep(3000);
+                game.text = `Just kidding ${username}. Excellent work!`;
+                updateText();
+                 // Loads the questions section
+                 await sleep(3000);
+                 document.getElementById("sacrifice-card").remove(sacrifice);
+                 runHubWorld(); // change to correct place
+            }
+            delayedOutro();
         });
-    };
+    }
 }
 
 // Array section - replace a member game.
