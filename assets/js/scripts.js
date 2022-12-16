@@ -55,7 +55,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 };
 
-/** Generates a quit button that resets the game in the footer. */ 
+/** Generates a quit button that resets the game in the footer. */
 function generateQuitBtn() {
     // generates the button
     quitBtn = document.createElement("button");
@@ -76,7 +76,7 @@ function toggleQuitBtn() {
 /** Checks if the user is sure they want to quit.
  * Called when clicking the "quitBtn"
  * Hides "quitBtn" and displays two new buttons "yesBtn" and "noBtn" to provide a better user experience by offering confirmation.
-*/
+ */
 function areYouSure() {
     // Hides the quit button
     quitBtn.style.display = "none";
@@ -105,9 +105,9 @@ function areYouSure() {
 function gameFailCheck() {
     if (game.failScore > 4) {
         // Set multiple HTML Divs to variables.
-        compWindow = document.getElementById("comp-player"); 
-        gameWindow = document.getElementById("game-window"); 
-        gameOverWindow = document.getElementById("game-over-window"); 
+        compWindow = document.getElementById("comp-player");
+        gameWindow = document.getElementById("game-window");
+        gameOverWindow = document.getElementById("game-over-window");
         // Hides the above comp and game windows
         compWindow.style.display = "none"; // Hides the comp window.
         gameWindow.style.display = "none"; // Hides the game window.
@@ -240,7 +240,7 @@ function runHubWorld() {
     showTextNode(1); // Displays initial text from node 1 of the Array.
 };
 
-/** Displays the correct buttons and text necessary for player navigation of this section. */ 
+/** Displays the correct buttons and text necessary for player navigation of this section. */
 function showTextNode(textNodeIndex) {
     // Sets variable equal to the id of the "textNodes" array.
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
@@ -266,7 +266,7 @@ function showTextNode(textNodeIndex) {
 };
 
 /** Called by showTextNode "if loop".
- * Updates the players state if a new item is acquired. */ 
+ * Updates the players state if a new item is acquired. */
 function selectOption(option) {
     // Finds the "nextText" specified in the Array.
     const nextTextNodeId = option.nextText
@@ -279,18 +279,18 @@ function selectOption(option) {
         }
         // Loads the Maths Levels with the "levelIntroMath" function.
         levelIntroMath();
-    
-    // Checks to see if the "nextText" ID matches a function. Then calls it.
+
+        // Checks to see if the "nextText" ID matches a function. Then calls it.
     } else if ((nextTextNodeId === -2)) {
         // Removes questions buttons.s
         while (document.getElementById("option-buttons").firstChild) {
             document.getElementById("option-buttons").removeChild(document.getElementById("option-buttons").firstChild)
         }
         // Loads the Final Card Level with the "finalProtocol" function.
-        finalProtocol(); 
-    
-    // Checks to see if the "nextText" ID matches. Then adds to the players failScore by 1.
-    } else if ((nextTextNodeId === 13 | nextTextNodeId === 5)) {   
+        finalProtocol();
+
+        // Checks to see if the "nextText" ID matches. Then adds to the players failScore by 1.
+    } else if ((nextTextNodeId === 13 | nextTextNodeId === 5)) {
         setScore(1);
     };
 
@@ -303,14 +303,14 @@ function selectOption(option) {
 /** Called by showTextNode "if loop".
  * If no state is required (null), this returns true, showing options that don't require states.
  * Shows state dependent options if their state requirement is met.
- */   
+ */
 function showOption(option) {
     return option.requiredState == null || option.requiredState(state);
 };
 
 // This contains all of the text options that occupy the "HUB World" Section of the game.
-const textNodes = [{ 
-        id: 1, 
+const textNodes = [{
+        id: 1,
         text: "The H.U.G. Protocol requires access to your digital conciousness to continue.",
         options: [{
             text: "Consent.",
@@ -325,7 +325,7 @@ const textNodes = [{
         }]
     },
     { // Main HUB area, allows travel to other zones.
-        id: 2, 
+        id: 2,
         text: "Welcome to the <em>[H.U.G.][HUB]</em> Where would you like your Digital Concious to travel?",
         options: [{
                 text: "Left.",
@@ -334,7 +334,7 @@ const textNodes = [{
             },
             {
                 text: "Left.", // Requires lightOn:true to display.
-                requiredState: (currentState) => currentState.lightOn, 
+                requiredState: (currentState) => currentState.lightOn,
                 nextText: 33, // Start Maths Game Area.
             },
             {
@@ -343,7 +343,7 @@ const textNodes = [{
                 nextText: 333, // Completed Maths Game Area.
             },
             {
-                text: "Forward.", 
+                text: "Forward.",
                 nextText: 100, // Path to Blast Door.
             },
             {
@@ -360,7 +360,7 @@ const textNodes = [{
     },
     ////////////////////////////////////HEAD LEFT SECTION////////////////////////////////////
     { // "Left" for the first time from the HUB (id: 3).
-        id: 3, 
+        id: 3,
         text: "This room is filled with darkness and the sound of whirring machines. How do you proceed?",
         options: [{
                 text: "Feel around for a light switch.",
@@ -373,7 +373,7 @@ const textNodes = [{
         ]
     },
     { // Activate the light switch
-        id: 4, 
+        id: 4,
         text: "Flicking a nearby switch illuminates the room with glowing light. You see a large, square room, packed with glowing panels, long cables and buzzing servers.",
         options: [{
             text: "Approach the central console.",
@@ -385,7 +385,7 @@ const textNodes = [{
         }, ]
     },
     { // Brave the darkness (id: 5,) (+1 to failScore).
-        id: 5, 
+        id: 5,
         text: "You trip over the scattered wires... not your finest plan.",
         options: [{
             text: "Stumble towards the light switch",
@@ -393,7 +393,7 @@ const textNodes = [{
         }, ]
     },
     { // "Left" from the HUB with lightsOn. (id: 33).
-        id: 33, 
+        id: 33,
         text: "You see a central machine running complex equations. A text box appears on the monitor: [Run Maths Protocol?]",
         options: [{
                 text: "Flee from the concept of Maths.",
@@ -406,8 +406,8 @@ const textNodes = [{
         ]
     },
     { // After completing the Math Game.(id: 34).
-        id: 34, 
-        text: "[Protocol Complete!] appears on the monitor, as a small hand shaped console springs from it's side.",
+        id: 34,
+        text: "[Protocol Complete!] appears on the monitor, as a small hand shaped console springs from its side.",
         options: [{
             text: "Place hand on the console.",
             setState: {
@@ -415,7 +415,7 @@ const textNodes = [{
                 noChip: false,
                 lightOn: false,
             }, // Sets bigBrain to true. Removes lightsOn property to change where left takes you from the HUB.
-            nextText: 35, 
+            nextText: 35,
         }, ]
     },
     { // Continues from above.
@@ -423,7 +423,7 @@ const textNodes = [{
         text: "The advanced machine creeks to life. Emitting an eerie blue light, it begins to scan your hand.",
         options: [{
             text: "Wait for process to complete.",
-            nextText: 36, 
+            nextText: 36,
         }]
     },
     { // Continues from above.
@@ -435,8 +435,8 @@ const textNodes = [{
         }]
     },
     { // "Left" after completing the Maths game. (id: 333).
-        id: 333, 
-        text: "The lights from the buzzing machinery, dance along the drab, white, interior of this room. Creating ominous shadows that overwhelm it's cramped interior.",
+        id: 333,
+        text: "The lights from the buzzing machinery, dance along the drab, white, interior of this room. Creating ominous shadows that overwhelm its cramped interior.",
         options: [{
             text: "Head back to [HUB].",
             nextText: 2, // Returns to Hub
@@ -447,33 +447,34 @@ const textNodes = [{
         id: 100,
         text: "Under a small archway, you see a large mechanical blast door with a nearby computer panel.",
         options: [{
-            text: "Examine the door.",
-            requiredState: (currentState) => currentState.noChip || currentState.bigBrain && !currentState.redChip || currentState.fleetFoot && !currentState.blueChip, // Shows when either: no chip; bigBrain and no redChip; or fleetFoot and no blueChip are active.
-            nextText: 101,
-        },
-        {
-            text: "Examine the door. (BlueChip)",
-            requiredState: (currentState) => currentState.blueChip && !currentState.redChip, // Shows when blueChip is active and no redChip.
-            nextText: 111,
-        },
-        {
-            text: "Examine the door. (RedChip)",
-            requiredState: (currentState) => currentState.redChip && !currentState.blueChip, // Shows when redChip is active and no blueChip.
-            nextText: 112,
-        },
-        {
-            text: "Examine the door. (BothChips)",
-            requiredState: (currentState) => currentState.redChip && currentState.blueChip, // Shows when bothChips are active.
-            nextText: 113,
-        },
-        {
-            text: "Examine the panel.",
-            nextText: 102,
-        },
-        {
-            text: "Head back to [HUB].",
-            nextText: 2,
-        }, ]
+                text: "Examine the door.",
+                requiredState: (currentState) => currentState.noChip || currentState.bigBrain && !currentState.redChip || currentState.fleetFoot && !currentState.blueChip, // Shows when either: no chip; bigBrain and no redChip; or fleetFoot and no blueChip are active.
+                nextText: 101,
+            },
+            {
+                text: "Examine the door. (BlueChip)",
+                requiredState: (currentState) => currentState.blueChip && !currentState.redChip, // Shows when blueChip is active and no redChip.
+                nextText: 111,
+            },
+            {
+                text: "Examine the door. (RedChip)",
+                requiredState: (currentState) => currentState.redChip && !currentState.blueChip, // Shows when redChip is active and no blueChip.
+                nextText: 112,
+            },
+            {
+                text: "Examine the door. (BothChips)",
+                requiredState: (currentState) => currentState.redChip && currentState.blueChip, // Shows when bothChips are active.
+                nextText: 113,
+            },
+            {
+                text: "Examine the panel.",
+                nextText: 102,
+            },
+            {
+                text: "Head back to [HUB].",
+                nextText: 2,
+            },
+        ]
     },
     { // Examining the blast door (id: 101).
         id: 101,
@@ -533,7 +534,7 @@ const textNodes = [{
     },
     { // Continues from above.
         id: 203,
-        text: "On it's screen you see a world map, filled with tiny moving dots.",
+        text: "On its screen you see a world map, filled with tiny moving dots.",
         options: [{
             text: "Examine the map.",
             nextText: 204,
@@ -557,7 +558,7 @@ const textNodes = [{
     },
     { // Continues from above.
         id: 205,
-        text: "If something were to happen to one of our <strong>beloved</strong> members, it would surely open up a position we'd need filled immediately...",
+        text: "If something were to happen to one of our <em>beloved</em> members... well, it would surely open up a position.",
         options: [{
             text: "Proceed.",
             nextText: 206,
@@ -582,26 +583,26 @@ const textNodes = [{
     { // Examining the monitor. (id: 103).
         id: 102,
         text: "You see a small white computer with a hand-shaped scanning device protruding from its side.",
-        options: [
-        {
-            text: "Place hand on the scanner.",
-            requiredState: (currentState) => currentState.noChip,
-            nextText: 103,
-        },
-        {
-            text: "Press the blue button and place hand on the scanner.",
-            requiredState: (currentState) => currentState.bigBrain,
-            nextText: 104,
-        },
-        {
-            text: "Press the red button and place hand on the scanner.",
-            requiredState: (currentState) => currentState.fleetFoot,
-            nextText: 105,
-        },
-        {
-            text: "Return.",
-            nextText: 100,
-        }, ]
+        options: [{
+                text: "Place hand on the scanner.",
+                requiredState: (currentState) => currentState.noChip,
+                nextText: 103,
+            },
+            {
+                text: "Press the blue button and place hand on the scanner.",
+                requiredState: (currentState) => currentState.bigBrain,
+                nextText: 104,
+            },
+            {
+                text: "Press the red button and place hand on the scanner.",
+                requiredState: (currentState) => currentState.fleetFoot,
+                nextText: 105,
+            },
+            {
+                text: "Return.",
+                nextText: 100,
+            },
+        ]
     },
     { // Hand scanner - noChip.
         id: 103,
@@ -621,11 +622,11 @@ const textNodes = [{
                 blueChip: true,
             },
             nextText: 102,
-        },]
+        }, ]
     },
     { // Hand scanner - fleetFoot.
         id: 105,
-        text: "You feel a mechanical burn as the laser scans your palm. The chip in your palm glows a bright red as a light above the blast door begins to glow.",
+        text: "You feel a mechanical burn as the laser scans your palm. The embedded chip glows a bright red, as a light above the blast door begins to glow.",
         options: [{
             text: "Back away from the machine.",
             setState: {
@@ -633,38 +634,40 @@ const textNodes = [{
                 redChip: true,
             },
             nextText: 102,
-        },]
+        }, ]
     },
     ////////////////////////////////////HEAD RIGHT SECTION////////////////////////////////////
     { // "Right" from HUB.
-        id: 50, 
+        id: 50,
         text: "You walk gingerly through a doorway cluttered with collapsed stone and rubble. At the far end of the path, you see a metallic plinth decorated with strange red markings.",
         options: [{
-                text: "Examine the surroundings.",        
+                text: "Examine the surroundings.",
                 nextText: 51,
             },
             {
                 text: "Head back to [HUB].",
                 nextText: 2,
-            },]
+            },
+        ]
     },
     { // Continues from above.
-        id: 51, 
+        id: 51,
         text: "This appears to be a treacherous, obstacle ridden path. Your not sure you can return.",
         options: [{
-                text: "Head down the path.",        
+                text: "Head down the path.",
                 nextText: 52, // Proceed down path.
             },
             {
                 text: "Head back to [HUB].",
                 nextText: 2,
-            },]
+            },
+        ]
     },
     { // Obstacle course begins.
-        id: 52, 
+        id: 52,
         text: "You see a steep path ahead of you. Dropping down into an area. How do you proceed?",
         options: [{
-                text: "Walk slowly down the path.",        
+                text: "Walk slowly down the steep path.",
                 nextText: 53,
             },
             {
@@ -675,38 +678,39 @@ const textNodes = [{
             {
                 text: "Sprint forwards and leap for the bushes down below",
                 nextText: 55,
-            },]
+            },
+        ]
     },
     { // Obstacle course continues.
-        id: 53, 
+        id: 53,
         text: "As you amble slowly down the steep hill. You lose your footing and tumble onto the lower path.",
         options: [{
-                text: "Ouch.",        
-                nextText: 56,
-            },]
+            text: "Ouch.",
+            nextText: 56,
+        }, ]
     },
     { // Obstacle course continues.
-        id: 54, 
+        id: 54,
         text: "You line your pockets with small sharp stones.",
         options: [{
-                text: "Walk slowly down the path.", 
-                setState: {
-                    noRocks: false,
-                    rocks: true,
-                },       
-                nextText: 52,
-            },]
+            text: "Neat.",
+            setState: {
+                noRocks: false,
+                rocks: true,
+            },
+            nextText: 52,
+        }, ]
     },
     { // Obstacle course continues.
-        id: 55, 
+        id: 55,
         text: "You limber up and brazenly slide down the steep path ahead. You manage to land in the thick brush below and avoid further harm.",
         options: [{
-                text: "Walk slowly down the path.",        
-                nextText: 56,
-            },]
+            text: "Dust yourself off.",
+            nextText: 56,
+        }, ]
     },
     { // Obstacle course Trial 2.
-        id: 56, 
+        id: 56,
         text: "Surviving the steep path you look ahead. Stone plates line a central path, leading towards the plinth. There appear to be two routes you can take.",
         options: [{
                 text: "Walk across the cracked plates.",
@@ -725,48 +729,49 @@ const textNodes = [{
             {
                 text: "Walk across the undamaged plates.",
                 nextText: 60,
-            },]
+            },
+        ]
     },
     { // Obstacle course continues.
-        id: 57, 
+        id: 57,
         text: "You slowly and carefully navigate your way over the cracked plates. Time passes as you slowly travel but you emerge unscathed on the other side.",
         options: [{
-                text: "Walk slowly down the path.",        
-                nextText: 61,
-            },]
+            text: "Breathe a sigh of relief.",
+            nextText: 61,
+        }, ]
     },
     { // Obstacle course continues.
-        id: 58, 
+        id: 58,
         text: "The rock careens into the cracked plates. Creating small chips in the area it hits. You notice nothing of interest.",
         options: [{
-                text: "Continue.",
-                setState: {
-                    rocks: false,
-                },            
-                nextText: 56,
-            },]
+            text: "Continue.",
+            setState: {
+                rocks: false,
+            },
+            nextText: 56,
+        }, ]
     },
     { // Obstacle course continues.
-        id: 59, 
+        id: 59,
         text: "The rock soars through the air. Landing on a stone plate. The pressure of the collision causes a small shower of rocks to drop from the air above the plate. Damaging the area directly below.",
         options: [{
-                text: "Continue.",
-                setState: {
-                    rocks: false,
-                },          
-                nextText: 56,
-            },]
+            text: "Continue.",
+            setState: {
+                rocks: false,
+            },
+            nextText: 56,
+        }, ]
     },
     { // Obstacle course continues.
-        id: 60, 
+        id: 60,
         text: "As you step onto the undamaged plates. You feel the weight of your body sink them down. As each pressure plate reaches the ground, rocks begin to fall from directly above. Pelting you as you hurry across the path",
         options: [{
-                text: "Walk slowly down the path.",        
-                nextText: 61,
-            },]
+            text: "Ouch",
+            nextText: 61,
+        }, ]
     },
     { // Obstacle course Trial 3.
-        id: 61, 
+        id: 61,
         text: "Having navigated the trapped floor, directly ahead, you see a large set of stone steps leading to a raised platform where the plinth resides.",
         options: [{
                 text: "Take the steps",
@@ -786,101 +791,102 @@ const textNodes = [{
                 text: "Throw a rock onto the steps.",
                 requiredState: (currentState) => currentState.rocks,
                 nextText: 65,
-            },]
+            },
+        ]
     },
     { // Obstacle course continues.
-        id: 62, 
+        id: 62,
         text: "Heading wearily up the stone steps, you reach the glowing red plinth and notice it features a hand-shaped stone panel.",
         options: [{
-                text: "Place hand on plinth.",
-                nextText: 66,
-            },]
+            text: "Place hand on plinth.",
+            nextText: 66,
+        }, ]
     },
     { // Obstacle course continues.
-        id: 63, 
+        id: 63,
         text: "Searching the nearby undergrowth you find a spool of frayed rope.",
         options: [{
-                text: "Continue.",
-                setState: {
-                    noRope: false,
-                    rope: true,
-                },          
-                nextText: 61,
-            },]
+            text: "Continue.",
+            setState: {
+                noRope: false,
+                rope: true,
+            },
+            nextText: 61,
+        }, ]
     },
     { // Obstacle course continues.
-        id: 64, 
+        id: 64,
         text: "You throw the rope upwards to the platform, it catches on a branch and immediately snaps. Not your finest idea.",
         options: [{
-                text: "Oh.",
-                setState: {
-                    rope: false,
-                },          
-                nextText: 61,
-            },]
+            text: "Oh.",
+            setState: {
+                rope: false,
+            },
+            nextText: 61,
+        }, ]
     },
     { // Obstacle course continues.
-        id: 65, 
-        text: "You throw the rock into the stone steps. It tumbles it's way from top to bottom. You notice nothing of interest.",
+        id: 65,
+        text: "You throw the rock into the stone steps. It tumbles its way from top to bottom. You notice nothing of interest.",
         options: [{
-                text: "Continue.",
-                setState: {
-                    rocks: false,
-                },          
-                nextText: 61,
-            },]
+            text: "Continue.",
+            setState: {
+                rocks: false,
+            },
+            nextText: 61,
+        }, ]
     },
     { // Reaching the Red Plinth.
-        id: 66, 
+        id: 66,
         text: "You feel a sharp pain as the rock begins to heat up, searing your palm.",
         options: [{
-                text: "Smells like bacon.",      
-                nextText: 67,
-            },]
+            text: "Smells like bacon.",
+            nextText: 67,
+        }, ]
     },
     { // Continues from above.
-        id: 67, 
+        id: 67,
         text: "Removing your palm from the stone, you notice it now has a red chip embedded in the palm.",
         options: [{
-            text: "",
+            text: "Look for a passage back.",
             setState: {
                 noFleetFoot: false,
                 fleetFoot: true,
-            },         
-                nextText: 61,
-            },]
+            },
+            nextText: 68,
+        }, ]
     },
     { // Continues from above.
-        id: 68, 
-        text: "You hear stone begin to shift, as a passage way opens beneath you.",
+        id: 68,
+        text: "You hear stone begin to shift, as the stone floor begins to fall away beneath you.",
         options: [{
-            text: "Jump into the hole.",   
-                nextText: 69,
-            },]
+            text: "Fall into the hole.",
+            nextText: 69,
+        }, ]
     },
     { // Continues from above.
-        id: 69, 
-        text: "As you prepare to fall, you realise you've landed immediately on your feet. As if stepping through a doorway. The world seemed to rotate around you. Looking down you notice where you were just stood reflected beneath you.",
+        id: 69,
+        text: "As you prepare to fall, you realise your feet have already found the ground. The world seemed to rotate around you. Looking down you notice where you previously were reflected back at you.",
         options: [{
-            text: "The physics of this world seem off?",   
-                nextText: 70,
-            },]
+            text: "The physics of this world seem off?",
+            nextText: 70,
+        }, ]
     },
     { // Continues from above.
-        id: 70, 
-        text: "The hatch begins to close. You look up and realise you are stood back inside the central HUB.",
+        id: 70,
+        text: "The reflection begins to fade away, leaving nothing but a solid stone wall. You turn around and realise you are stood back inside the central HUB.",
         options: [{
-            text: "Proceed.",   
-                nextText: 2,
-            },]
+            text: "Proceed.",
+            nextText: 2,
+        }, ]
     },
     { // Right after Obstacle Course Complete.
-        id: 71, 
+        id: 71,
         text: "You see the distant red plinth has turned to rubble.",
         options: [{
-            text: "Head back to [HUB].",   
-                nextText: 2,
-            },]
+            text: "Head back to [HUB].",
+            nextText: 2,
+        }, ]
     },
 ];
 
@@ -1056,7 +1062,8 @@ let members = {
     firstname: ["Jim", "Pam", "Steve", "Urkel", "Johnny", "Benjamin", "Hooper", "Eleanor", "Marge", "Big", "Naruto", "Miyazaki", "Ronald", "Björn", "Golden", "Max", "Julia", "Mr.", "Mrs.", "Senior", ], // 20* fNames
     lastname: ["Stevenson", "Björnson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubadour", "The Great", "Power", "Radagast", ], // 17* lNames
     skill: ["East-End Bartender", "Computer Scientist", "Full-Time Dungeon Master", "Weekend Dog Walker", "Middle School Teacher", "Developer of Indie RPG'S", "Airsoft Enthusiast", "Owns a Katana Collection", "Drives a '67 Chevrolet Impala", "Has Been To France Twice",
-    "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fan Fiction", "Has Eaten a Glass of Water With Chopsticks"], // 15* Skills
+        "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fan Fiction", "Has Eaten a Glass of Water With Chopsticks"
+    ], // 15* Skills
     avatar: [
         "assets/images/avatar/av1.png",
         "assets/images/avatar/av2.png",
@@ -1087,7 +1094,7 @@ let members = {
 
 /** Generates random Cards for final act of the game.
  * Designed in this way so that this code won't need to be updated as the array is expanded upon.
- * All random numbers generated will be within the confines of the Arrays Length. */ 
+ * All random numbers generated will be within the confines of the Arrays Length. */
 function finalProtocol() {
     game.text = "[The Final Assessment.]"
     updateText();
