@@ -8,6 +8,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- Font Awesome integration -->
+    <script src="https://kit.fontawesome.com/67e7e0c15f.js" crossorigin="anonymous"></script>
     <!-- Favicon -->
     <link rel='shortcut icon' type="image/x-icon" href="assets/images/favicon.ico" />
     <!-- Animate CSS -->
@@ -56,18 +58,29 @@
     </div>
 
     <!-- Game Footer -->
-    <footer id="game-footer" class="text-center fixed-bottom">
-        <!-- Fail Score Tracker -->
-        <hr>
-        <div class="score-card">
-            <!-- Span updates the number to match the failures in Javascript -->
-            FAILURES: <span id="score">0</span>
+    <footer id="game-footer" class="fixed-bottom container">
+        <!-- Styled with CSS to add a subtle drop shadow as the top of the footer -->
+        <hr class="footer_hr">
+        <!-- Center column -->
+        <div class="container">
+            <!-- Quit Button Div -->
+            <div id="quit-btn-div">
+                <!-- Quit Button generates here -->
+            </div>
         </div>
-        <hr>
-        <!-- Quit Button Div -->
-        <div id="quit-btn-div" class="col">
-            <!-- Quit Button generates here -->
-        </div>
+        <!-- Grid container -->
+        <div class="container-fluid text-center">
+            <!-- Github Link -->
+           
+            <!-- Fail Score Tracker -->
+            <div class="score-card d-flex justify-content-between">
+                <!-- Span updates the number to match the failures in Javascript -->
+               <a href="https://github.com/Hadokane" target="_blank"><p>© 2023 HK_Dev</p></a>
+                    <div class="text-center"><h4> FAILURES: <span id="score">0</span></h4>
+                    </div>
+            </div>
+
+
     </footer>
     <!-- jQuery Javascript -->
     <script src="https://code.jquery.com/jquery-3.6.1.js"

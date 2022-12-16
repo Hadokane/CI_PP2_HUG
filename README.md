@@ -87,3 +87,5 @@ https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp - hide show for bu
 https://dev.to/javascript_jeep/how-to-empty-the-dom-element-in-javascript-nf8 - Empties div.
 
 https://www.npmjs.com/package/textfit?activeTab=readme - TextFit  plugin installed.
+
+https://lospec.com/palette-list/ayy4 - palette I used.

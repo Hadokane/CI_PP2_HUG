@@ -1,6 +1,18 @@
 /* --------- Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Roboto:wght@100;300;400;500;700;900&family=VT323&display=swap');
 
+/*----------------------------- Removes default margins & padding to clear unwanted space*/
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+.footer_hr {
+    margin: 0;
+    padding: 0; 
+}
+
 /* --------- Body style */
 h2,
 body {
@@ -10,28 +22,50 @@ body {
 
 /*--- Stops fixed-footer overlapping content. */
 body {
+    background-color: #00303b;
     padding-bottom: 120px;
+}
+
+/* --------- Footer style. */
+footer {
+    background-color: #f1f2da;
+    box-shadow: 5px 5px #ffce96;
+}
+
+/* --------- Footer HR styled to provide drop shadow. */
+.footer_hr {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* --------- Link styling for Copyright in Footer. */
+a {
+    color: #ff7777;
+    text-decoration: none;
+    text-transform: uppercase;   
 }
 
 /* --------- Game Window style */
 #game-window {
-    background-color: antiquewhite;
+    background-color: #f1f2da;
     padding: 2em;
+    box-shadow: 5px 5px #ffce96;
 }
 
 #final-cards {
     overflow: auto;
-    height: 28em;
+    height: fit-content;
 }
 
 /* --------- Computer Player Window style */
 #comp-player,
 #game-over-window {
-    background-color: yellowgreen;
-    color: green;
+    background-color: #f1f2da;
+    color: #00303b;
     margin-bottom: 32px;
     padding: 2em;
-    box-shadow: 5px 5px;
+    box-shadow: 5px 5px #ffce96;
 }
 
 #comp-player {
@@ -47,7 +81,7 @@ label {
 /* --------- Math Questions Styling */
 #math-question {
     font-size: 3em;
-    background-color: aquamarine;
+    background-color: #ff7777;
     color: black;
     text-align: center;
     padding: 1em;
@@ -56,8 +90,8 @@ label {
 
 /* --------- Button style */
 .btn {
-    background-color: rebeccapurple;
-    color: white;
+    background-color: #ff7777;
+    color: #00303b;
     border-radius: 10%;
     text-align: center;
     margin-bottom: 32px;
@@ -68,7 +102,7 @@ label {
 /* --------- Color and font family of the username text box */
 .user-text {
     font-family: 'Gloria Hallelujah', cursive;
-    color: red;
+    color: #ff7777;
 }
 
 /* --------- Username display style */
@@ -92,7 +126,7 @@ label {
 /* --------- Hover effects */
 .card:hover {
     transform: scale(1.05);
-    outline: 2px solid red;
+    outline: 2px solid #ff7777;
     box-shadow: 5px 5px 15px;
     z-index: 1;
 }
@@ -112,19 +146,19 @@ p {
 
 /* --------- Card <a> style */
 .card-footer a {
-    color: red;
+    color: #ff7777;
     font-size: 1em;
 }
 
 /* --------- onClick destroy style for selected card */
 .destroy {
-    outline: 6px solid black;
+    outline: 6px solid #00303b;
     animation: fadeToGrey 5s ease-out forwards;
 }
 
 /* --------- override card:hover */
 .destroy:hover {
-    outline: 6px solid black;
+    outline: 6px solid #00303b;
 }
 
 /* --------- Animation to fade the card to grey when the destroy class is added */

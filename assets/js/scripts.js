@@ -59,7 +59,7 @@ function sleep(ms) {
 function generateQuitBtn() {
     // generates the button
     quitBtn = document.createElement("button");
-    quitBtn.innerHTML = `<em>[End Protocol]<em>`;
+    quitBtn.innerHTML = `[End Protocol]`;
     quitBtn.classList.add("btn", "btn-block");
     document.getElementById("quit-btn-div").append(quitBtn);
 };
@@ -82,11 +82,11 @@ function areYouSure() {
     quitBtn.style.display = "none";
     // Creates No Button
     noBtn = document.createElement("button");
-    noBtn.innerHTML = `<em>[Continue the test!]<em>`;
+    noBtn.innerHTML = "[Continue the test!]";
     noBtn.classList.add("btn", "btn-block", "btn-success");
     // Creates yes Button
     yesBtn = document.createElement("button");
-    yesBtn.innerHTML = `<em>[Quit?]<em>`;
+    yesBtn.innerHTML = "[Quit?]";
     yesBtn.classList.add("btn", "btn-block", "btn-danger");
     // remove quitBtn and adds yesBtn and noBtn
     document.getElementById("quit-btn-div").append(noBtn);
