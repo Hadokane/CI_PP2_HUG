@@ -103,9 +103,9 @@ function areYouSure(){
     yesBtn.addEventListener("click", () => window.location.reload());
 };
 
-// Ends the game if the game.failScore reaches above 9.
+// Ends the game if the game.failScore reaches above 5.
 function gameFailCheck(){
-    if (game.failScore > 2) {
+    if (game.failScore > 4) {
         // Set game-window and gameOverWindow to variables.
         compWindow = document.getElementById("comp-player"); // Emptys the game window of all objects the player can interact with. Leaving only this text and the end button.
         gameWindow = document.getElementById("game-window"); // Emptys the game window of all objects the player can interact with. Leaving only this text and the end button.
@@ -126,7 +126,7 @@ function gameFailCheck(){
 function newGame(){
     game.text = "Welcome New Candidate to the H.U.G. Protocol."
     updateText(); // Displays the update to the game.text
-    setScore(8); // Adds 8 to score
+    setScore(0); // Initialises the score
 
     // Creates the start game button
     let startBtn = document.createElement("div");
@@ -242,8 +242,9 @@ function runHubWorld(){
 function showTextNode(textNodeIndex){
     // sets const equal to the id of the textNodes array.
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
-    // Sets inner text of element equal to textNodes.text, wrapped in <h2> tags for css styles
-    cText.innerHTML = "<h2>" + textNode.text + "</h2>";
+    // Sets game.text equal to textNodes.text and calls the update
+    game.text = textNode.text;
+    updateText();
     // Removes the button child elements from the options-buttons div - if present - when not called by the question. Removes the questions buttons.
     while (document.getElementById("option-buttons").firstChild) {
         document.getElementById("option-buttons").removeChild(document.getElementById("option-buttons").firstChild)
@@ -275,15 +276,12 @@ function selectOption(option) {
         // change to levelIntroMath
         levelIntroMath(); 
     } else if ((nextTextNodeId === -2)){
-            // Removes buttons before loading game.
-            while (document.getElementById("option-buttons").firstChild) {
-                document.getElementById("option-buttons").removeChild(document.getElementById("option-buttons").firstChild)
-            }
-            // change to finalProtocol
-            finalProtocol(); 
-            // Updates the fail score
-    } else if ((nextTextNodeId === 13)){
-            // Removes buttons before loading game.
+        // Removes buttons before loading game.
+        while (document.getElementById("option-buttons").firstChild) {
+            document.getElementById("option-buttons").removeChild(document.getElementById("option-buttons").firstChild)
+        }
+            finalProtocol(); // change to finalProtocol
+        } else if ((nextTextNodeId === 13 | nextTextNodeId === 5)){ // Updates the fail score based on fail location ids   
             setScore(1); 
     };
     // checks the state, updates the state if setState present, overwrites state.
@@ -381,8 +379,7 @@ const textNodes = [
         options: [
             {
             text: "Stumble to the light switch",
-            nextText: 4, // Returns to Hub
-            fail: 1, // Adds to the failscore
+            nextText: 4, // Find light switch
             },
         ]
     },
@@ -448,7 +445,6 @@ const textNodes = [
 
 /** (Maths Round) */
 function levelIntroMath(){
-    game.failScore = 66; // for test
     async function delayedGreeting() {
         game.text = "Welcome to the <em>[Basic Equation Module]</em>."
         updateText();
