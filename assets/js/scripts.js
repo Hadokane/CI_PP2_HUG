@@ -8,13 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Calling initial functions
     updateText(); // Displays game.text in the HTML Div
     setScore(0); // Adds 0 to the game.failScore and initialises it
-    newGame(); // runs a newGame().
+    newGame() // runs a newGame().
 });
 
 // Setting the players username to a global variable so it is accessible in all areas of the game.
 var cText = document.getElementById('comp-text');
 var userString;
-var username = `<span id='username-style'> Steve </span>`; // Providing default value for testing, set to "" when testing is done
+var username = ""; // Providing default value for testing, set to "" when testing is done
 
 // Initialises the game
 let game = {
@@ -256,7 +256,7 @@ function showTextNode(textNodeIndex) {
         if (showOption(option)) {
             const button = document.createElement("button")
             button.innerText = option.text // Sets buttons text to match the text nodes options text.
-            button.classList.add("btn") // Adds CSS styles to the button.
+            button.classList.add("btn", "btn-block") // Adds CSS styles to the button.
             // onClick the button runs the "selectOption" function.
             button.addEventListener("click", () => selectOption(option))
             document.getElementById("option-buttons").appendChild(button)
@@ -1141,7 +1141,7 @@ function finalProtocol() {
             // Copy the selected card into a new object to display it.
             let sacrifice = card;
             // Add a class to trigger the black and white animation. 
-            sacrifice.classList.add('destroy');
+            sacrifice.classList.add("destroy", "build");
             document.getElementById("sacrifice-card").append(sacrifice);
             // Removes other cards from the div.
             document.getElementById("final-cards").remove(card);
@@ -1193,7 +1193,7 @@ function runEnding() {
             <div class="card-body h-100">
                 <h3 class="card-title">${username}</h3>
                 <p class="card-text">Newest member of the H.U.G. Protocol</p>
-                <p class="card-text">Failures: ${game.failScore}</p>
+                <p class="card-text"><strong>Failures: ${game.failScore}</strong></p>
             </div>
             <div class="card-footer bg-transparent border-danger">
                 <a class="stretched-link h-100">Digital Conscious Uploaded</a>
@@ -1203,7 +1203,7 @@ function runEnding() {
     document.getElementById("sacrifice-card").append(userCard);
     // Plays final message and creates a replay button        
     async function delayedEnd() {
-        game.text = `Congratulations! ${username} You have successfully passed the H.U.G. Protocol`;
+        game.text = `Congratulations! ${username} You have successfully passed the H.U.G. Protocol!`;
         updateText();
         await sleep(3000);
         game.text = "We have stored the Digital ID of your Conscious within our servers.";

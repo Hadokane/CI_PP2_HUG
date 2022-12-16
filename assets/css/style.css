@@ -6,19 +6,22 @@ h2,
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    width: 100%;
 }
 
-/* --------- Body Background Colour */
-#game-footer {
-    background-color: rgba(0, 0, 0, .25);
+/*--- Stops fixed-footer overlapping content. */
+body {
+    padding-bottom: 120px;
 }
 
 /* --------- Game Window style */
 #game-window {
     background-color: antiquewhite;
-    height: fit-content;
     padding: 2em;
+}
+
+#final-cards {
+    overflow: auto;
+    height: 28em;
 }
 
 /* --------- Computer Player Window style */
@@ -26,15 +29,14 @@ body {
 #game-over-window {
     background-color: yellowgreen;
     color: green;
-    text-align: center;
     margin-bottom: 32px;
     padding: 2em;
     box-shadow: 5px 5px;
 }
 
-/* --------- Computer Players Text styling */
-h2 {
-    font-size: 3em;
+#comp-player {
+    margin-top: 1em;
+    overflow-wrap: normal;
 }
 
 /* --------- Label used by Math Questions and Username box*/
@@ -142,4 +144,12 @@ p {
     to {
         opacity: 60%;
     }
+}
+
+/* --------- Resizes the end game cards */
+.build {
+    max-height: 40%;
+    max-width: 40%;
+    height: 100%;
+    display: block;
 }
