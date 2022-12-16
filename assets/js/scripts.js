@@ -498,6 +498,78 @@ const textNodes = [{
             nextText: 200, // TAKE TO ROOM WHERE END GOAL IS REVEALED GAME ENDS.
         }, ]
     },
+    { // Proceed to final area.
+        id: 200,
+        text: "As you step through the door, a blinding white light engulfs you.",
+        options: [{
+            text: "Cover eyes.",
+            nextText: 201, // TAKE TO ROOM WHERE END GOAL IS REVEALED GAME ENDS.
+        }, ]
+    },
+    { // Continues from above.
+        id: 201,
+        text: "Covering your eyes, you wait for your vision to adjust. Through the gaps in your fingers, shapes start to come into focus.",
+        options: [{
+            text: "Proceed.",
+            nextText: 202,
+        }, ]
+    },
+    { // Continues from above.
+        id: 202,
+        text: "The console ahead of you dims as you approach it. As if it were adjusting itself to your presence.",
+        options: [{
+            text: "Proceed.",
+            nextText: 203,
+        }, ]
+    },
+    { // Continues from above.
+        id: 203,
+        text: "On it's screen you see a world map, filled with tiny moving dots.",
+        options: [{
+            text: "Examine the map.",
+            nextText: 204,
+        }, ]
+    },
+    { // Continues from above.
+        id: 203,
+        text: `Well done on making it this far ${username} but as you can see our membership ranks are rather full at the moment.`,
+        options: [{
+            text: "Proceed.",
+            nextText: 204,
+        }, ]
+    },
+    { // Continues from above.
+        id: 204,
+        text: "You seem to have reached our central targetting array, where we track the position of each active member.",
+        options: [{
+            text: "Proceed.",
+            nextText: 205,
+        }, ]
+    },
+    { // Continues from above.
+        id: 205,
+        text: "If something were to happen to one of our <strong>beloved</strong> members, it would surely open up a position we'd need filled immediately...",
+        options: [{
+            text: "Proceed.",
+            nextText: 206,
+        }, ]
+    },
+    { // Continues from above.
+        id: 206,
+        text: "Looking down you notice a number of images begin to appear. People. Families. Targets.",
+        options: [{
+            text: "Proceed.",
+            nextText: 207,
+        }, ]
+    },
+    { // Launches the finalProtocol.
+        id: 207,
+        text: "The screen seems to be willing you to make a selection...",
+        options: [{
+            text: "Do what must be done.",
+            nextText: -2,
+        }, ]
+    },
     { // Examining the monitor. (id: 103).
         id: 102,
         text: "You see a small white computer with a hand-shaped scanning device protruding from its side.",
