@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", function(){
     setScore(0); // Adds 0 to the game.failScore
 
     // runs a newGame();
-    newGame();
+    runHubWorld()
 });
 
-// Setting HTML elements to global variables
+// Setting the players username to a global variable so it is accessible in all areas of the game.
 var cText = document.getElementById('comp-text');
 var userString;
 // Providing default value for testing, set to "" when testing is done
@@ -35,21 +35,22 @@ let game = {
  *  */
 function updateText() {
     cText.innerHTML = "<h2 class ='animate__animated animate__fadeInUp'>" + game.text + "</div>";
-}
+};
 
 /** Adds newScore to the current game.failScore value.
  * Can put (0) to initalise the score */
 function setScore(newScore){
     game.failScore = game.failScore + newScore;
     document.getElementById("score").innerText = game.failScore;
-}
+    gameFailCheck();
+};
 
 /** Updates the game.mathScore data by the value of newMathScore.
  * Can put (0) to initalise the score
  */
 function setMathScore(newMathScore){
     game.mathScore = game.mathScore + newMathScore;
-}
+};
 
 /** Sleep function using Promises to set delays between code.
  * Used mainly for the purpose of displaying automated text for the computer player.
@@ -66,7 +67,7 @@ function generateQuitBtn(){
         quitBtn.classList.add("btn", "btn-block");
         document.getElementById("quit-btn-div").append(quitBtn);
         
-}  
+};
 
 // Toggles visibility of the quit button
 function toggleQuitBtn(){
@@ -79,7 +80,7 @@ function toggleQuitBtn(){
 
 // Checks if the user is sure they want to quit.
 function areYouSure(){
-    
+    // Hides the quit button
     quitBtn.style.display = "none";
     // Creates No Button
     noBtn = document.createElement("button");
@@ -100,7 +101,22 @@ function areYouSure(){
     });
     // Quits the game by reloading the window if "Yes"
     yesBtn.addEventListener("click", () => window.location.reload());
-}
+};
+
+// Ends the game if the game.failScore reaches above 9.
+function gameFailCheck(){
+    if (game.failScore > 2) {
+        // Set game-window and gameOverWindow to variables.
+        compWindow = document.getElementById("comp-player"); // Emptys the game window of all objects the player can interact with. Leaving only this text and the end button.
+        gameWindow = document.getElementById("game-window"); // Emptys the game window of all objects the player can interact with. Leaving only this text and the end button.
+        gameOverWindow = document.getElementById("gameover-window"); // Emptys the game window of all objects the player can interact with. Leaving only this text and the end button.
+        // Hides the players game window
+        compWindow.style.display = "none";
+        gameWindow.style.display = "none";
+        // Shows the game over window
+        gameOverWindow.style.display = "block";       
+    }
+};
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -127,7 +143,7 @@ function newGame(){
         startBtn.remove();
         enterName(); // runs enterName
     }
-}
+};
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -184,45 +200,45 @@ function enterName(){
             delayedGreeting()
         }
     }
-}
+};
 
 ////////////////////////////////////////////////////////////////////////
 
-/** Level 2 - Basic Aptitude Test (Questions Round) */
+/** Text Based Adventure "HUB AREA" of the game */
 
 // Keeps track of player items.
 let state = {};
 
+// Introduction test to the level
 function levelIntroHub(){
     /* Updates computer players text and references the players username */
     async function delayedGreeting() {
         game.text = "Initalising <em>[Human Usefulness Generator]</em>..."
         updateText();
         await sleep(3000);
-        game.text = "Welcome " + username + " to your first test.";
+        game.text = "Welcome " + username + ".";
         updateText();
         await sleep(3000);
-        game.text = "This is the <em>[Basic Aptitude Module]</em>.";
+        game.text = "We will now present you with a series of apptitude tests.";
         updateText();
         await sleep(3000);
-        game.text = "You will be asked a series of important questions.";
+        game.text = "Do your best... Your future membership depends on it.";
         updateText();
         await sleep(3000);
-        game.text = "Answer honestly... Your future membership depends on it.";
-        updateText();
-        // Loads the questions section
-        await sleep(3000);
+        // Loads the Hub Area
         runHubWorld();
     }
     delayedGreeting();
-}
+};
 
+// Launches the Hub World
 function runHubWorld(){
     state = {}; // sets players starting items
-    setScore(42); // sets the fail score.
+    setScore(0); // sets the score
     showTextNode(1); // shows initial text from node 1 of the array.
-}
+};
 
+// Displays the correct buttons and text necessary for navigating the text adventure section.
 function showTextNode(textNodeIndex){
     // sets const equal to the id of the textNodes array.
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
@@ -244,7 +260,7 @@ function showTextNode(textNodeIndex){
         }
     })
 
-}
+};
 
 // Called by showTextNode if loop. Finds the option and updates the players state if item acquired.
 function selectOption(option) {
@@ -258,50 +274,61 @@ function selectOption(option) {
         }
         // change to levelIntroMath
         levelIntroMath(); 
-    }
+    } else if ((nextTextNodeId === -2)){
+            // Removes buttons before loading game.
+            while (document.getElementById("option-buttons").firstChild) {
+                document.getElementById("option-buttons").removeChild(document.getElementById("option-buttons").firstChild)
+            }
+            // change to finalProtocol
+            finalProtocol(); 
+            // Updates the fail score
+    } else if ((nextTextNodeId === 13)){
+            // Removes buttons before loading game.
+            setScore(1); 
+    };
     // checks the state, updates the state if setState present, overwrites state.
     state = Object.assign(state, option.setState)
     // Shows the nextTextNode
     showTextNode(nextTextNodeId)
-}
+};
 
 // Called by showTextNode if loop.  
 function showOption(option) {
     // if no state is required (null) returns ture or if requiredstate is met returns true, showing hidden options.
     return option.requiredState == null || option.requiredState(state);
-}
+};
 
 // The games many text options that populate the hub world.
 const textNodes = [
     { // Initial hub area, allows travel to other zones.
         id: 1,
-        text: "The H.U.G. Protocol requires your digital conciousness to continue. <br><br> Proceed?",
+        text: "The H.U.G. Protocol requires access to your digital conciousness to continue.",
         options: [
             {
-                text: "Walk into the light.",
-                setState: { noBadge: true }, // Sets starting inventory for the player.          
+                text: "Consent.",
+                setState: { noLight: true }, // Sets starting inventory for the player.          
                 nextText: 2, // advances to id: 2
             }
         ]
     },
     { // Initial hub area, allows travel to other zones.
         id: 2,
-        text: "Welcome to the hub " + username + ". Where would you like to go?",
+        text: "Welcome to the inner-hub. Where would you like your digital concious to travel?",
         options: [
             {
                 text: "Left",
-                requiredState: (currentState) => currentState.noBadge, // requires noBadge to show            
+                requiredState: (currentState) => currentState.noLight, // requires noLight to show            
                 nextText: 3, // advances to id: 2
             },
             {
-                text: "Left (With Badge)",
-                requiredState: (currentState) => currentState.mathBadge, // requires mathBadge to show. state{} read. Does it have what is required? Show Option Function reads it.
-                nextText: 77, // runs mathGame
+                text: "Left (Light On)",
+                requiredState: (currentState) => currentState.lightOn, // requires lightOn to show.
+                nextText: 33, // To MathGame
             },
             {
                 text: "Left (With BigBrain)",
-                requiredState: (currentState) => currentState.bigBrain, // requires bigBrain
-                nextText: 13, // runs mathGame
+                requiredState: (currentState) => currentState.bigBrain, // requires bigBrain from math game completion.
+                nextText: 333, // Completed MathGame
             },
             {
                 text: "Forward",
@@ -309,68 +336,113 @@ const textNodes = [
             },
             {
                 text: "Right",
-                nextText: 13,
+                nextText: 15,
             },
         ]
     },
     { // If chosing left above.
         id: 3,
-        text: "You reach a dark room filled with blood.",
+        text: "You reach a dark room filled with the sound of whiring machines.",
         options: [
             {
-            text: "gross!",
+            text: "Feel for a light switch",
             nextText: 4,
             },
             {
-            text: "cool!",
+            text: "Navigate the darkness",
             nextText: 5,
             },
         ]
     },
     { // If chosing left above.
-        id: 4,
-        text: "Smells bad bro.",
+        id: 13,
+        text: "Fail score should go up by 1.",
         options: [
             {
-            text: "grab math badge!",
-            setState: { mathBadge: true, noBadge: false }, // gives you badge, removes no_badge property; Sets state to true for mathBadge.
-            nextText: 2, // Returns to Hub
+            text: "Go Back",
+            nextText: 2,
+            },
+        ]
+    },
+    { // Activate light switch
+        id: 4,
+        text: "Flicking a nearby switch illuminates the room with glowing light. You see a large server room.",
+        options: [
+            {
+            text: "Approach the central console",
+            setState: { lightOn: true, noLight: false }, // gives you badge, removes no_badge property; Sets state to true for mathBadge.
+            nextText: 33, // Returns to Hub
+            },
+        ]
+    },
+    { // Brave the darkness (+1 failscore)
+        id: 5,
+        text: "You trip over the scattered wires... not your finest plan.",
+        options: [
+            {
+            text: "Stumble to the light switch",
+            nextText: 4, // Returns to Hub
+            fail: 1, // Adds to the failscore
             },
         ]
     },
     { // If chosing left above.
-        id: 77,
-        text: "You see a math console plugged in. Run Protocol?",
+        id: 33,
+        text: "You see a central machine running complex equations. A text box appears on the monitor: [Run Maths Protocol?]",
         options: [
             {
-            text: "Flee in fear!",
-            setState: { mathBadge: true, noBadge: false }, // gives you badge, removes no_badge property; Sets state to true for mathBadge.
+            text: "Flee from the idea of maths",
             nextText: 2, // Returns to Hub
             },
             {
-            text: "Run Math Protocol!",
-            setState: { mathBadge: true, noBadge: false }, // gives you badge, removes no_badge property; Sets state to true for mathBadge.
+            text: "Run Maths Protocol!",
             nextText: -1, // Runs Math Game
             },
         ]
     },
     { // After completing Math Game.
         id: 42,
-        text: "Protocol Complete. Good job " + username,
+        text: "[Protocol Complete.]",
         options: [
             {
             text: "Place hand on console!",
-            setState: { bigBrain: true, }, // gives you badge, removes no_badge property; Sets state to true for mathBadge.
-            nextText: 2, // Returns to Hub
+            setState: { bigBrain: true, lightOn: false }, // gives you badge, removes no_badge property; Sets state to true for mathBadge.
+            nextText: 43, // Returns to Hub
             },
         ]
     },
     { // If chosing left above.
-        id: 5,
-        text: "Indeed.",
-        nextText: 2, // Returns to Hub
+        id: 43,
+        text: "The advanced machine creeks to life emitting an eerie blue light. You feel your head pulse for a moment.",
+        options: [
+            {
+            text: "You feel energy leaving your digital form...",
+            nextText: 44, // Returns to Hub
+            }
+        ]
     },
-]
+    { // If chosing left above.
+        id: 44,
+        text: "Looking down at your hand reveals a blue mark.",
+        options: [
+            {
+            text: "Head back to central room",
+            nextText: 2, // Returns to Hub
+            }
+        ]
+    },
+    { // If chosing left above.
+        id: 333,
+        text: "The lights from the buzzing machines create ominous shadows, as they flicker quickly across the drab white interior.",
+        options: [
+            {
+            text: "Head back to central room",
+            nextText: 2, // Returns to Hub
+            }
+        ]
+    },
+
+];
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -389,7 +461,7 @@ function levelIntroMath(){
         runMathGame();
     }
     delayedGreeting()
-}
+};
 
 /** Generates 2 random numbers.
  * Adds necessary UI elements to div. */
@@ -440,7 +512,7 @@ function displayQuestion(operand1, operand2, operator) {
     operator = "+";
 };
 
-// Generates two random numbers and passes them into display question. Advances the game./
+// Generates two random numbers and passes them into display question. Advances the game.
 function nextQuestion(){
     // Generates a random number * 10, rounded to nearest integer. Won't return 0.
     let num1 = Math.floor(Math.random() * 10) + 1;
@@ -532,6 +604,7 @@ function checkAnswer(){
 
 ////////////////////////////////////////////////////////////////////////
 
+// Loads cards for final act of the game.
 function finalProtocol() {
     // TEST
     game.text = "The Final Assessment."
@@ -649,8 +722,9 @@ function finalProtocol() {
             delayedOutro();
         });
     }
-}
+};
 
+// Runs the games true ending, provides a restart button for the user.
 function runEnding(){
             // Creates the users card
             userCard = document.createElement("div");
@@ -690,6 +764,4 @@ function runEnding(){
                 replayBtn.addEventListener("click", () => window.location.reload());
             }
             delayedEnd();
-}
-
-// Maze to fruit section.
+};

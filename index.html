@@ -17,11 +17,11 @@
 </head>
 <body>
     <!-- Computer Players Text Box -->
-    <div id="comp-player">
+    <div id="comp-player" class="container text-center">
         <span id="comp-text"></span>
     </div>
     <!-- Game Window -->
-    <div id="game-window" class="container-fluid text-center">
+    <div id="game-window" class="container text-center">
         <!-- Users Game Box -->
         <div id="user" class="container-fluid text-center">
             <!-- Username field generates here-->
@@ -30,19 +30,34 @@
         <div id="sacrifice-card" class="d-flex flex-fill row justify-content-center">
             <!-- Sacrifice Card generates here-->
         </div>
-        <!-- Buttons for player choices during text adventure generate here -->
+        <!-- Cards for player desturction generate here -->
         <div id="final-cards" class="d-flex flex-fill row justify-content-center">
             <!-- Array Cards generate here-->
         </div>
-    </div>
-    <!-- Spacing -->
-    <hr>
-    <!-- Game Footer -->
-    <footer id="game-footer" class="container-fluid text-center fixed-bottom">
-        <!-- Fail Score Tracker -->
-        <div class="score-card">
-            FAIL SCORE: <span id="score">0</span>
+        <!-- Buttons for player choices during text adventure generate here -->
+        <div class="container">
+            <div id="option-buttons" class="btn-grid">
+                <!-- Buttons generate here -->
+            </div>
         </div>
+    </div>
+    <div id='gameover-window' class='container text-center' style='display:none'>
+            <h2>YOU HAVE BEEN REJECTED FROM THE H.U.G. PROTOCOL!</h2>
+            <p>Please <em>DO NOT</em>try again.</p>
+        <button class="btn col" onclick='document.location.reload();'>
+            [Restart Protocol]
+        </button>
+    </div>
+
+    <!-- Game Footer -->
+    <footer id="game-footer" class="container text-center fixed-bottom">
+        <!-- Fail Score Tracker -->
+        <hr>
+        <div class="score-card">
+            <!-- Span updates the number to match the failures in Javascript -->
+            FAILURES: <span id="score">0</span>
+        </div>
+        <hr>
         <!-- Quit Button Div -->
         <div id="quit-btn-div" class="col">
             <!-- Quit Button generates here -->

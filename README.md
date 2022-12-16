@@ -67,3 +67,21 @@ https://www.sitepoint.com/delay-sleep-pause-wait/ - explained the premise of a s
 https://www.youtube.com/watch?v=GUEB9FogoP8 - Good tutorial on animations, couldnt get working.
 
 https://code-boxx.com/allow-one-click-javascript/ - Remove onclick from button idea.
+
+https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener - Javascript advice and reminders, namely with evenlisteners and DOM targetting/navigation.
+
+https://personas.draftbit.com/ - Avatar Generator for images on the cards
+
+https://animate.style/ - Animation plug-in used for text box changes and cards.
+
+https://www.w3schools.com/howto/howto_css_image_bw.asp - for black and white effect on card.
+
+https://codepen.io/gunnarbittersmann/pen/XpqmgJ?editors=0100 - fade to black and white adapted from this and the above.
+
+https://www.youtube.com/watch?v=O8IJepb-hlQ - Left 4 Dead death sounds sampled to make the destroy audio for this game.
+
+https://www.w3schools.com/- Used for all java, css, html reserach throughout project.
+
+https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp - hide show for buttons
+
+https://dev.to/javascript_jeep/how-to-empty-the-dom-element-in-javascript-nf8 - Empties divs out.

@@ -7,8 +7,10 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     width: 100%;
-    height: auto;
 }
+
+/* --------- Body Background Colour */
+
 
 /* --------- Game Window style */
 #game-window{
@@ -18,7 +20,8 @@ body {
 }
 
 /* --------- Computer Player Window style */
-#comp-player{
+#comp-player,
+#gameover-window{
     background-color: yellowgreen;
     color: green;
     text-align: center;
@@ -27,16 +30,17 @@ body {
     box-shadow: 5px 5px;
 }
 
-/* --------- Text styling */
-#h2{
-    font-size: 1em;
+/* --------- Computer Players Text styling */
+h2{
+    font-size: 3em;
 }
 
-/* --------- Label */
+/* --------- Label used by Math Questions and Username box*/
 label{
     font-size: 2em;
 }
 
+/* --------- Math Questions Styling */
 #math-question{
     font-size: 3em;
     background-color: aquamarine;
@@ -50,33 +54,27 @@ label{
 .btn{
     background-color: rebeccapurple;
     color:white;
-    border-radius: 15%;
+    border-radius: 10%;
     text-align: center;
     margin-bottom: 32px;
     box-shadow: 2px 2px;
     margin: 0.6em;
 }
 
-/* --------- Button recolor with jQuery */
-.btn-red{
-    background-color: red;
-    color: white;
+/* --------- Color and font family of the username text box */
+.user-text{
+    font-family: 'Gloria Hallelujah', cursive;
+    color: red;
 }
 
 /* --------- Username display style */
 #username-style{
-    color: white;
+    color: black;
     font-style: italic;
     font-family: 'VT323', monospace;
     font-weight: 400;
     text-transform: capitalize;
     font-size: 1.25em;
-}
-
-/* --------- Color and font family of the username text box */
-.user-text{
-    font-family: 'Gloria Hallelujah', cursive;
-    color: red;
 }
 
 /* --------- Card Style */
@@ -87,12 +85,6 @@ label{
     scale: 95%; 
 }
 
-/* --------- Focus effects */
-.card:focus,
-.user-text:focus {
-    outline: 2px solid red;
-}
-
 /* --------- Hover effects */
 .card:hover {
     transform: scale(1.05);
@@ -101,22 +93,40 @@ label{
     z-index: 1;
 }
 
+/* --------- Card name style */
 h3{
     font-size: 1.75em;
     font-weight: bold;
 }
 
+/* --------- Card skill style */
 p{
     font-size: 1.25em;
     font-style: oblique;
     font-weight: normal;
 }
 
+/* --------- Card <a> style */
 .card-footer a {
     color: red;
     font-size: 1em;
 }
 
-.hide{
-    outline: 6px solid blue;
+/* --------- onClick destory style for selected card */
+.destroy{  
+    outline: 6px solid black;
+    animation: fadeToGrey 5s ease-out forwards;
+}
+
+/* --------- overide card:hover */
+.destroy:hover{
+    outline: 6px solid black;
+}
+
+/* --------- Animation to fade the card to grey when the destory class is added */
+@keyframes fadeToGrey {
+    from {filter: grayscale(0%);}
+    to {filter: grayscale(100%);}
+    from {opacity: 100%;}
+    to {opacity: 60%;}
 }
