@@ -317,6 +317,9 @@ const textNodes = [{
             setState: {
                 noLight: true,
                 noChip: true,
+                noRocks: true,
+                noRope: true,
+                noFleetFoot: true,
             }, // Sets starting inventory for the player.          
             nextText: 2, // Advances to main HUB area.
         }]
@@ -341,11 +344,17 @@ const textNodes = [{
             },
             {
                 text: "Forward.", 
-                nextText: 100, // Path to Final Area.
+                nextText: 100, // Path to Blast Door.
             },
             {
-                text: "Right.", // End Game Test.
-                nextText: -2,
+                text: "Right.", // Path to Obstacle Course.
+                requiredState: (currentState) => currentState.noFleetFoot,
+                nextText: 50,
+            },
+            {
+                text: "Right.", // Completed Obstacle Course Area.
+                requiredState: (currentState) => currentState.fleetFoot || currentState.redChip, // Requires fleetFoot:true or redChip:true to display.
+                nextText: 71,
             },
         ]
     },
@@ -462,7 +471,7 @@ const textNodes = [{
             nextText: 102,
         },
         {
-            text: "Head back to [HUB]..",
+            text: "Head back to [HUB].",
             nextText: 2,
         }, ]
     },
@@ -564,7 +573,7 @@ const textNodes = [{
     },
     { // Launches the finalProtocol.
         id: 207,
-        text: "The screen seems to be willing you to make a selection...",
+        text: "The screen seems to be willing you on to make a selection...",
         options: [{
             text: "Do what must be done.",
             nextText: -2,
@@ -626,13 +635,252 @@ const textNodes = [{
             nextText: 102,
         },]
     },
-    { // If choosing "up" from the "Main HUB" (id: 2).
-        id: 13,
-        text: "Fail score should go up by 1.",
+    ////////////////////////////////////HEAD RIGHT SECTION////////////////////////////////////
+    { // "Right" from HUB.
+        id: 50, 
+        text: "You walk gingerly through a doorway cluttered with collapsed stone and rubble. At the far end of the path, you see a metallic plinth decorated with strange red markings.",
         options: [{
-            text: "Head back to [HUB].",
-            nextText: 2,
-        }, ]
+                text: "Examine the surroundings.",        
+                nextText: 51,
+            },
+            {
+                text: "Head back to [HUB].",
+                nextText: 2,
+            },]
+    },
+    { // Continues from above.
+        id: 51, 
+        text: "This appears to be a treacherous, obstacle ridden path. Your not sure you can return.",
+        options: [{
+                text: "Head down the path.",        
+                nextText: 52, // Proceed down path.
+            },
+            {
+                text: "Head back to [HUB].",
+                nextText: 2,
+            },]
+    },
+    { // Obstacle course begins.
+        id: 52, 
+        text: "You see a steep path ahead of you. Dropping down into an area. How do you proceed?",
+        options: [{
+                text: "Walk slowly down the path.",        
+                nextText: 53,
+            },
+            {
+                text: "Fill your pockets with nearby small stones.",
+                requiredState: (currentState) => currentState.noRocks,
+                nextText: 54,
+            },
+            {
+                text: "Sprint forwards and leap for the bushes down below",
+                nextText: 55,
+            },]
+    },
+    { // Obstacle course continues.
+        id: 53, 
+        text: "As you amble slowly down the steep hill. You lose your footing and tumble onto the lower path.",
+        options: [{
+                text: "Ouch.",        
+                nextText: 56,
+            },]
+    },
+    { // Obstacle course continues.
+        id: 54, 
+        text: "You line your pockets with small sharp stones.",
+        options: [{
+                text: "Walk slowly down the path.", 
+                setState: {
+                    noRocks: false,
+                    rocks: true,
+                },       
+                nextText: 52,
+            },]
+    },
+    { // Obstacle course continues.
+        id: 55, 
+        text: "You limber up and brazenly slide down the steep path ahead. You manage to land in the thick brush below and avoid further harm.",
+        options: [{
+                text: "Walk slowly down the path.",        
+                nextText: 56,
+            },]
+    },
+    { // Obstacle course Trial 2.
+        id: 56, 
+        text: "Surviving the steep path you look ahead. Stone plates line a central path, leading towards the plinth. There appear to be two routes you can take.",
+        options: [{
+                text: "Walk across the cracked plates.",
+                nextText: 57,
+            },
+            {
+                text: "Throw a stone at the cracked plates.",
+                requiredState: (currentState) => currentState.rocks,
+                nextText: 58,
+            },
+            {
+                text: "Throw a stone at the undamaged plates.",
+                requiredState: (currentState) => currentState.rocks,
+                nextText: 59,
+            },
+            {
+                text: "Walk across the undamaged plates.",
+                nextText: 60,
+            },]
+    },
+    { // Obstacle course continues.
+        id: 57, 
+        text: "You slowly and carefully navigate your way over the cracked plates. Time passes as you slowly travel but you emerge unscathed on the other side.",
+        options: [{
+                text: "Walk slowly down the path.",        
+                nextText: 61,
+            },]
+    },
+    { // Obstacle course continues.
+        id: 58, 
+        text: "The rock careens into the cracked plates. Creating small chips in the area it hits. You notice nothing of interest.",
+        options: [{
+                text: "Continue.",
+                setState: {
+                    rocks: false,
+                },            
+                nextText: 56,
+            },]
+    },
+    { // Obstacle course continues.
+        id: 59, 
+        text: "The rock soars through the air. Landing on a stone plate. The pressure of the collision causes a small shower of rocks to drop from the air above the plate. Damaging the area directly below.",
+        options: [{
+                text: "Continue.",
+                setState: {
+                    rocks: false,
+                },          
+                nextText: 56,
+            },]
+    },
+    { // Obstacle course continues.
+        id: 60, 
+        text: "As you step onto the undamaged plates. You feel the weight of your body sink them down. As each pressure plate reaches the ground, rocks begin to fall from directly above. Pelting you as you hurry across the path",
+        options: [{
+                text: "Walk slowly down the path.",        
+                nextText: 61,
+            },]
+    },
+    { // Obstacle course Trial 3.
+        id: 61, 
+        text: "Having navigated the trapped floor, directly ahead, you see a large set of stone steps leading to a raised platform where the plinth resides.",
+        options: [{
+                text: "Take the steps",
+                nextText: 62,
+            },
+            {
+                text: "Search the environment for something to use.",
+                requiredState: (currentState) => currentState.noRope,
+                nextText: 63,
+            },
+            {
+                text: "Lasso the rope upwards to secure a climbable path to the plinth.",
+                requiredState: (currentState) => currentState.rope,
+                nextText: 64,
+            },
+            {
+                text: "Throw a rock onto the steps.",
+                requiredState: (currentState) => currentState.rocks,
+                nextText: 65,
+            },]
+    },
+    { // Obstacle course continues.
+        id: 62, 
+        text: "Heading wearily up the stone steps, you reach the glowing red plinth and notice it features a hand-shaped stone panel.",
+        options: [{
+                text: "Place hand on plinth.",
+                nextText: 66,
+            },]
+    },
+    { // Obstacle course continues.
+        id: 63, 
+        text: "Searching the nearby undergrowth you find a spool of frayed rope.",
+        options: [{
+                text: "Continue.",
+                setState: {
+                    noRope: false,
+                    rope: true,
+                },          
+                nextText: 61,
+            },]
+    },
+    { // Obstacle course continues.
+        id: 64, 
+        text: "You throw the rope upwards to the platform, it catches on a branch and immediately snaps. Not your finest idea.",
+        options: [{
+                text: "Oh.",
+                setState: {
+                    rope: false,
+                },          
+                nextText: 61,
+            },]
+    },
+    { // Obstacle course continues.
+        id: 65, 
+        text: "You throw the rock into the stone steps. It tumbles it's way from top to bottom. You notice nothing of interest.",
+        options: [{
+                text: "Continue.",
+                setState: {
+                    rocks: false,
+                },          
+                nextText: 61,
+            },]
+    },
+    { // Reaching the Red Plinth.
+        id: 66, 
+        text: "You feel a sharp pain as the rock begins to heat up, searing your palm.",
+        options: [{
+                text: "Smells like bacon.",      
+                nextText: 67,
+            },]
+    },
+    { // Continues from above.
+        id: 67, 
+        text: "Removing your palm from the stone, you notice it now has a red chip embedded in the palm.",
+        options: [{
+            text: "",
+            setState: {
+                noFleetFoot: false,
+                fleetFoot: true,
+            },         
+                nextText: 61,
+            },]
+    },
+    { // Continues from above.
+        id: 68, 
+        text: "You hear stone begin to shift, as a passage way opens beneath you.",
+        options: [{
+            text: "Jump into the hole.",   
+                nextText: 69,
+            },]
+    },
+    { // Continues from above.
+        id: 69, 
+        text: "As you prepare to fall, you realise you've landed immediately on your feet. As if stepping through a doorway. The world seemed to rotate around you. Looking down you notice where you were just stood reflected beneath you.",
+        options: [{
+            text: "The physics of this world seem off?",   
+                nextText: 70,
+            },]
+    },
+    { // Continues from above.
+        id: 70, 
+        text: "The hatch begins to close. You look up and realise you are stood back inside the central HUB.",
+        options: [{
+            text: "Proceed.",   
+                nextText: 2,
+            },]
+    },
+    { // Right after Obstacle Course Complete.
+        id: 71, 
+        text: "You see the distant red plinth has turned to rubble.",
+        options: [{
+            text: "Head back to [HUB].",   
+                nextText: 2,
+            },]
     },
 ];
 
