@@ -10,7 +10,7 @@ p,
 a,
 .footer_hr {
     margin: 0;
-    padding: 0; 
+    padding: 0;
 }
 
 /* --------- Body style */
@@ -43,7 +43,7 @@ footer {
 a {
     color: #ff7777;
     text-decoration: none;
-    text-transform: uppercase;   
+    text-transform: uppercase;
 }
 
 /* --------- Game Window style */
@@ -53,12 +53,7 @@ a {
     box-shadow: 5px 5px #ffce96;
 }
 
-#final-cards {
-    overflow: auto;
-    height: fit-content;
-}
-
-/* --------- Computer Player Window style */
+/* --------- Computer Player & Game Over Window style */
 #comp-player,
 #game-over-window {
     background-color: #f1f2da;
@@ -68,6 +63,12 @@ a {
     box-shadow: 5px 5px #ffce96;
 }
 
+/* --------- Hides the Game Over Window by default */
+#game-over-window {
+    display: none;
+}
+
+/* --------- Computer Player top margin */
 #comp-player {
     margin-top: 1em;
     overflow-wrap: normal;
@@ -120,7 +121,7 @@ label {
     box-shadow: 2px 2px;
     transition: 0.25s ease;
     /* --------- card class h-100, fills entire div, scaling it down allows for space between the cards while keeping the sizes relative. */
-    scale: 95%;
+    transform: scale(95);
 }
 
 /* --------- Hover effects */
