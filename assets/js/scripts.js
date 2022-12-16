@@ -310,37 +310,38 @@ function showOption(option) {
 
 // This contains all of the text options that occupy the "HUB World" Section of the game.
 const textNodes = [{ 
-        id: 1, // First screen the player reaches.
+        id: 1, 
         text: "The H.U.G. Protocol requires access to your digital conciousness to continue.",
         options: [{
             text: "Consent.",
             setState: {
-                noLight: true
+                noLight: true,
+                noChip: true,
             }, // Sets starting inventory for the player.          
-            nextText: 2, // advances to main HUB area.
+            nextText: 2, // Advances to main HUB area.
         }]
     },
-    { 
-        id: 2, // Main HUB area, allows travel to other zones.
-        text: "Welcome to the <em>[H.U.G.-HUB.]</em> Where would you like your Digital Concious to travel?",
+    { // Main HUB area, allows travel to other zones.
+        id: 2, 
+        text: "Welcome to the <em>[H.U.G.][HUB]</em> Where would you like your Digital Concious to travel?",
         options: [{
                 text: "Left.",
                 requiredState: (currentState) => currentState.noLight, // Requires noLight:true to display.           
-                nextText: 3, // advances to id: 2
+                nextText: 3, // Advances Unlit Maths Game Area.
             },
             {
                 text: "Left.", // Requires lightOn:true to display.
                 requiredState: (currentState) => currentState.lightOn, 
-                nextText: 33, // Start MathGame Area
+                nextText: 33, // Start Maths Game Area.
             },
             {
                 text: "Left.",
-                requiredState: (currentState) => currentState.bigBrain, // Requires bigBrain:true to display.
-                nextText: 333, // Completed MathGame Area
+                requiredState: (currentState) => currentState.bigBrain || currentState.blueChip, // Requires bigBrain:true or blueChip:true to display.
+                nextText: 333, // Completed Maths Game Area.
             },
             {
-                text: "Forward.", // Fail Score Increase Test.
-                nextText: 13,
+                text: "Forward.", 
+                nextText: 100, // Path to Final Area.
             },
             {
                 text: "Right.", // End Game Test.
@@ -349,8 +350,8 @@ const textNodes = [{
         ]
     },
     ////////////////////////////////////HEAD LEFT SECTION////////////////////////////////////
-    { 
-        id: 3, // If choosing "left" for the first time from the "Main HUB" (id: 2).
+    { // "Left" for the first time from the HUB (id: 3).
+        id: 3, 
         text: "This room is filled with darkness and the sound of whirring machines. How do you proceed?",
         options: [{
                 text: "Feel around for a light switch.",
@@ -362,8 +363,8 @@ const textNodes = [{
             },
         ]
     },
-    { 
-        id: 4, // Activate the light switch
+    { // Activate the light switch
+        id: 4, 
         text: "Flicking a nearby switch illuminates the room with glowing light. You see a large, square room, packed with glowing panels, long cables and buzzing servers.",
         options: [{
             text: "Approach the central console.",
@@ -374,16 +375,16 @@ const textNodes = [{
             nextText: 33, // Returns to Hub
         }, ]
     },
-    { 
-        id: 5, // Brave the darkness (+1 to failScore)
+    { // Brave the darkness (id: 5,) (+1 to failScore).
+        id: 5, 
         text: "You trip over the scattered wires... not your finest plan.",
         options: [{
             text: "Stumble towards the light switch",
             nextText: 4, // Find the light switch
         }, ]
     },
-    { 
-        id: 33, // If choosing "left" from the HUB with lightsOn.
+    { // "Left" from the HUB with lightsOn. (id: 33).
+        id: 33, 
         text: "You see a central machine running complex equations. A text box appears on the monitor: [Run Maths Protocol?]",
         options: [{
                 text: "Flee from the concept of Maths.",
@@ -395,19 +396,20 @@ const textNodes = [{
             },
         ]
     },
-    { 
-        id: 34, // After completing the Math Game.
+    { // After completing the Math Game.(id: 34).
+        id: 34, 
         text: "[Protocol Complete!] appears on the monitor, as a small hand shaped console springs from it's side.",
         options: [{
             text: "Place hand on the console.",
             setState: {
                 bigBrain: true,
-                lightOn: false
+                noChip: false,
+                lightOn: false,
             }, // Sets bigBrain to true. Removes lightsOn property to change where left takes you from the HUB.
             nextText: 35, 
         }, ]
     },
-    { 
+    { // Continues from above.
         id: 35,
         text: "The advanced machine creeks to life. Emitting an eerie blue light, it begins to scan your hand.",
         options: [{
@@ -415,39 +417,143 @@ const textNodes = [{
             nextText: 36, 
         }]
     },
-    { 
+    { // Continues from above.
         id: 36,
-        text: "You feel your head pulse for a moment. Looking down at your hand reveals a small blue mark has been inserted into the palm.",
+        text: "You feel your head pulse for a moment. Looking down at your hand reveals a small blue chip has been inserted into the palm.",
         options: [{
             text: "Head back to [HUB].",
             nextText: 2, // Returns to Hub
         }]
     },
-    { 
-        id: 333, // If "choosing" left after completing the Maths game.
+    { // "Left" after completing the Maths game. (id: 333).
+        id: 333, 
         text: "The lights from the buzzing machinery, dance along the drab, white, interior of this room. Creating ominous shadows that overwhelm it's cramped interior.",
         options: [{
             text: "Head back to [HUB].",
             nextText: 2, // Returns to Hub
         }]
     },
-    { // If choosing "up" from the "Main HUB" (id: 2).
-        id: 13,
-        text: "Fail score should go up by 1.",
+    ////////////////////////////////////HEAD FORWARD SECTION////////////////////////////////////
+    { // "Forward" from the HUB (id: 100).
+        id: 100,
+        text: "Under a small archway, you see a large mechanical blast door with a nearby computer panel.",
         options: [{
-            text: "Head back to [HUB].",
+            text: "Examine the door.",
+            requiredState: (currentState) => currentState.noChip || currentState.bigBrain && !currentState.redChip || currentState.fleetFoot && !currentState.blueChip, // Shows when either: no chip; bigBrain and no redChip; or fleetFoot and no blueChip are active.
+            nextText: 101,
+        },
+        {
+            text: "Examine the door. (BlueChip)",
+            requiredState: (currentState) => currentState.blueChip && !currentState.redChip, // Shows when blueChip is active and no redChip.
+            nextText: 111,
+        },
+        {
+            text: "Examine the door. (RedChip)",
+            requiredState: (currentState) => currentState.redChip && !currentState.blueChip, // Shows when redChip is active and no blueChip.
+            nextText: 112,
+        },
+        {
+            text: "Examine the door. (BothChips)",
+            requiredState: (currentState) => currentState.redChip && currentState.blueChip, // Shows when bothChips are active.
+            nextText: 113,
+        },
+        {
+            text: "Examine the panel.",
+            nextText: 102,
+        },
+        {
+            text: "Head back to [HUB]..",
             nextText: 2,
         }, ]
     },
-    { // If choosing "up" from the "Main HUB" (id: 2).
-        id: 13,
-        text: "Fail score should go up by 1.",
+    { // Examining the blast door (id: 101).
+        id: 101,
+        text: "The blast door is firmly sealed. You see two dimly lit symbols above it.",
         options: [{
-            text: "Head back to [HUB].",
-            nextText: 2,
+            text: "Return.",
+            nextText: 100,
         }, ]
     },
-    ////////////////////////////////////HEAD UP SECTION////////////////////////////////////
+    { // Blast door with blue chip.
+        id: 111,
+        text: "A single blue symbol gleams brightly above the blast door.",
+        options: [{
+            text: "Return.",
+            nextText: 100,
+        }, ]
+    },
+    { // Blast door with red chip.
+        id: 112,
+        text: "A single red symbol glistens strongly above the blast door.",
+        options: [{
+            text: "Return.",
+            nextText: 100,
+        }, ]
+    },
+    { // Blast door with both chips.
+        id: 113,
+        text: "Both a blue and red symbol shine strongly above the blast door. With a loud scraping sound, the doorway begins to open.",
+        options: [{
+            text: "Proceed.",
+            nextText: 200, // TAKE TO ROOM WHERE END GOAL IS REVEALED GAME ENDS.
+        }, ]
+    },
+    { // Examining the monitor. (id: 103).
+        id: 102,
+        text: "You see a small white computer with a hand-shaped scanning device protruding from its side.",
+        options: [
+        {
+            text: "Place hand on the scanner.",
+            requiredState: (currentState) => currentState.noChip,
+            nextText: 103,
+        },
+        {
+            text: "Press the blue button and place hand on the scanner.",
+            requiredState: (currentState) => currentState.bigBrain,
+            nextText: 104,
+        },
+        {
+            text: "Press the red button and place hand on the scanner.",
+            requiredState: (currentState) => currentState.fleetFoot,
+            nextText: 105,
+        },
+        {
+            text: "Return.",
+            nextText: 100,
+        }, ]
+    },
+    { // Hand scanner - noChip.
+        id: 103,
+        text: "Nothing seems to happen.",
+        options: [{
+            text: "Return.",
+            nextText: 102, // Returns to examining the monitor.
+        }, ]
+    },
+    { // Hand scanner - bigBrain.
+        id: 104,
+        text: "You feel pain wrack your hand. You notice the chip in your palm glowing a soft blue as a light above the blast door illuminates.",
+        options: [{
+            text: "Back away from the machine.",
+            setState: {
+                bigBrain: false,
+                blueChip: true,
+            },
+            nextText: 102,
+        },]
+    },
+    { // Hand scanner - fleetFoot.
+        id: 105,
+        text: "You feel a mechanical burn as the laser scans your palm. The chip in your palm glows a bright red as a light above the blast door begins to glow.",
+        options: [{
+            text: "Back away from the machine.",
+            setState: {
+                fleetFoot: false,
+                redChip: true,
+            },
+            nextText: 102,
+        },]
+    },
     { // If choosing "up" from the "Main HUB" (id: 2).
         id: 13,
         text: "Fail score should go up by 1.",
