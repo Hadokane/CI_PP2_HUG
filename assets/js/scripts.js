@@ -103,7 +103,7 @@ function areYouSure(){
     yesBtn.addEventListener("click", () => window.location.reload());
 };
 
-// Ends the game if the game.failScore reaches above 5.
+// Ends the game if the game.failScore reaches 5 or above.
 function gameFailCheck(){
     if (game.failScore > 4) {
         // Set game-window and gameOverWindow to variables.
@@ -329,12 +329,12 @@ const textNodes = [
                 nextText: 333, // Completed MathGame
             },
             {
-                text: "Forward",
+                text: "Forward", // fail test
                 nextText: 13,
             },
             {
-                text: "Right",
-                nextText: 15,
+                text: "Right", // end game test
+                nextText: -2,
             },
         ]
     },
@@ -600,18 +600,12 @@ function checkAnswer(){
 
 ////////////////////////////////////////////////////////////////////////
 
-// Loads cards for final act of the game.
-function finalProtocol() {
-    // TEST
-    game.text = "The Final Assessment."
-    updateText();
-    
-    // Array data for cards
-    let members = {
-        firstname: ["Jim", "Pam", "Steve", "Urkle", "Johnny", "Benjamin", "Hooper", "Eleanor", "Marge", "Big", "Naruto", "Myuzaki", "Ronald", "Bjorn", "Golden", "Max", "Julia", "Mr.", "Mrs.", "Senior",],
-        lastname: ["Stevenson", "Bjornson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubador", "The Great", "Power", "Radaghast",],
-        skill: ["East-End Bartender", "Computer Scientist", "Full-Time Dungeon Master", "Weekend Dog Walker", "Middle School Teacher", "Developer of Indie RPG'S", "Airsoft Enthusiast", "Owns a Katana Collection", "Drives a '67 Chevrolet Impala", "Has Been To France Twice", "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fanfiction", "Has Eaten a Glass of Water With Chopsticks"],
-        avatar: [
+// Array data for cards
+let members = {
+    firstname: ["Jim", "Pam", "Steve", "Urkle", "Johnny", "Benjamin", "Hooper", "Eleanor", "Marge", "Big", "Naruto", "Myuzaki", "Ronald", "Bjorn", "Golden", "Max", "Julia", "Mr.", "Mrs.", "Senior",],
+    lastname: ["Stevenson", "Bjornson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubador", "The Great", "Power", "Radaghast",],
+    skill: ["East-End Bartender", "Computer Scientist", "Full-Time Dungeon Master", "Weekend Dog Walker", "Middle School Teacher", "Developer of Indie RPG'S", "Airsoft Enthusiast", "Owns a Katana Collection", "Drives a '67 Chevrolet Impala", "Has Been To France Twice", "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fanfiction", "Has Eaten a Glass of Water With Chopsticks"],
+    avatar: [
             "assets/images/avatar/av1.png", 
             "assets/images/avatar/av2.png", 
             "assets/images/avatar/av3.png", 
@@ -637,7 +631,13 @@ function finalProtocol() {
             "assets/images/avatar/av23.png",
             "assets/images/avatar/av24.png",
         ]
-    }
+}
+
+// Loads cards for final act of the game.
+function finalProtocol() {
+    // TEST
+    game.text = "The Final Assessment."
+    updateText();
     // Developing a random function for array selection // i < 8 as I want 8 cards to display
     for (let i = 0; i < 8; i++) {
         // Generates a random number each time the code is ran, within confines of array.length
@@ -666,7 +666,7 @@ function finalProtocol() {
                     <p class="card-text">${namerSkill}.</p>
                 </div>
                 <div class="card-footer bg-transparent border-danger">
-                        <a href="#" class="stretched-link h-100">Replace?</a>
+                    <a href="#" class="stretched-link h-100">Replace?</a>
                 </div>
             </div>
         `;
@@ -694,7 +694,6 @@ function finalProtocol() {
             destroySoundF.volume = 0.1;
             // Select one of the above sounds to play at random
             let x = Math.round(Math.random());
-            console.log(x);
             if (x === 1){
                 destroySoundF.play();
             } else {
@@ -710,10 +709,10 @@ function finalProtocol() {
                 await sleep(3000);
                 game.text = `Just kidding ${username}. Excellent work!`;
                 updateText();
-                 // Loads the questions section
-                 await sleep(3000);
-                 document.getElementById("sacrifice-card").remove(sacrifice);
-                 runEnding(); // change to correct place
+                // Loads the questions section
+                await sleep(3000);
+                document.getElementById("sacrifice-card").removeChild(sacrifice);
+                runEnding(); // change to correct place
             };
             delayedOutro();
         });
@@ -722,42 +721,51 @@ function finalProtocol() {
 
 // Runs the games true ending, provides a restart button for the user.
 function runEnding(){
-            // Creates the users card
-            userCard = document.createElement("div");
-            // Adds column sizing to the parent div to hold the cards
-            userCard.classList.add("build"); 
-            // Sets cards innerHTML
-            userCard.innerHTML = `
-                <div class="card text-center h-100">
-                    <div class="card-body h-100">
-                        <h3 class="card-title">${username}</h3>
-                        <p class="card-text">Newest member of the H.U.G. Protocol</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-danger">
-                            <a href="#" class="stretched-link h-100">Digital Conscious Uploaded</a>
-                    </div>
-                </div>
-            `;
-            document.getElementById("sacrifice-card").append(userCard);
-            async function delayedEnd(){
-                game.text = `Congratulations! ${username} You have successfully passed the H.U.G. Protocol`;
-                updateText();
-                await sleep(3000);
-                game.text = "We have stored the Digital ID of your Conscious";
-                updateText();
-                await sleep(3000);
-                game.text = "Thank you for your time.";
-                updateText();
-                await sleep(3000);
-                game.text = "You are now authorised to recruit further members.";
-                updateText();
-                // Creates the replay button
-                replayBtn = document.createElement("button");
-                replayBtn.innerHTML= `<em>[Begin Protocol]<em>`;
-                replayBtn.classList.add("btn", "btn-block");
-                document.getElementById("user").append(replayBtn);
-                // Replay button launches a new game.
-                replayBtn.addEventListener("click", () => window.location.reload());
-            }
-            delayedEnd();
+    // Generates a random avatar image from the remaining array.
+    let randomAv = Math.floor(Math.random() * members.avatar.length); 
+    let namerAv = members.avatar.splice(randomAv, 1);
+    // Creates the users card
+    userCard = document.createElement("div");
+    // Adds column sizing to the parent div to hold the cards
+    userCard.classList.add("build"); 
+    // Sets cards innerHTML
+    userCard.innerHTML = `
+        <div class="card text-center h-100">
+            <img class="card-img-top" src=${namerAv} alt="Card image">
+            <div class="card-body h-100">
+                <h3 class="card-title">${username}</h3>
+                <p class="card-text">Newest member of the H.U.G. Protocol</p>
+                <p class="card-text">Failures: ${game.failScore}</p>
+            </div>
+            <div class="card-footer bg-transparent border-danger">
+                <a href="#" class="stretched-link h-100">Digital Conscious Uploaded</a>
+            </div>
+        </div>
+        `;
+    document.getElementById("sacrifice-card").append(userCard);       
+    // Plays final message and creates a replay button        
+    async function delayedEnd(){
+        game.text = `Congratulations! ${username} You have successfully passed the H.U.G. Protocol`;
+        updateText();
+        await sleep(3000);
+        game.text = "We have stored the Digital ID of your Conscious";
+        updateText();    
+        await sleep(3000);
+        game.text = "Thank you for your time.";
+        updateText();
+        await sleep(3000);
+        game.text = "Feel free to screenshot your ID below.";
+        updateText();
+        await sleep(3000);
+        game.text = "You are now authorised to recruit further members.";
+        updateText();
+        // Creates the replay button
+        replayBtn = document.createElement("button");
+        replayBtn.innerHTML= `<em>[Begin Protocol]<em>`;
+        replayBtn.classList.add("btn", "btn-block");
+        document.getElementById("user").append(replayBtn);
+        // Replay button launches a new game.
+        replayBtn.addEventListener("click", () => window.location.reload());
+    }
+    delayedEnd();
 };

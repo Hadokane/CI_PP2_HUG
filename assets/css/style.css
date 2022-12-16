@@ -10,7 +10,9 @@ body {
 }
 
 /* --------- Body Background Colour */
-
+#game-footer{
+    background-color: rgba(0,0,0,.25);
+}
 
 /* --------- Game Window style */
 #game-window{
