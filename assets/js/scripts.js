@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Calling initial functions
     updateText(); // Displays game.text in the HTML Div
     setScore(0); // Adds 0 to the game.failScore and initialises it
-    runHubWorld() // runs a newGame() in final.
+    newGame(); // runs a newGame().
 });
 
 // Setting the players username to a global variable so it is accessible in all areas of the game.
@@ -20,7 +20,7 @@ var username = `<span id='username-style'> Steve </span>`; // Providing default 
 let game = {
     failScore: 0, // Once this reaches 5 or more you are rejected. Ending the game.
     mathScore: 0, // Used to advance the questions during the Maths game
-    text: "THIS IS WORKING!", // Test text, set to empty in final.
+    text: "", // Set to empty.
 };
 
 /**
@@ -452,17 +452,17 @@ const textNodes = [{
                 nextText: 101,
             },
             {
-                text: "Examine the door. (BlueChip)",
+                text: "Examine the door.",
                 requiredState: (currentState) => currentState.blueChip && !currentState.redChip, // Shows when blueChip is active and no redChip.
                 nextText: 111,
             },
             {
-                text: "Examine the door. (RedChip)",
+                text: "Examine the door.",
                 requiredState: (currentState) => currentState.redChip && !currentState.blueChip, // Shows when redChip is active and no blueChip.
                 nextText: 112,
             },
             {
-                text: "Examine the door. (BothChips)",
+                text: "Examine the door.",
                 requiredState: (currentState) => currentState.redChip && currentState.blueChip, // Shows when bothChips are active.
                 nextText: 113,
             },
@@ -541,16 +541,8 @@ const textNodes = [{
         }, ]
     },
     { // Continues from above.
-        id: 203,
-        text: `Well done on making it this far ${username} but as you can see our membership ranks are rather full at the moment.`,
-        options: [{
-            text: "Proceed.",
-            nextText: 204,
-        }, ]
-    },
-    { // Continues from above.
         id: 204,
-        text: "You seem to have reached our central targetting array, where we track the position of each active member.",
+        text: `Well done on making it this far, but as you can see our membership ranks are rather full at the moment.`,
         options: [{
             text: "Proceed.",
             nextText: 205,
@@ -558,7 +550,7 @@ const textNodes = [{
     },
     { // Continues from above.
         id: 205,
-        text: "If something were to happen to one of our <em>beloved</em> members... well, it would surely open up a position.",
+        text: "You seem to have reached our central targetting array, where we track the position of each active member.",
         options: [{
             text: "Proceed.",
             nextText: 206,
@@ -566,14 +558,22 @@ const textNodes = [{
     },
     { // Continues from above.
         id: 206,
-        text: "Looking down you notice a number of images begin to appear. People. Families. Targets.",
+        text: "If something were to happen to one of our <em>beloved</em> members... well, it would surely open up a position.",
         options: [{
             text: "Proceed.",
             nextText: 207,
         }, ]
     },
-    { // Launches the finalProtocol.
+    { // Continues from above.
         id: 207,
+        text: "Looking down you notice a number of images begin to appear. People. Families. Targets.",
+        options: [{
+            text: "Proceed.",
+            nextText: 208,
+        }, ]
+    },
+    { // Launches the finalProtocol.
+        id: 208,
         text: "The screen seems to be willing you on to make a selection...",
         options: [{
             text: "Do what must be done.",
@@ -1179,7 +1179,7 @@ function finalProtocol() {
     }
 };
 
-// Runs the games ending, providing a restart button for the user.
+/** Runs the games ending, providing a restart button for the user. */
 function runEnding() {
     // Generates a random avatar image from the remaining array.
     let randomAv = Math.floor(Math.random() * members.avatar.length);
@@ -1196,7 +1196,7 @@ function runEnding() {
                 <p class="card-text">Failures: ${game.failScore}</p>
             </div>
             <div class="card-footer bg-transparent border-danger">
-                <a href="#" class="stretched-link h-100">Digital Conscious Uploaded</a>
+                <a class="stretched-link h-100">Digital Conscious Uploaded</a>
             </div>
         </div>
         `;
