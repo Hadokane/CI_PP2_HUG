@@ -290,7 +290,7 @@ function selectOption(option) {
         finalProtocol();
 
         // Checks to see if the "nextText" ID matches. Then adds to the players failScore by 1.
-    } else if ((nextTextNodeId === 13 | nextTextNodeId === 5)) {
+    } else if ((nextTextNodeId === 5 | nextTextNodeId === 53| nextTextNodeId === 60 | nextTextNodeId === 64)) {
         setScore(1);
     };
 
@@ -396,12 +396,12 @@ const textNodes = [{
         id: 33,
         text: "You see a central machine running complex equations. A text box appears on the monitor: [Run Maths Protocol?]",
         options: [{
-                text: "Flee from the concept of Maths.",
-                nextText: 2, // Returns to Hub.
-            },
-            {
                 text: "[Run Maths Protocol.]",
                 nextText: -1, // Runs Math Game.
+            },
+            {
+                text: "Flee from the concept of Maths.",
+                nextText: 2, // Returns to Hub.
             },
         ]
     },
@@ -614,7 +614,7 @@ const textNodes = [{
     },
     { // Hand scanner - bigBrain.
         id: 104,
-        text: "You feel pain wrack your hand. You notice the chip in your palm glowing a soft blue as a light above the blast door illuminates.",
+        text: "You feel pain wrack your hand. You notice the chip in your palm glowing a soft blue, as a light above the blast door illuminates.",
         options: [{
             text: "Back away from the machine.",
             setState: {
@@ -652,7 +652,7 @@ const textNodes = [{
     },
     { // Continues from above.
         id: 51,
-        text: "This appears to be a treacherous, obstacle ridden path. Your not sure you can return.",
+        text: "This appears to be a treacherous, obstacle ridden path. You're not sure you can return.",
         options: [{
                 text: "Head down the path.",
                 nextText: 52, // Proceed down path.
@@ -764,7 +764,7 @@ const textNodes = [{
     },
     { // Obstacle course continues.
         id: 60,
-        text: "As you step onto the undamaged plates. You feel the weight of your body sink them down. As each pressure plate reaches the ground, rocks begin to fall from directly above. Pelting you as you hurry across the path",
+        text: "As you step onto the undamaged plates. The weight of your body causes them to press down. As each pressure plate reaches the ground, rocks begin to fall from directly above. Pelting you as you hurry across the path",
         options: [{
             text: "Ouch",
             nextText: 61,
