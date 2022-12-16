@@ -120,8 +120,8 @@ label {
 .card {
     box-shadow: 2px 2px;
     transition: 0.25s ease;
-    /* --------- card class h-100, fills entire div, scaling it down allows for space between the cards while keeping the sizes relative. */
-    transform: scale(95);
+    /* --------- card class h-100, fills entire height of the div causing them to touch. Scaling them down allows for space between the cards while keeping the sizes relative. */
+    transform: scale(0.95);
 }
 
 /* --------- Hover effects */
