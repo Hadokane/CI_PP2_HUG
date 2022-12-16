@@ -10,12 +10,12 @@ body {
 }
 
 /* --------- Body Background Colour */
-#game-footer{
-    background-color: rgba(0,0,0,.25);
+#game-footer {
+    background-color: rgba(0, 0, 0, .25);
 }
 
 /* --------- Game Window style */
-#game-window{
+#game-window {
     background-color: antiquewhite;
     height: fit-content;
     padding: 2em;
@@ -23,7 +23,7 @@ body {
 
 /* --------- Computer Player Window style */
 #comp-player,
-#gameover-window{
+#game-over-window {
     background-color: yellowgreen;
     color: green;
     text-align: center;
@@ -33,17 +33,17 @@ body {
 }
 
 /* --------- Computer Players Text styling */
-h2{
+h2 {
     font-size: 3em;
 }
 
 /* --------- Label used by Math Questions and Username box*/
-label{
+label {
     font-size: 2em;
 }
 
 /* --------- Math Questions Styling */
-#math-question{
+#math-question {
     font-size: 3em;
     background-color: aquamarine;
     color: black;
@@ -53,9 +53,9 @@ label{
 }
 
 /* --------- Button style */
-.btn{
+.btn {
     background-color: rebeccapurple;
-    color:white;
+    color: white;
     border-radius: 10%;
     text-align: center;
     margin-bottom: 32px;
@@ -64,13 +64,13 @@ label{
 }
 
 /* --------- Color and font family of the username text box */
-.user-text{
+.user-text {
     font-family: 'Gloria Hallelujah', cursive;
     color: red;
 }
 
 /* --------- Username display style */
-#username-style{
+#username-style {
     color: black;
     font-style: italic;
     font-family: 'VT323', monospace;
@@ -84,7 +84,7 @@ label{
     box-shadow: 2px 2px;
     transition: 0.25s ease;
     /* --------- card class h-100, fills entire div, scaling it down allows for space between the cards while keeping the sizes relative. */
-    scale: 95%; 
+    scale: 95%;
 }
 
 /* --------- Hover effects */
@@ -96,13 +96,13 @@ label{
 }
 
 /* --------- Card name style */
-h3{
+h3 {
     font-size: 1.75em;
     font-weight: bold;
 }
 
 /* --------- Card skill style */
-p{
+p {
     font-size: 1.25em;
     font-style: oblique;
     font-weight: normal;
@@ -114,21 +114,32 @@ p{
     font-size: 1em;
 }
 
-/* --------- onClick destory style for selected card */
-.destroy{  
+/* --------- onClick destroy style for selected card */
+.destroy {
     outline: 6px solid black;
     animation: fadeToGrey 5s ease-out forwards;
 }
 
-/* --------- overide card:hover */
-.destroy:hover{
+/* --------- override card:hover */
+.destroy:hover {
     outline: 6px solid black;
 }
 
-/* --------- Animation to fade the card to grey when the destory class is added */
+/* --------- Animation to fade the card to grey when the destroy class is added */
 @keyframes fadeToGrey {
-    from {filter: grayscale(0%);}
-    to {filter: grayscale(100%);}
-    from {opacity: 100%;}
-    to {opacity: 60%;}
+    from {
+        filter: grayscale(0%);
+    }
+
+    to {
+        filter: grayscale(100%);
+    }
+
+    from {
+        opacity: 100%;
+    }
+
+    to {
+        opacity: 60%;
+    }
 }

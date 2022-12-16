@@ -64,11 +64,11 @@ https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/ - diff
 
 https://www.sitepoint.com/delay-sleep-pause-wait/ - explained the premise of a sleep function and the use of promises to stagger my code for the automated chat box. Allowing for a more user friendly experience by reducing the number of button presses required to progress for the user. Creating the illusion of a sentient AI presence.
 
-https://www.youtube.com/watch?v=GUEB9FogoP8 - Good tutorial on animations, couldnt get working.
+https://www.youtube.com/watch?v=GUEB9FogoP8 - Good tutorial on animations, couldn't get working.
 
 https://code-boxx.com/allow-one-click-javascript/ - Remove onclick from button idea.
 
-https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener - Javascript advice and reminders, namely with evenlisteners and DOM targetting/navigation.
+https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener - Javascript advice and reminders, namely with event listeners and DOM targetting/navigation.
 
 https://personas.draftbit.com/ - Avatar Generator for images on the cards
 
@@ -80,8 +80,8 @@ https://codepen.io/gunnarbittersmann/pen/XpqmgJ?editors=0100 - fade to black and
 
 https://www.youtube.com/watch?v=O8IJepb-hlQ - Left 4 Dead death sounds sampled to make the destroy audio for this game.
 
-https://www.w3schools.com/- Used for all java, css, html reserach throughout project.
+https://www.w3schools.com/- Used for all java, css, html research throughout project.
 
 https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp - hide show for buttons
 
-https://dev.to/javascript_jeep/how-to-empty-the-dom-element-in-javascript-nf8 - Empties divs out.
+https://dev.to/javascript_jeep/how-to-empty-the-dom-element-in-javascript-nf8 - Empties div.
