@@ -4,17 +4,11 @@
 
 ***Italic Text***
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-------
-
 ![Logo](assets/images/)
 
 # The H.U.G. Initiative
 
-## The digital home of the subversive Javascript game.
+## The digital home of the subversive Text Adventure Game.
 
 ![UI](docs/ui/)
 
@@ -24,15 +18,17 @@ To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the ter
 
 [Developer - HK_Dev](https://github.com/Hadokane "Hadokane - Github")
 
-[Commit Log](https://github.com/Hadokane/)
+[Commit Log](https://github.com/Hadokane/CI_PP2_HUG/commits/main)
 
 **Live Website Link:**
 
-[Live Website](https://hadokane.github.io/CI_PP2 "H.U.G.")
+[Live Website](https://hadokane.github.io/CI_PP2_HUG/ "H.U.G. Protocol")
 
 **Repository Pages:**
 
-[Repository page - Index.html](../)
+[Repository page - index.html](https://github.com/Hadokane/CI_PP2_HUG/blob/main/index.html#L3)
+[Repository page - style.css](https://github.com/Hadokane/CI_PP2_HUG/blob/main/assets/css/style.css)
+[Repository page - scripts.js](https://github.com/Hadokane/CI_PP2_HUG/blob/main/assets/js/scripts.js)
 
 ---
 ## Academic Project Aims
@@ -44,7 +40,7 @@ The academic aim of this project is to demonstrate my newly developed skills wit
 
 I intend to display this throughout the project via my: coding, comments, commits, and the explanation provided by this README file.
 
-Additional functionality has been provided by the framework [Bootstrap 4.6](https://getbootstrap.com/).
+Additional functionality has been provided by the framework [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/) & [jQuery 3.6.1](https://jquery.com/download/).
 
 Great care has been taken, to ensure that the website is designed to meet best practice standards, and is responsive on all screen resolutions.
 
@@ -55,6 +51,78 @@ It has been tested on a variety of devices and screen resolutions, from mobiles 
 ---
 
 1. [User Experience (UX)](#user-experience---ux)
+
+---
+## Deployment
+---
+
+The website was deployed on GitHub through the following steps:
+
+1. Login into GitHub and navigate to this repository - [CI_PP2_H.U.G.](https://github.com/Hadokane/CI_PP2_HUG)
+2. Head to the "Settings" tab on the navigation menu and select it.
+3. On the left sidebar select "Pages".
+4. Under "Build and deployment" you will see a heading names "Source". Click on the dropdown menu and select: "Branch: main" leaving the file as "/(root)"
+5. Click the save button.
+6. A URL will appear in your newly deployed repository.
+7. GitHub will process your request and the bar's colour will change from blue to green on a page refresh, indicating that the page has been deployed.
+8. The website is now live and deployed at the following URL: https://hadokane.github.io/CI_PP2_HUG/
+
+![CI_PP1_Oversights](docs/screenshots/git_deploy.png)
+
+**Forking**
+1. Login into GitHub and navigate to this repository - [CI_PP2_H.U.G.](https://github.com/Hadokane/CI_PP2_HUG)
+2. Select the "Fork" tab on the navigation menu.
+3. Choose a destination to save your newly forked repository.
+
+[Back to top ↑](#the-oversights---band-website)
+
+---
+## Credits 
+---
+
+### Languages Used
+
+- HTML 5
+- CSS 3
+- Javascript ES2022
+- jQuery 3.6.1
+
+### Frameworks Used
+
+- [Bootstrap 4](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - For their responsive grid and container system.
+- [jQuery](https://jquery.com/download/) - For their responsive grid and container system.
+
+
+### Validators Used
+
+- [W3C HTML Validator](https://validator.w3.org/) - Validation of HTML
+- [W3C JigSaw Validator](https://jigsaw.w3.org/css-validator/) - Validation of CSS
+- [Lighthouse & Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Performance testing
+- [Webaim](https://wave.webaim.org/) - Accessibility testing
+
+### Technologies Used
+
+1. [CI TEMPLATE](https://github.com/Code-Institute-Org/gitpod-full-template) - This repository was initially created using Code Institute's provided template.
+
+2. [Markdown Guide](https://www.markdownguide.org/cheat-sheet/) - For their "Markdown Cheat Sheet" and assistive documents on writing a README.md file.
+
+7. [Compressjpeg](https://compressjpeg.com/) - For allowing me to compress images and keep image file size down.
+
+8. [AnyWebp](https://anywebp.com/convert-to-webp.html) - For allowing me to convert images into a .webp format for use in picture elements, to improve the mobile functionality scores of the website.
+
+9. [Grammarly](https://app.grammarly.com/) - For spell-checking my Text Based Adventure Module during brainstorming.
+
+11. [Am I Responsive](https://ui.dev/amiresponsive) - For providing the mock-up image featured at the top of this document.
+
+12. [Google Fonts](https://fonts.google.com/) - For access to their wealth of commercially-available fonts.
+
+13. [Favicon.io](https://favicon.io/) - For providing an emoji based favicon for use in this game.
+
+14. [Balsamiq](https://balsamiq.com/) - For providing software to create the wireframes seen in this README.
+
+15. [GitHub](https://github.com/) - For serving as my IDE of choice and allowing me to create and deploy my repository for user testing and submission purposes.
+
+[Back to top ↑](#the-oversights---band-website)
 
 HELPFUL LINKS:
 
@@ -89,3 +157,18 @@ https://dev.to/javascript_jeep/how-to-empty-the-dom-element-in-javascript-nf8 - 
 https://www.npmjs.com/package/textfit?activeTab=readme - TextFit  plugin installed.
 
 https://lospec.com/palette-list/ayy4 - palette I used.
+
+https://speckyboy.com/css-javascript-animated-backgrounds - Background from here.
+
+---
+## Acknowledgements
+---
+
+With thanks to:
+- My family and friends - for keeping me on task and providing a helpful eye and user-testing across multiple devices and browsers.
+
+- Code Institute & its slack community - for providing me with the necessary skills, knowledge and guidance to execute this project off.
+
+[Back to top ↑](#the-oversights---band-website)
+
+---
