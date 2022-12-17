@@ -1,7 +1,7 @@
 // Waits for the DOM to finish loading before running the game.
 document.addEventListener("DOMContentLoaded", function () {
-
-    // Quit button launches a new game.
+    
+   // Quit button launches a new game.
     generateQuitBtn();
     quitBtn.addEventListener("click", () => areYouSure());
 
