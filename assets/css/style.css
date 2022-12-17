@@ -22,7 +22,7 @@ body {
 
 /*--- Stops fixed-footer overlapping content. */
 body {
-
+    background: #00303b;
     padding-bottom: 120px;
 }
 

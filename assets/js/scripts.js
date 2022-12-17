@@ -1,7 +1,7 @@
 // Waits for the DOM to finish loading before running the game.
 document.addEventListener("DOMContentLoaded", function () {
-    
-   // Quit button launches a new game.
+
+    // Quit button launches a new game.
     generateQuitBtn();
     quitBtn.addEventListener("click", () => areYouSure());
 
@@ -290,7 +290,7 @@ function selectOption(option) {
         finalProtocol();
 
         // Checks to see if the "nextText" ID matches. Then adds to the players failScore by 1.
-    } else if ((nextTextNodeId === 5 | nextTextNodeId === 53| nextTextNodeId === 60 | nextTextNodeId === 64)) {
+    } else if ((nextTextNodeId === 5 | nextTextNodeId === 53 | nextTextNodeId === 60 | nextTextNodeId === 64)) {
         setScore(1);
     };
 
@@ -858,7 +858,7 @@ const textNodes = [{
     },
     { // Continues from above.
         id: 68,
-        text: "You hear stone begin to shift, as the stone floor begins to fall away beneath you.",
+        text: "You hear stone begin to shift, as the floor begins to fall away beneath you.",
         options: [{
             text: "Fall into the hole.",
             nextText: 69,
