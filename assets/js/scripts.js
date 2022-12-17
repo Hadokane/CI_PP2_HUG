@@ -1020,6 +1020,8 @@ function correctAnswer() {
 function checkAnswer() {
     // Gets the users answer from the box. parseInt converts the string to a number.
     let userAnswer = parseInt(document.getElementById("answer-box").value);
+    // Clears text from the answer box.
+    document.getElementById("answer-box").value = "";
     // Runs the correctAnswer function to get the correct answer.
     let calculateAnswer = correctAnswer();
     // Compares this against the users answer.
@@ -1059,11 +1061,11 @@ function checkAnswer() {
 
 // Array data for generating cards.
 let members = {
-    firstname: ["Jim", "Pam", "Steve", "Urkel", "Johnny", "Benjamin", "Hooper", "Eleanor", "Marge", "Big", "Naruto", "Miyazaki", "Ronald", "Björn", "Golden", "Max", "Julia", "Mr.", "Mrs.", "Senior", ], // 20* fNames
-    lastname: ["Stevenson", "Björnson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubadour", "The Great", "Power", "Radagast", ], // 17* lNames
+    firstname: ["Jim", "Pam", "Steve", "Urkel", "Johnny", "Benjamin", "Hooper", "Eleanor", "Marge", "Big", "Naruto", "Miyazaki", "Ronald", "Björn", "Golden", "Max", "Julia", "Mr.", "Mrs.", "Senior", "Jacques", "Thelma", ], // 22* fNames
+    lastname: ["Stevenson", "Björnson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubadour", "The Great", "Power", "Radagast", "Drummond", ], // 18* lNames
     skill: ["East-End Bartender", "Computer Scientist", "Full-Time Dungeon Master", "Weekend Dog Walker", "Middle School Teacher", "Developer of Indie RPG'S", "Airsoft Enthusiast", "Owns a Katana Collection", "Drives a '67 Chevrolet Impala", "Has Been To France Twice",
-        "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fan Fiction", "Has Eaten a Glass of Water With Chopsticks"
-    ], // 15* Skills
+        "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fan Fiction", "Has Eaten a Glass of Water With Chopsticks", "Deep Sea Diver", "Librarian", 
+    ], // 17* Skills
     avatar: [
         "assets/images/avatar/av1.png",
         "assets/images/avatar/av2.png",
