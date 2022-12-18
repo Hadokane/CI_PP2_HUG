@@ -1,12 +1,6 @@
-## Header
+![Logo](assets/images/docs/logo/hp_logo.png)
 
-**Bold Text**
-
-***Italic Text***
-
-![Logo](assets/images/)
-
-# The H.U.G. Initiative
+# The H.U.G. Protocol
 
 ## The digital home of the subversive Text Adventure Game.
 
@@ -59,22 +53,25 @@ It has been tested on a variety of devices and screen resolutions, from mobiles 
 The website was deployed on GitHub through the following steps:
 
 1. Login into GitHub and navigate to this repository - [CI_PP2_H.U.G.](https://github.com/Hadokane/CI_PP2_HUG)
+    <details><summary>Deployment 1</summary><img src="assets/images/docs/deployment/dp1.png" alt="Deployment part 1"></details>
 2. Head to the "Settings" tab on the navigation menu and select it.
 3. On the left sidebar select "Pages".
+    <details><summary>Deployment 2</summary><img src="assets/images/docs/deployment/dp2.png" alt="Deployment part 2"></details>
 4. Under "Build and deployment" you will see a heading names "Source". Click on the dropdown menu and select: "Branch: main" leaving the file as "/(root)"
 5. Click the save button.
+    <details><summary>Deployment 3</summary><img src="assets/images/docs/deployment/dp3.png" alt="Deployment part 3"></details>
 6. A URL will appear in your newly deployed repository.
 7. GitHub will process your request and the bar's colour will change from blue to green on a page refresh, indicating that the page has been deployed.
 8. The website is now live and deployed at the following URL: https://hadokane.github.io/CI_PP2_HUG/
 
-![CI_PP1_Oversights](docs/screenshots/git_deploy.png)
+![CI_PP2_H.U.G.](assets/images/docs/deployment/dp4.png)
 
 **Forking**
 1. Login into GitHub and navigate to this repository - [CI_PP2_H.U.G.](https://github.com/Hadokane/CI_PP2_HUG)
 2. Select the "Fork" tab on the navigation menu.
 3. Choose a destination to save your newly forked repository.
 
-[Back to top ↑](#the-oversights---band-website)
+[Back to top ↑](#)
 
 ---
 ## Credits 
@@ -122,7 +119,7 @@ The website was deployed on GitHub through the following steps:
 
 15. [GitHub](https://github.com/) - For serving as my IDE of choice and allowing me to create and deploy my repository for user testing and submission purposes.
 
-[Back to top ↑](#the-oversights---band-website)
+[Back to top ↑](#)
 
 HELPFUL LINKS:
 
@@ -165,10 +162,10 @@ https://speckyboy.com/css-javascript-animated-backgrounds - Background from here
 ---
 
 With thanks to:
-- My family and friends - for keeping me on task and providing a helpful eye and user-testing across multiple devices and browsers.
+- My family and friends - For keeping me on task and providing a helpful eye and user-testing across multiple devices and browsers.
 
-- Code Institute & its slack community - for providing me with the necessary skills, knowledge and guidance to execute this project off.
+- Code Institute & its slack community - For providing me with the necessary skills, knowledge and guidance to execute this project off.
 
-[Back to top ↑](#the-oversights---band-website)
+[Back to top ↑](#)
 
 ---
