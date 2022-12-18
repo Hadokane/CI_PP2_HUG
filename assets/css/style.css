@@ -153,7 +153,7 @@ p {
 
 /* --------- onClick destroy style for selected card */
 .destroy {
-    outline: 6px solid #00303b;
+
     animation: fadeToGrey 5s ease-out forwards;
 }
 
@@ -179,14 +179,6 @@ p {
     to {
         opacity: 60%;
     }
-}
-
-/* --------- Resizes the end game cards */
-.build {
-    max-height: 40%;
-    max-width: 40%;
-    height: 100%;
-    display: block;
 }
 
 /* --------- Background Style. Created by: https://speckyboy.com/css-javascript-animated-backgrounds */

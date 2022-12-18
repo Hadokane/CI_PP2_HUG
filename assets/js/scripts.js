@@ -1064,7 +1064,7 @@ let members = {
     firstname: ["Jim", "Pam", "Steve", "Urkel", "Johnny", "Benjamin", "Hooper", "Eleanor", "Marge", "Big", "Naruto", "Miyazaki", "Ronald", "Björn", "Golden", "Max", "Julia", "Mr.", "Mrs.", "Senior", "Jacques", "Thelma", ], // 22* fNames
     lastname: ["Stevenson", "Björnson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubadour", "The Great", "Power", "Radagast", "Drummond", ], // 18* lNames
     skill: ["East-End Bartender", "Computer Scientist", "Full-Time Dungeon Master", "Weekend Dog Walker", "Middle School Teacher", "Developer of Indie RPG'S", "Airsoft Enthusiast", "Owns a Katana Collection", "Drives a '67 Chevrolet Impala", "Has Been To France Twice",
-        "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fan Fiction", "Has Eaten a Glass of Water With Chopsticks", "Deep Sea Diver", "Librarian", 
+        "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fan Fiction", "Has Eaten a Glass of Water With Chopsticks", "Deep Sea Diver", "Librarian",
     ], // 17* Skills
     avatar: [
         "assets/images/avatar/av1.png",
@@ -1142,9 +1142,10 @@ function finalProtocol() {
         card.addEventListener("click", function destroy() {
             // Copy the selected card into a new object to display it.
             let sacrifice = card;
+            let sacrificeContainer = document.getElementById("sacrifice-card");
             // Add a class to trigger the black and white animation. 
-            sacrifice.classList.add("destroy", "build");
-            document.getElementById("sacrifice-card").append(sacrifice);
+            sacrifice.classList.add("destroy", );
+            sacrificeContainer.append(sacrifice);
             // Removes other cards from the div.
             document.getElementById("final-cards").remove(card);
             // Removes the current event listener from the selected card, stopping onClick functions being triggered again.
@@ -1188,7 +1189,6 @@ function runEnding() {
     let namerAv = members.avatar.splice(randomAv, 1);
     // Creates the users victory card. Displays there name and score.
     userCard = document.createElement("div");
-    userCard.classList.add("build");
     userCard.innerHTML = `
         <div class="card text-center h-100">
             <img class="card-img-top" src=${namerAv} alt="Card image">
@@ -1202,7 +1202,7 @@ function runEnding() {
             </div>
         </div>
         `;
-    document.getElementById("sacrifice-card").append(userCard);
+    document.getElementById("victory-card").append(userCard);
     // Plays final message and creates a replay button        
     async function delayedEnd() {
         game.text = `Congratulations! ${username} You have successfully passed the H.U.G. Protocol!`;
