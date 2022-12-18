@@ -1,3 +1,19 @@
+// Global Variables set here.
+
+// Ensures the comp-text box is always accessible to display information to the player.
+var cText = document.getElementById('comp-text');
+
+// Game initial settings stated here.
+var game = {
+    failScore: 0, // Once this reaches 5 or more you are rejected. Ending the game.
+    mathScore: 0, // Used to advance the questions during the Maths game.
+    text: "" // Set to empty.
+};
+
+// Players username set as a global variable so it is accessible in all areas of the game.
+var userString;
+var username = "";
+
 // Waits for the DOM to finish loading before running the game.
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -8,20 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Calling initial functions
     updateText(); // Displays game.text in the HTML Div
     setScore(0); // Adds 0 to the game.failScore and initialises it
-    newGame() // runs a newGame().
+    newGame(); // runs a newGame().
 });
-
-// Setting the players username to a global variable so it is accessible in all areas of the game.
-var cText = document.getElementById('comp-text');
-var userString;
-var username = ""; // Providing default value for testing, set to "" when testing is done
-
-// Initialises the game
-let game = {
-    failScore: 0, // Once this reaches 5 or more you are rejected. Ending the game.
-    mathScore: 0, // Used to advance the questions during the Maths game
-    text: "", // Set to empty.
-};
 
 /**
  * Sets the innerText of "comp-text" to match game.text throughout the game.
@@ -147,8 +151,8 @@ function newGame() {
 ////////////////////////////////////ENTER NAME SECTION////////////////////////////////////
 
 /** Creates a username text field for the player to interact with.
- * Saves the username on button click. 
- * Removes the button now that data is set. 
+ *Saves the username on button click.
+ *Removes the button now that data is set.
  */
 function enterName() {
     game.text = "Enter your name below."
@@ -199,7 +203,7 @@ function enterName() {
                 levelIntroHub();
             }
             // Calls the above async function.
-            delayedGreeting()
+            delayedGreeting();
         }
     }
 };
@@ -320,7 +324,7 @@ const textNodes = [{
                 noRocks: true,
                 noRope: true,
                 noFleetFoot: true,
-            }, // Sets starting inventory for the player.          
+            }, // Sets starting inventory for the player.
             nextText: 2, // Advances to main HUB area.
         }]
     },
@@ -329,7 +333,7 @@ const textNodes = [{
         text: "Welcome to the <em>[H.U.G.][HUB]</em> Where would you like your Digital Concious to travel?",
         options: [{
                 text: "Left.",
-                requiredState: (currentState) => currentState.noLight, // Requires noLight:true to display.           
+                requiredState: (currentState) => currentState.noLight, // Requires noLight:true to display.
                 nextText: 3, // Advances Unlit Maths Game Area.
             },
             {
@@ -997,9 +1001,10 @@ function nextQuestion() {
     }
 };
 
-/** Reads the 2 random numbers and operator. 
- * Completes the equation to determine the answer.
- * Called by the checkAnswer function. */
+/** Reads the 2 random numbers and operator.
+*Completes the equation to determine the answer.
+*Called by the checkAnswer function.
+*/
 function correctAnswer() {
     let operand1 = parseInt(document.getElementById("operand1").innerText);
     let operand2 = parseInt(document.getElementById("operand2").innerText);
@@ -1102,7 +1107,7 @@ function finalProtocol() {
     updateText();
     // Developing a random function for array selection. (i < 8) as I want 8 cards in total.
     for (let i = 0; i < 8; i++) {
-        // Generates a random first name, by using a different random number each time the code is ran.  
+        // Generates a random first name, by using a different random number each time the code is ran.
         let randomFname = Math.floor(Math.random() * members.firstname.length);
         // Uses a random number to pick an item from the array. Splices it away so it can't be selected again.
         let namerFirst = members.firstname.splice(randomFname, 1);
@@ -1135,15 +1140,15 @@ function finalProtocol() {
         document.getElementById("final-cards").append(membersCard);
     };
 
-    // Set cards equal to all newly generated card class objects.   
+    // Set cards equal to all newly generated card class objects.
     let cards = document.getElementsByClassName("card");
-    // Destroy the card onClick. Then advances the game.   
+    // Destroy the card onClick. Then advances the game.
     for (let card of cards) {
         card.addEventListener("click", function destroy() {
             // Copy the selected card into a new object to display it.
             let sacrifice = card;
             let sacrificeContainer = document.getElementById("sacrifice-card");
-            // Add a class to trigger the black and white animation. 
+            // Add a class to trigger the black and white animation.
             sacrifice.classList.add("destroy", );
             sacrificeContainer.append(sacrifice);
             // Removes other cards from the div.
@@ -1203,7 +1208,7 @@ function runEnding() {
         </div>
         `;
     document.getElementById("victory-card").append(userCard);
-    // Plays final message and creates a replay button        
+    // Plays final message and creates a replay button
     async function delayedEnd() {
         game.text = `Congratulations! ${username} You have successfully passed the H.U.G. Protocol!`;
         updateText();
