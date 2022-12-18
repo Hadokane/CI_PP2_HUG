@@ -1,10 +1,8 @@
-![Logo](assets/images/docs/logo/hp_logo.png)
-
 # The H.U.G. Protocol
 
 ## The digital home of the subversive Text Adventure Game.
 
-![UI](docs/ui/)
+![UI](assets/images/docs/ui/banner.png)
 
 **Developer Links:**
 
@@ -21,36 +19,51 @@
 **Repository Pages:**
 
 [Repository page - index.html](https://github.com/Hadokane/CI_PP2_HUG/blob/main/index.html#L3)
+
 [Repository page - style.css](https://github.com/Hadokane/CI_PP2_HUG/blob/main/assets/css/style.css)
+
 [Repository page - scripts.js](https://github.com/Hadokane/CI_PP2_HUG/blob/main/assets/js/scripts.js)
 
 ---
 ## Academic Project Aims
 ---
 
-I am currently pursuing my **Diploma in Web App Development** from [Code Institute](https://codeinstitute.net/ "code institute").
+I am currently pursuing my **Diploma in Web App Development** from [Code Institute](https://codeinstitute.net/ "code Institute").
 
-The academic aim of this project is to demonstrate my newly developed skills within...
+The academic aim of this project is to demonstrate my newly developed skills within Javascript by building an interactive front-end site.
+It will be responsive to users actions, allowing them to engage with the presented data, elements and imagery to progress through an engaging "text-adventure" game.
 
-I intend to display this throughout the project via my: coding, comments, commits, and the explanation provided by this README file.
+The user will be able to interact with the games many elements in order to reach the satisfying conclusion of passing the "H.U.G. Protocol."
+
+As the site owner I will achieve my goal of providing an engaging and fast to digest "Text-Adventure" game for multiple users to enjoy.
+
+I intend to display the above throughout the project via my: coding, comments, commits, and the explanation provided by this README file.
 
 Additional functionality has been provided by the framework [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/) & [jQuery 3.6.1](https://jquery.com/download/).
 
 Great care has been taken, to ensure that the website is designed to meet best practice standards, and is responsive on all screen resolutions.
 
-It has been tested on a variety of devices and screen resolutions, from mobiles to 4k-monitors, and has proven compatibility with all popular web browsers.
+It has been tested on a variety of devices and screen resolutions: from mobiles; to tablets; and 4k-monitors. It also has proven compatibility with all popular web browsers.
 
 ---
 ## Table of Contents
 ---
 
 1. [User Experience (UX)](#user-experience---ux)
+1. [Deployment](#deployment)
+    - [Forking](#forking)
+1. [Credits](#credits)
+    - [Languages Used](#languages-used)
+    - [Frameworks Used](#frameworks-used)
+    - [Validators Used](#validators-used)
+    - [Technologies Used](#technologies-used)
+    - [Acknowledgements](#acknowledgements)
 
 ---
 ## Deployment
 ---
 
-The website was deployed on GitHub through the following steps:
+The website was deployed on GitHub via the following steps:
 
 1. Login into GitHub and navigate to this repository - [CI_PP2_H.U.G.](https://github.com/Hadokane/CI_PP2_HUG)
     <details><summary>Deployment 1</summary><img src="assets/images/docs/deployment/dp1.png" alt="Deployment part 1"></details>
@@ -68,10 +81,12 @@ The website was deployed on GitHub through the following steps:
 
 **Forking**
 1. Login into GitHub and navigate to this repository - [CI_PP2_H.U.G.](https://github.com/Hadokane/CI_PP2_HUG)
-2. Select the "Fork" tab on the navigation menu.
+2. Select the "Fork" tab on the right-hand side of the navigation menu.
 3. Choose a destination to save your newly forked repository.
 
-[Back to top ↑](#)
+![CI_PP2_H.U.G.](assets/images/docs/deployment/f1.png)
+
+[Back to top ↑](#The-H.U.G.-Protocol)
 
 ---
 ## Credits 
@@ -82,20 +97,20 @@ The website was deployed on GitHub through the following steps:
 - HTML 5
 - CSS 3
 - Javascript ES2022
-- jQuery 3.6.1
 
-### Frameworks Used
+### Frameworks Used 
 
 - [Bootstrap 4](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - For their responsive grid and container system.
-- [jQuery](https://jquery.com/download/) - For their responsive grid and container system.
+- [jQuery](https://jquery.com/download/) - For their convenient JavaScript library features.
+- [Animate.css](https://animate.style/) - For their simple to use CSS animations.
 
+### Validators Used 
 
-### Validators Used
-
-- [W3C HTML Validator](https://validator.w3.org/) - Validation of HTML
-- [W3C JigSaw Validator](https://jigsaw.w3.org/css-validator/) - Validation of CSS
-- [Lighthouse & Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Performance testing
-- [Webaim](https://wave.webaim.org/) - Accessibility testing
+- [W3C HTML Validator](https://validator.w3.org/) - Validation of HTML.
+- [W3C JigSaw Validator](https://jigsaw.w3.org/css-validator/) - Validation of CSS.
+- [JSLint Validator](https://www.jslint.com/) - Validation of Javascript.
+- [Webaim](https://wave.webaim.org/) - Accessibility Testing.
+- [Lighthouse & Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Performance testing.
 
 ### Technologies Used
 
@@ -103,69 +118,55 @@ The website was deployed on GitHub through the following steps:
 
 2. [Markdown Guide](https://www.markdownguide.org/cheat-sheet/) - For their "Markdown Cheat Sheet" and assistive documents on writing a README.md file.
 
-7. [Compressjpeg](https://compressjpeg.com/) - For allowing me to compress images and keep image file size down.
+3. [Grammarly](https://app.grammarly.com/) - For spell-checking my Text Based Adventure Module during brainstorming.
 
-8. [AnyWebp](https://anywebp.com/convert-to-webp.html) - For allowing me to convert images into a .webp format for use in picture elements, to improve the mobile functionality scores of the website.
+4. [Am I Responsive](https://ui.dev/amiresponsive) - For providing the mock-up image featured at the top of this document.
 
-9. [Grammarly](https://app.grammarly.com/) - For spell-checking my Text Based Adventure Module during brainstorming.
+5. [Google Fonts](https://fonts.google.com/) - For access to their wealth of commercially-available fonts.
 
-11. [Am I Responsive](https://ui.dev/amiresponsive) - For providing the mock-up image featured at the top of this document.
+6. [Favicon.io](https://favicon.io/) - For providing an emoji based favicon for use in this game.
 
-12. [Google Fonts](https://fonts.google.com/) - For access to their wealth of commercially-available fonts.
+7. [Balsamiq](https://balsamiq.com/) - For providing software to create the wireframes seen in this README.
 
-13. [Favicon.io](https://favicon.io/) - For providing an emoji based favicon for use in this game.
+8. [GitHub](https://github.com/) - For serving as my IDE of choice and allowing me to create and deploy my repository for user testing and submission purposes.
 
-14. [Balsamiq](https://balsamiq.com/) - For providing software to create the wireframes seen in this README.
+9. [StackOverflow Question](https://stackoverflow.com/questions/11813806/javascript-get-a-functions-variables-value-within-another-function) - For advice on making functions global. Used when deciding if username variables should be made global for later content to access the value.
 
-15. [GitHub](https://github.com/) - For serving as my IDE of choice and allowing me to create and deploy my repository for user testing and submission purposes.
+10. [FreeCodeCamp Article](https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/) - For a convenient primer on the differences between "Var" "Let" and "Const". Used when checking over my variables to ensure correct choices had been made.
 
-[Back to top ↑](#)
+11. [Sitepoint Article](https://www.sitepoint.com/delay-sleep-pause-wait/) - Explained the premise of a "sleep" function and the use of promises to stagger my code for the automated computer player box I implemented throughout the project. This allowed for the integration of a more user friendly experience by reducing the number of button presses required to progress for the user. Creating the illusion of a sentient AI presence.
 
-HELPFUL LINKS:
+12. [Youtube: developedbyed](https://www.youtube.com/watch?v=GUEB9FogoP8) - Great tutorial on text animations. Didn't end up implementing as used Animate.css instead but serves as good reference for potential future updates.
 
-https://stackoverflow.com/questions/11813806/javascript-get-a-functions-variables-value-within-another-function - make username global for access elsewhere.
+13. [CodeBoxx Article](https://code-boxx.com/allow-one-click-javascript/) - For reference when deciding to disable the "maths-box" submit button onClick to prevent multiple answer submissions. Could cause the score to bug out or the player to accidentally fail the game.
 
-https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/ - difference of var, let, const
+14. [MDN Webdocks](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener) - Provided general Javascript advice and reminders on functionality. Namely pertaining to event listeners and DOM targetting/navigation.
 
-https://www.sitepoint.com/delay-sleep-pause-wait/ - explained the premise of a sleep function and the use of promises to stagger my code for the automated chat box. Allowing for a more user friendly experience by reducing the number of button presses required to progress for the user. Creating the illusion of a sentient AI presence.
+15. [Personas](https://personas.draftbit.com/) - Avatar generator used to provide images for the cards generated by the "members" array.
 
-https://www.youtube.com/watch?v=GUEB9FogoP8 - Good tutorial on animations, couldn't get working.
+16. [Animate.css](https://animate.style/) - Animation plug-in used for text update animation.
 
-https://code-boxx.com/allow-one-click-javascript/ - Remove onclick from button idea.
+17. [w3Schools](https://www.w3schools.com/) - Use for general HTML, CSS & Javascript research and referencing.
 
-https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener - Javascript advice and reminders, namely with event listeners and DOM targetting/navigation.
+18. [CodePen Article](https://codepen.io/gunnarbittersmann/pen/XpqmgJ?editors=0100) - Provided a reference example of an image fading to grey. Used as reference when creating my own "Fade Out" Animation for the "sacrifice" Card.
 
-https://personas.draftbit.com/ - Avatar Generator for images on the cards
+19. [Valve: Left4Dead](https://www.youtube.com/watch?v=O8IJepb-hlQ) - Death sounds sampled to make the "destroy" card audio heard at the end of this game.
 
-https://animate.style/ - Animation plug-in used for text box changes and cards.
+20. [DEV](https://dev.to/javascript_jeep/how-to-empty-the-dom-element-in-javascript-nf8)- Used to understand the best method to empty a div in Javascript.
 
-https://www.w3schools.com/howto/howto_css_image_bw.asp - for black and white effect on card.
+21. [Lospec: AYY4 PALETTE](https://lospec.com/palette-list/ayy4) - Color palette I used for this project.
 
-https://codepen.io/gunnarbittersmann/pen/XpqmgJ?editors=0100 - fade to black and white adapted from this and the above.
-
-https://www.youtube.com/watch?v=O8IJepb-hlQ - Left 4 Dead death sounds sampled to make the destroy audio for this game.
-
-https://www.w3schools.com/- Used for all java, css, html research throughout project.
-
-https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp - hide show for buttons
-
-https://dev.to/javascript_jeep/how-to-empty-the-dom-element-in-javascript-nf8 - Empties div.
-
-https://www.npmjs.com/package/textfit?activeTab=readme - TextFit  plugin installed.
-
-https://lospec.com/palette-list/ayy4 - palette I used.
-
-https://speckyboy.com/css-javascript-animated-backgrounds - Background from here.
+22. [SpeckyBoy](https://speckyboy.com/css-javascript-animated-backgrounds) - Animated background in project taken directly from here.
 
 ---
 ## Acknowledgements
 ---
 
 With thanks to:
-- My family and friends - For keeping me on task and providing a helpful eye and user-testing across multiple devices and browsers.
+- My family and friends - For providing some great feedback and user-testing across multiple devices and browsers.
 
-- Code Institute & its slack community - For providing me with the necessary skills, knowledge and guidance to execute this project off.
+- Code Institute & its slack community - For providing me with the necessary skills, knowledge and guidance to execute this project.
 
-[Back to top ↑](#)
+[Back to top ↑](#The-H.U.G.-Protocol)
 
 ---
