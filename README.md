@@ -112,7 +112,7 @@ Each subheading provided expands upon the initial goal, providing further elabor
 
 As a site user/game player, I want to:
 
-1. Be able to interact with the elements of the game and reach a desired result:
+1. Be able to interact with the elements of the game and reach the desired result:
 
     1. Do the buttons work and direct you to an expected place?
 
@@ -151,11 +151,11 @@ As a site owner, I want to:
     
     2. Manual testing of the site's many paths and elements will be crucial to achieving both this goal and the aforementioned user goal, and as such will be documented in its own section later.
 
-6. Ensure the app and it's elements display correctly on any device.
+6. Ensure the app and its elements display correctly on any device.
 
     1. Check it on multiple devices and screen sizes. (Documented in the testing section and improved upon by user feedback).
 
-    2. Are all elements can be interacted with by mouse and touch devices? (Include photos of using a each device, before and after).
+    2. Are all elements can be interacted with by mouse and touch devices? (Include photos of using each device, before and after).
 
 7. Demonstrate a variety of javascript functionality such as:
 
@@ -169,7 +169,7 @@ As a site owner, I want to:
 
 8. Provide a unique experience for each individual user/player.
     
-    1. This goal ties into "user story" (3) of achieving "replayability".
+    1. This goal ties into the "user story" (3) of achieving "replayability".
     
     2. We can achieve both through the use of random cards and "branching" pathways in the text adventure section.
 
@@ -393,10 +393,173 @@ Each image is notated to provide further explanation.
 ## Surface Plane
 ---
 
+In the following sections, I will describe how the game creates a positive experience for users through its use of hover effects, predictable navigation, clear content, and minimalistic design choices.
+
+**Design Philosophies**
+---
+
+Bootstrap containers were utilised to ensure images and text would be readable across all devices, ensuring a consistent user experience for both mobile and desktop screens.
+
+The only major change implemented between the mobile and desktop experience is the number of cards displayed on a single line in the end array section.
+
+- Rows of 4 on large desktop devices.
+
+<details><summary>Cards Large</summary><img src="assets/images/docs/play_session/cards_4_2.png" alt="Cards Large"></details>
+
+- Rows of 3 on medium-sized devices.
+
+<details><summary>Cards Medium</summary><img src="assets/images/docs/play_session/cards_3.png" alt="Cards Medium"></details>
+
+- Rows of 2 on smaller-sized devices.
+
+<details><summary>Cards Small</summary><img src="assets/images/docs/play_session/cards_2.png" alt="Cards Small"></details>
+
+- Rows of 1 on extra-small devices.
+
+<details><summary>Cards X-Small</summary><img src="assets/images/docs/play_session/cards_1.png" alt="Cards X-Small"></details>
+
+---
+
+During the Skeleton Plane, I explained how the user experience would be improved by the interaction design of the card and button elements.
+
+I have documented images below to provide visual examples of each and confirmation that they have been implemented into the final design:
+
+<details><summary>Card Hover</summary><img src="assets/images/docs/play_session/card_focus.png" alt="Card Hover"></details>
+
+<details><summary>Card Encouragement</summary><img src="assets/images/docs/play_session/card_encouraged.png" alt="Card Encouragement"></details>
+
+<details><summary>Card Destruction</summary><img src="assets/images/docs/play_session/card_burn.png" alt="Card Destruction"></details>
+
+<details><summary>Card Victory</summary><img src="assets/images/docs/play_session/ps22.png" alt="Card Victory"></details>
+
+---
+
+For the button I added a subtle text underline and drop shadow, along with lifting the button slightly upwards, providing player feedback upon interaction without impacting the intentionally limited colour palette.
+
+```
+.btn:hover {
+    text-decoration: underline;
+    box-shadow: 5px 5px 5px;
+    transform: translateY(-0.05em);
+}
+```
+<details><summary>Standard Button Hover</summary><img src="assets/images/docs/play_session/button3.png" alt="Button Hover"></details>
+
+---
+
+The quit button at the bottom of the screen required a failsafe to prevent the user accidentally clicking it and restarting the entire game (as happened to me early during manual testing), as such I implemented an `onClick` function that displayed two additional buttons in it's place. Improving the users experience by preventing this disheartening action from happening and providing an additional check to confirm their action.
+
+- One to confirm the Quit action.
+- One to cancel the Quit action.
+
+Feedback was provided by using default bootstrap classes to change the `:hover` colour of these buttons to Green and Red (`success` and `warning`).
+
+<details><summary>Button Return</summary><img src="assets/images/docs/play_session/button1.png" alt="Button Return"></details>
+
+<details><summary>Button Quit</summary><img src="assets/images/docs/play_session/button2.png" alt="Button Quit"></details>
+
+---
+
+**Visual Separation**
+---
+
+Visual separation is achieved between sections of the game through the use of bootstrap containers. 
+
+The players area is alway
+
+s displayed below the "Computer-Players" text box, sticking to an ordered hierarchy. At the bottom is a `Sticky Footer` which will maintain it's position responsively across all device screen sizes.
+
+This simple layout, intuitively conveys the games structure to the user from the beginning.
+
+Drop shadows were added to the top of the footer to provide a sleek sense of visual separation. This improves visual clarity between elements of the game and is crucial for the ending card section, where the second row of cards will be overlapped by the footer.
+
+---
+
+**Colour Palette**
+---
+
+The following colour palette was utilised throughout the game.
+
+<details><summary>Colour Palette</summary><img src="assets/images/docs/ui/colour_palette.png" alt="Colour Palette"></details>
+
+It was taken from [Lospec: AYY4 PALETTE](https://lospec.com/palette-list/ayy4).
+
+The reason I selected this palette was as a tribute to the simple text-based and Gameboy games of the past. These would often use highly limited, 4-colour palettes for their entire games. 
+
+I wanted to emulate this limited style for a number of reason:
+
+- To provide a sense of familiarity to the user. Who may have experienced a similar game in their past.
+- To achieve a feeling of consistent, branded design throughout the projects many elements.
+- To compliment the games narrative of navigating a Computer-hosted simulation environment.
+- The colours compliment a simplistic design philosophy.
+- They provide clean, distinct colours that pass best practice guidelines.
+
+---
+
+**Image Choices**
+---
+
+The game is devoid of imagery apart from the Avatar images that are used to populate the `members cards`.
+
+[Personas](https://personas.draftbit.com/) was utilised to create the many avatar images.
+
+The generator was user friendly and varied enough that I was able to generate 24 individual images for inclusion in this version of the game. In the future this can be increased to allow for even more variety.
+
+This art style was selected as it was simplistic and complimented the overall design choices already made.
+
+The layout of each card is as follows:
+- First Name + Last Names (Create more unique combinations than just one name alone.)
+- Special Skill (Included to add interest, humour and personality to each member.)
+- A tag at the bottom of the card that reads `"Replace?"` to reinforce the action the user is about to take, providing further feedback to their interactions.
+
+Below I have included a selection of "VICTORY" Cards from my play testers.
+
+<details><summary>User #1</summary><img src="assets/images/docs/play_session/user1.png" alt="User #1"></details>
+
+<details><summary>User #2</summary><img src="assets/images/docs/play_session/user2.png" alt="User #2"></details>
+
+<details><summary>User #3</summary><img src="assets/images/docs/play_session/user3.png" alt="User #3"></details>
+
+<details><summary>User #4</summary><img src="assets/images/docs/play_session/user4.png" alt="User #4"></details>
+
+<details><summary>User #5</summary><img src="assets/images/docs/play_session/user5.png" alt="User #5"></details>
+
+<details><summary>User #6</summary><img src="assets/images/docs/play_session/user6.png" alt="User #6"></details>
+
+---
+
+**Font / Typography**
+---
+
+It was important to me that the font was readable on all screen sizes while also representing the fact that it would be mainly used as the onscreen "voice" of the "Computer-Player". 
+
+As such I stuck to [ROBOTO](https://fonts.google.com/specimen/Roboto) for the majority of the onscreen text.
+
+In order to make the players `username` stand out from the text, I made use of the [VT323](https://fonts.google.com/specimen/VT323?query=vt) font by Peter Hull, which serves to visually emulate the classic computer monitor fonts of days passed. Visually this seemed like a natural choice to reinforce the "Computer-Player's" personality and visually highlight whenever the `username` was used to the player, improving their overall unique experience and connection to the games elements.
+
+The selection of these fonts and the previous colour palette also helped in conforming to the expected culture of an old-school "text-based" adventure game. As many of these would have originally ran on older gaming systems like MS DOS or Commodore. 
+
+---
+
+**Dependencies**
+---
+
+Bootstrap and Jquery Javascript dependencies are placed at the bottom of the body tags. CSS dependencies are kept at the top. 
+
+As this game is on a webpage it will be loaded "Top-Bottom" from the HTML file. 
+
+This structure should ensure that the page is loaded quickly and that the user doesn't see an unstyled page or wait for the initial elements to load in. 
+
+---
+## Features - meetings User Stories
+---
+
 
 
 ---
+
 ## Validation
+
 ---
 
 With all user stories being satisfactorily met, the website being published and user-testing fixes implemented, I then ran the site through several online Validators to confirm it meets best practices and runs as efficiently as possible.
