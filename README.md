@@ -57,7 +57,8 @@ It has been tested on a variety of devices and screen resolutions: from mobiles;
     - [Screen Reader Accessibility](#screen-reader-accessibility)
     - [Performance Testing](#performance-testing)
     - [Device Testing](#device-testing)
-1. [Bugs](#bugs)
+    - [Manual Testing](#manual-testing)
+1. [Bug Fixes](#bug-fixes)
 1. [Deployment](#deployment)
     - [Forking](#forking)
 1. [Credits](#credits)
@@ -214,6 +215,237 @@ The website has been tested on up-to-date versions of the following browsers:
 - Internet Explorer
 
 The website has also been tested on monitors of 16:9, 16:10 and 21:9 resolutions.
+
+---
+
+### Manual Testing
+
+--- ADD INFO AND SCREENSHOTS HERE OF FIXES FROM FRIENDS & FAMILY PLAY-TESTING.
+
+
+[Back to top ↑](#The-H.U.G.-Protocol)
+
+---
+## Bug Fixes
+---
+
+The following is a documentation of the bugs encountered throughout the development process of this "Text Adventure" Game.
+
+---
+
+**BUG #1**
+
+---
+
+The computer player's text would update to the last line automatically before the user was given the chance to see the previous lines. 
+<details><summary>Bug #1-1</summary>
+<img src="assets/images/docs/bugs/bug1_1.png" alt="Bug Image 1-1"></details>
+This happened because functions don't happen asynchronously by default.
+
+My solution was found online in a [Sitepoint article](https://www.sitepoint.com/delay-sleep-pause-wait/) which showed me I could use an async promise function to create a reusable automated delay between text updates.
+<details><summary>Bug #1-2</summary>
+<img src="assets/images/docs/bugs/bug1_2.png" alt="Bug Image 1-2"></details>
+
+This allowed me to achieve my vision of providing an automated AI computer to act as the player's guide throughout the game.
+<details><summary>Bug #1-3</summary>
+<img src="assets/images/docs/bugs/bug1_3.png" alt="Bug Image 1-3"></details>
+
+---
+
+**BUG #2**
+
+---
+
+I wanted to be able to style the player's username to differentiate it from the computer player's text.
+
+By passing the "userText" value, I found I was unable to remotely change it.
+<details><summary>Bug #2-1</summary>
+<img src="assets/images/docs/bugs/bug2_1.png" alt="Bug Image 2-1"></details>
+The solution I engineered was to change the:
+
+```
+cText.innerText = game.text;
+into 
+cText.innerHTML = game.text;
+```
+By changing the above to `.innerHTML` I was able to provide classes and styling to the username value without having to worry about altering the surrounding text.
+<details><summary>Bug #2-2</summary>
+<img src="assets/images/docs/bugs/bug2_2.png" alt="Bug Image 2-2"></details>
+
+---
+
+**BUG #3**
+
+---
+
+I tried following an online tutorial - [Youtube: developedbyed](https://www.youtube.com/watch?v=GUEB9FogoP8) - to separate the characters within "game.text" to get them to animate individually.
+<details><summary>Bug #3</summary>
+<img src="assets/images/docs/bugs/bug3.png" alt="Bug Image 3"></details>
+
+The following lines of code didn't work as expected and the text simply animated on as normal.
+
+```
+cont span = document.getElementsByClassName("fancy")[char];
+$(span).addClass("noOpacity");
+```
+I eventually decided to simply use the "Animate.css" plugin to animate the text in a satisfying manner.
+
+This is something I would look at reintroducing in a future version of the game.
+At this stage however, it wasn't a core feature for the user experience and was cut from this stage of development.
+
+---
+
+**BUG #4**
+
+---
+
+Answers input into the "Maths" game section were being flagged as incorrect, even when correct.
+
+<details><summary>Bug #4-1</summary>
+<img src="assets/images/docs/bugs/bug4_1.png" alt="Bug Image 4-1"></details>
+
+To investigate this further I utilised Chrome Dev Tools.
+
+I began by console logging out the values and data types of the random numbers being generated for the math equations, the operand used and the user's answer.
+
+<details><summary>Bug #4-2</summary>
+<img src="assets/images/docs/bugs/bug4_2.png" alt="Bug Image 4-2"></details>
+
+This allowed me to uncover that I had been comparing a number to a string value using `===` which would return a false answer even when the values matched. 
+
+As a "9" number isn't equivalent to a "9" that is a string.
+
+<details><summary>Bug #4-3</summary>
+<img src="assets/images/docs/bugs/bug4_3.png" alt="Bug Image 4-3"></details>
+
+Removing the `parseINT()` from around the following:
+
+```
+let operator = parseInt(document.getElementById(operator));
+````
+
+This caused the operator to return the correct type of data, allowing the equation to return true when the correct answer was input.
+
+---
+
+**BUG #5**
+
+---
+
+I designed the game's many different levels in individual segments and functions. This was to ensure they worked in isolation before joining them all together.
+
+As I connected the new game launch button with the name input field, I encountered an error where the text box for the player to enter their chosen username wouldn't appear.
+
+<details><summary>Bug #5-1 (BEFORE CLICK)</summary>
+<img src="assets/images/docs/bugs/bug5_1.png" alt="Bug Image 5-1"></details>
+
+<details><summary>Bug #5-2(AFTER CLICK)</summary>
+<img src="assets/images/docs/bugs/bug5_2.png" alt="Bug Image 5-2"></details>
+
+After some analysis, I found this code to be the culprit.
+
+<details><summary>Bug #5-3</summary>
+<img src="assets/images/docs/bugs/bug5_3.png" alt="Bug Image 5-3"></details>
+
+Removing the new game button directly from the div itself, seemed to stop the amend that was called in the next function.
+
+The solution in this instance was to instead remove the button directly.
+
+<details><summary>Bug #5-4</summary>
+<img src="assets/images/docs/bugs/bug5_4.png" alt="Bug Image 5-4"></details>
+
+---
+
+**BUG #6**
+
+---
+
+Clicking the "nameBox" submit button, removed the entire div element it was inside of.
+
+<details><summary>Bug #6-1 (BEFORE CLICK)</summary>
+<img src="assets/images/docs/bugs/bug6_1.png" alt="Bug Image 6-1"></details>
+
+<details><summary>Bug #6-2 (AFTER CLICK)</summary>
+<img src="assets/images/docs/bugs/bug6_2.png" alt="Bug Image 6-2"></details>
+
+This was caused by and resolved similarly to Bug #7.
+The remove function called on "nameBox" was removing the entire "user" div, meaning the amend couldn't create the following object in its target div, as it had been deleted.
+
+<details><summary>Bug #6-3</summary>
+<img src="assets/images/docs/bugs/bug6_3.png" alt="Bug Image 6-3"></details>
+
+The solution was to again simply remove the "nameBox" directly.
+
+<details><summary>Bug #6-4</summary>
+<img src="assets/images/docs/bugs/bug6_4.png" alt="Bug Image 6-4"></details>
+
+---
+
+**BUG #7**
+
+---
+
+The card generator array would stop splicing people from the "members" array. Occurring before the function had finished being called for the 8th time.
+
+<details><summary>Bug #7-1</summary>
+<img src="assets/images/docs/bugs/bug7_1.png" alt="Bug Image 7-1"></details>
+
+It seemed randomised how many were created before the loop would stick to the same number and stop producing results.
+
+<details><summary>Bug #7-2</summary>
+<img src="assets/images/docs/bugs/bug7_2.png" alt="Bug Image 7-2"></details>
+
+The solution was to move the random number generator variables inside of the loop, as they weren't being called correctly when left as global variables.
+
+<details><summary>Bug #7-3</summary>
+<img src="assets/images/docs/bugs/bug7_3.png" alt="Bug Image 7-3"></details>
+
+---
+
+**BUG #8**
+
+---
+
+A further issue with the array was when the cards wouldn't generate a random avatar image despite being - seemingly - correctly coded.
+
+<details><summary>Bug #8-1</summary>
+<img src="assets/images/docs/bugs/bug8_1.png" alt="Bug Image 8-1"></details>
+
+I had forgotten to add the ".png" suffix to the end of my linked avatar images within the array.
+
+After amending these suffixes the cards loaded as expected.
+
+<details><summary>Bug #8-2</summary>
+<img src="assets/images/docs/bugs/bug8_2.png" alt="Bug Image 8-2"></details>
+
+---
+
+**BUG #9**
+
+---
+
+Text animations weren't playing during the "HUB Text Adventure" portion of the game.
+
+This caused a jarring experience for the user as the text would stop animating during this section only.
+
+The issues lie in the code I had written to set the: 
+
+```
+cText.innerHTML = <h2>textNode.text</h2>
+```
+
+This seemed logical to me as the "cText" was the element being displayed, formatted and working correctly in other areas of the game.
+
+However the code that got me the desired result was:
+
+```
+game.text = textNode.text;
+updateText();
+```
+
+The animations themselves had been tied to the `updateText()` function, which was not being called with the original code.
+
+This change fixed the bug and allowed the game to maintain its animations throughout, improving the user's experience by preventing a distracting change.
 
 [Back to top ↑](#The-H.U.G.-Protocol)
 
