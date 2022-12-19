@@ -1,6 +1,6 @@
 # The H.U.G. Protocol
 
-## The digital home of the subversive Text Adventure Game.
+## The digital home of the Subversive Text Adventure Game.
 
 ![UI](assets/images/docs/ui/banner.png)
 
@@ -51,10 +51,8 @@ It has been tested on a variety of devices and screen resolutions: from mobiles;
 
 1. [User Experience (UX)](#user-experience---ux)
     - [Strategy Plane](#strategy-plane)
-        - [User Stories](#user-stories)
     - [Scope Plane](#scope-plane)
     - [Structure Plane](#structure-plane)
-        - [Interaction Design (IXD)](#interaction-design---ixd)
     - [Skeleton Plane](#skeleton-plane)
         - [Wireframes](#wireframes)
     - [Surface Plane](#surface-plane)
@@ -110,6 +108,7 @@ Had been met by the stated example.
 Each subheading provided expands upon the initial goal, providing further elaboration on ways to achieve it or referencing areas where I expect to meet these goals throughout the development of the project.
 
 **User/Player Stories:**
+---
 
 As a site user/game player, I want to:
 
@@ -119,7 +118,7 @@ As a site user/game player, I want to:
 
     2. Can I enter a name in the `nameBox input` field and have it be displayed correctly throughout the project?
 
-    3. Does the maths answer box accept my answer and tell me if it's correct or incorrect?
+    3. Does the Maths answer box accept my answer and tell me if it's correct or incorrect?
 
     4. Do the options provided in the text-adventure section lead to logical areas?
 
@@ -140,6 +139,7 @@ As a site user/game player, I want to:
         3. different routes are available through the "Text-based" obstacle course section.
 
 **Site Owner/Developer Stories:**
+---
 
 As a site owner, I want to:
 
@@ -173,14 +173,16 @@ As a site owner, I want to:
     
     2. We can achieve both through the use of random cards and "branching" pathways in the text adventure section.
 
-**Grid Of Opportunities - To Meet User Expectations:**
+**How To Meet User Expectations:**
+---
 
 With the above goals in mind, I have assembled the following "grid of opportunities" to showcase what features to prioritise heading into the next stage of development.
 
 | Opportunity                        | IMPORTANCE | VIABILITY |
 |------------------------------------|------------|-----------|
 | All elements function correctly    | 5          | 5         |
-| Reach a satisfying conclusion      | 5          | 5         |
+| Create a unique experience for each player     | 5          | 4         |
+| Reach a satisfying conclusion      | 4          | 5         |
 | Provide variety with Javascript interaction | 4          | 4        |
 | Replayability for players          | 3          | 3         |
 
@@ -189,9 +191,167 @@ With the above goals in mind, I have assembled the following "grid of opportunit
 ---
 
 ### Scope Plane 
+
 ---
 
-It is within this plane that I will address, the features required to meet the established by the "User Stories" section of the Strategy Plane. These goals will allow me to avoid "feature creep" and maintain an agile approach to the development of the website.
+In the above User & Site owner stories, I addressed ways in which I could meet the established goals. Establishing required features for the pursuit of these.
+
+In the interest of avoiding "feature creep" and maintaining an agile approach to the development of this game, I will further elaborate on the features required below.
+
+**Features Required:**
+---
+
+The following are written with respect to the above user/site-owner stories and directly reference how they can solve and improve the goals stated above.
+
+1. A "Username" input field.
+    
+    - To improve the user's connection to the "Computer-Player" and feel that they are being spoken to directly.
+    
+    - Allows the user's end-game card to display their unique "Username" on the victory screen, furthering the feel of a unique user experience.
+
+2. A "Computer-Player" that serves as a guide for the user. 
+    - Aids in their progression throughout the game by directing them towards their next task.
+
+3. A function that generates unique membership cards for each successful user.
+    - Provides positive feedback to the player upon completion of the game.
+    - Provides a visual reward.
+    - Improves the feeling of a unique experience for the player.
+
+4. A function that generates unique math questions for each user.
+    - Same reasoning as the above.
+    - Varies the gameplay loop on replays.
+
+5. A way to reach a "GAME OVER" screen.
+    - Provides tension for the player.
+    - Provides feedback and meaning to incorrect answers.
+
+6. Branching "text-adventure" paths. 
+    - Allowing the user the ability to make different decisions, improving the appeal of replaying the game.
+
+7. A reachable victory screen. 
+    - validates the users' experience, providing positive feedback.
+
+8. A quit/restart button, available from each section of the game.
+    - Provides users with an escape if they encounter a page break/error. 
+    - Can preemptively restart if they feel they want to try for a better score.
+
+[Back to top ↑](#the-hug-protocol)
+
+---
+
+**Road Map:**
+
+---
+
+By carrying out this section I have also created a Road-Map for future updates that will improve the overall experience of the game. 
+
+These have been deemed non-essential for an initial "proof-of-concept" build and would serve to simply enhance the "core" experience I am creating.
+
+**Future goals:**
+
+I'm very happy with the verbose code I've created:
+
+The "members" array is set up so that I can continue adding data to it without having to adjust the functions. With them already comparing the max length of the arrays while generating random numbers, ensuring the outcome is always within the scope of the array.
+
+The text-based adventure and states system already works perfectly for navigation, providing a perfect framework for me to iterate on and expand the player's experience within the H.U.G. Protocol.
+
+In a theoretical "next update", I would make it a priority to improve upon the existing user experience before looking to expand it.
+
+1. The addition of more sound effects to the game, such as: 
+    - Correct and incorrect sounds called by the Maths answer button.
+    - Sounds for button presses in other areas such as the `name input` field.
+    - Relevant sounds for the actions taking place within the choices within the text-adventure section. All to provide additional, audio feedback to the user's interaction.
+
+2. Add a unique feel to each of the game's sections:
+    - A backing soundtrack for each individual "Test" would achieve this.
+    - Changing the colour of the background to match - for example, a light blue for the math field or green for the obstacle course - would further this sense of identity.
+
+I deemed that both of these features would improve upon the existing framework and game but are not core features or priorities in providing an initial, satisfying user experience.
+
+Beyond this I would continue to expand the game through the implementation of:
+
+3. Adding additional branching pathways and a more elaborate text adventure experience.
+    - More areas, tests and states to expand upon the defined in-place framework.
+    - Thankfully my approach to verbose coding would allow this with the game in it's current finished state.
+
+4. Implement a more extensive variety of user tests for the player to interact with.
+    - Moving the player's mouse through an onscreen maze, where touching the sides increases the "Failures" score.
+    - Holding the mouse over an image for a period of time to stop a background timer from resetting and impeding the player's progression.
+    - More sections hinting at a wider narrative of the player entering into an exclusive club, that gradually begins to reveal sinister intentions.
+
+5. Add a download button for the player's card.
+    - Being able to Screenshot works sufficiently within the current version of the game and is suggested to the player by the "Computer-Player" to provide them with the opportunity.
+    - This would serve as a fidelity upgrade for the image, removing the players need to crop or perfectly target the image with a screenshot application.
+    - It would also add simplicity for users who aren't aware of how to take a screenshot.
+
+6. Add a "leaderboard" of players' cards.
+    - Allows the player to see other players' unique cards, serving as motivation for them to replay the game and achieve a higher score.
+
+[Back to top ↑](#the-hug-protocol)
+
+---
+## Structure Plane:
+---
+
+Here we will discuss the priority of the features necessary to play and complete the game.
+
+**Feature Priority**
+
+The first thing the player should be greeted by is a clickable `button` to `"BEGIN THE PROTOCOL"`.
+
+From here the game should set out to establish the feel of a unique experience by providing the player with automated text from the "Computer-Player" to simulate a conversation. 
+
+It should then provide a `username text input` to set the players `username` to a `global variable` for use throughout the game. 
+
+These measures will drastically improve the **unique** experience for each player and start things off on the right foot.
+
+Next the player should be introduced to the H.U.B. Text-Adventure area, where they are presented with options to navigate the area in the form of `buttons`. 
+
+The interaction design (IXD) of these buttons is as follows:
+
+1. They should change shade on `:hover` to indicate that the player can interact with them.
+
+2. `onClick` these elements will (as necessary):
+    - Update the Computer-Players text to describe the next area.
+    - Move the player to that new area.
+    - Provide information on an object the player is examining.
+    - Change the players state by acquiring an item.
+    - Launch the Maths game.
+    - Launch the Card Selection game.
+    - Update the players failScore.
+
+All of these actions will take place on a single webpage, with the elements loading and being removed from `<div>`'s as required to display the correct elements the player needs to interact with at any given time.
+
+The final section will feature a selection of 8 cards. These cards will be populated with data from the `"members" array` and utilise random number generation to ensure they are different for each user and on each subsequent play-through of the game. This is the main method through which the player will be encourage to replay and interact with new elements. 
+
+The interaction design of the cards is as follows:
+
+1. The cards should increase in scale slightly on `:hover` to provide the user with positive feedback that: they have interaction; and that their cursor is currently hovering over that specific card from the 8 on display.
+
+2. `onClick` a function should be called to remove the 7 other cards and display the selected card in the center.
+    - Sound should then play as the card is animated to fade out into black & white.
+    - This is to surprise the user and add significant weight to the selection they've just made. Providing a series of shock and feedback that will make the user want to replay the game and see if they made the correct choice.
+    - Variety is provided here with the inclusion of two "death" sound effects. Also adding to the replayability of the experience.
+
+3. The random generation is to ensure each user has a different experience in the game. The inclusion of funny `"skills"` encourages the user to replay the game in order to see what other options may present themselves.
+
+4. The users card will then generate. Showing their `$(username)` and `$(failScore)` proudly, encouraging them to screenshot it.
+    - The user may want to replay for a better score.
+    - They are encouraged to send the game to a friend at this point. Enhancing their experience and connection to the game and expanding the experience to more users.
+
+Overall this game will:
+- Be consistent in design, branding and colours used.
+- Provide constant visual feedback to users throughout.
+- Provide audio feedback during a tense moment. 
+- Provide the feel of a unique experience on every playthrough.
+- Encourage them to replay.
+- Ensure all text and elements have visual clarity and are readable across many devices.
+- Reward the user with progression for all interactions.
+
+---
+## Skeleton Plane
+---
+
 
 
 ---
