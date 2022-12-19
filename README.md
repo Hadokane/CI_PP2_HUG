@@ -513,12 +513,6 @@ Below I have included a selection of "VICTORY" Cards from my play testers.
 
 <details><summary>User #3</summary><img src="assets/images/docs/play_session/user3.png" alt="User #3"></details>
 
-<details><summary>User #4</summary><img src="assets/images/docs/play_session/user4.png" alt="User #4"></details>
-
-<details><summary>User #5</summary><img src="assets/images/docs/play_session/user5.png" alt="User #5"></details>
-
-<details><summary>User #6</summary><img src="assets/images/docs/play_session/user6.png" alt="User #6"></details>
-
 ---
 
 **Font / Typography**
@@ -549,6 +543,250 @@ This structure should ensure that the page is loaded quickly and that the user d
 
 In this section, we shall revisit out original user & site-owner stories and examine if they have been met during the creation of this game.
 
+    As a site user/game player, I want to:
+
+    1. Be able to interact with the elements of the game and reach the desired result:
+
+        1. Do the buttons work and direct you to an expected place?
+
+        2. Can I enter a name in the `nameBox input` field and have it be displayed correctly throughout the project?
+
+        3. Does the Maths answer box accept my answer and tell me if it's correct or incorrect?
+
+        4. Do the options provided in the text-adventure section lead to logical areas?
+
+**The above goal has been met** as evidenced - with imagery provided - in the below "Manual & User Testing" section. 
+
+The game features all of the above mentioned elements:
+- Username input box. Capable of accepting any symbols or numbers.
+- Math answer input box. Displays the correct and incorrect answer responses as expected.
+- Interactable buttons for navigation of the H.U.G. HUB, submitting requested data and restarting the game.
+- All buttons direct you to the expected place as evidenced further in the "Manual & User Testing" section.
+
+<details><summary>Username Input Box Testing - Before</summary>
+<img src="assets/images/docs/play_session/ps3.png" alt="Username Testing Before"></details>
+
+<details><summary>Username Input Box Testing - After</summary>
+<img src="assets/images/docs/play_session/ps4.png" alt="Username Testing After"></details>
+
+<details><summary>Math Box - Correct</summary>
+<img src="assets/images/docs/play_session/ps9.png" alt="Math Box Correct"></details>
+
+<details><summary>Math Box - Incorrect</summary>
+<img src="assets/images/docs/play_session/ps23.png" alt="Math Box Incorrect"></details>
+
+    2. Reach a satisfying conclusion:
+
+        1. Provide users with their own unique membership card.
+
+        2. Grant users the ability to "recruit" others. Making them feel as if they've achieved true membership within the H.U.G. protocol.
+
+**The above goal has been met.** 
+The player is able to make it to the ending bug-free as evidenced in the following document sections. A unique membership card is generated for the user - as shown above where a sample of play-tester cards were shown. I've included further play-tester cards below, as immediate evidence.
+
+The recruitment button is provided for players, encouraging them to share the game.
+
+<details><summary>User #4</summary><img src="assets/images/docs/play_session/user4.png" alt="User #4"></details>
+
+<details><summary>User #5</summary><img src="assets/images/docs/play_session/user5.png" alt="User #5"></details>
+
+<details><summary>User #6</summary><img src="assets/images/docs/play_session/user6.png" alt="User #6"></details>
+
+<details><summary>Recruitment Button</summary>
+<img src="assets/images/docs/play_session/ps22.png" alt="Recruitment Button"></details>
+
+    3. Have a reason to replay the game:
+
+        1. Is the user greeted with a different experience each time they play? If so how?
+            
+            1. through the use of randomly generated math questions
+            
+            2. through the use of randomly generated user cards
+            
+            3. different routes are available through the "Text-based" obstacle course section.
+
+**The above goal has been met.** 
+As already seen throughout this document, each maths question generates unique question on each playthrough of the game. The same is true for the user generated cards as evidenced in the last user goal section above and the manual testing section below.
+
+There are a few varied routes on offer through the obstacle course, an image included in user testing - examining if player states have an impact on the game - shows proof of multiple options that only appear if the player collects the `rock` and `rope` objects.
+
+I've included a few images to substantiate these claims further below.
+
+<details><summary>Obstacle Course Choices</summary>
+<img src="assets/images/docs/play_session/ps12r.png" alt="Obstacle Course Choices"></details>
+
+<details><summary>Blast Door Monitor Choices</summary>
+<img src="assets/images/docs/play_session/ps16f.png" alt="Blast Door Monitor Choices"></details>
+
+<details><summary>HUB Navigation Choices</summary>
+<img src="assets/images/docs/play_session/ps6.png" alt="HUB Navigation Choices"></details>
+
+    As a site owner, I want to:
+    4. Ensure the app works as intended for the user.
+
+    5. Ensure the user/player can interact with all elements to reach a logical and desired result.
+
+        1. This goal will be achieved naturally by achieving all of the standards laid out within "User story" (1).
+        
+        2. Manual testing of the site's many paths and elements will be crucial to achieving both this goal and the aforementioned user goal, and as such will be documented in its own section later.
+
+**The above goals have been met.** 
+In the above user stories analysis and in the following testing sections, I have proven that the app and all of it's functions and features work as intended. Later in the document I have included the aforementioned Manual testing section. to provide further evidence.
+
+    6. Ensure the app and its elements display correctly on any device.
+
+        1. Check it on multiple devices and screen sizes. (Documented in the testing section and improved upon by user feedback).
+
+        2. All elements can be interacted with by mouse and touch devices?
+
+**The above goal has been met.** 
+I personally tested the device on a number of devices including:
+- Phones
+- Tablets
+- Laptops
+- Desktop
+During the development of this game. Further testing was carried out by play-testers made up of my friends, family and Code Institute forum members. These tests spanned numerous devices and browsers. Further documentation is provided in the testing section.
+
+I have included images of touch functionality working on a mobile device below.
+
+<details><summary>Touch Before</summary>
+<img src="assets/images/docs/play_session/touch1.png" alt="Touch Before"></details>
+
+<details><summary>Touch After</summary>
+<img src="assets/images/docs/play_session/touch2.png" alt="Touch After"></details>
+
+    7. Demonstrate a variety of javascript functionality such as:
+
+        1. "onClick" functions. (Button events).
+
+        2. "promise" functions. (Sleep function).
+
+        3. "if" loops. (To cycle through arrays and generate cards.)
+        
+        4. Arrays. (Members array stores data for card generation.)
+
+
+**The above goal has been met.** 
+The following Javascript functions are all used and viewable within this projects "scripts.js" file. This was important to include from a site-owner perspective in order to provide a varied game experience for the users and to meet the expectations of the assignment by providing a strong knowledge of Javascript.
+
+- As an example of an "onClick" function here are lines (144-147):
+
+```
+    document.getElementById("startBtn").onclick = function () {
+        // Removes nameBox from the "user" div inside of the html file
+        startBtn.remove();
+        enterName(); // runs enterName
+```
+
+- For an example of a promise function in action view this section of code from "scripts.js" lines (1171-1185):
+
+```
+ // Select one of the above sounds to play at random.
+            async function delayedOutro() {
+                game.text = "You actually did it...";
+                updateText();
+                await sleep(3000);
+                game.text = `${username}... you're a monster.`;
+                updateText();
+                await sleep(3000);
+                game.text = `Just kidding ${username}. Excellent work!`;
+                updateText();
+                await sleep(3000);
+                // Loads the game ending.
+                document.getElementById("sacrifice-card").removeChild(sacrifice);
+                runEnding();
+            };
+            delayedOutro();
+```
+
+- An example of an "if/else" loop can be seen on lines (278-294):
+
+```
+    // Checks to see if the "nextText" ID matches a function. Then calls it.
+    if (nextTextNodeId === -1) {
+        // Removes questions buttons.
+        while (document.getElementById("option-buttons").firstChild) {
+            document.getElementById("option-buttons").removeChild(document.getElementById("option-buttons").firstChild)
+        }
+        // Loads the Maths Levels with the "levelIntroMath" function.
+        levelIntroMath();
+
+        // Checks to see if the "nextText" ID matches a function. Then calls it.
+    } else if ((nextTextNodeId === -2)) {
+        // Removes questions buttons.s
+        while (document.getElementById("option-buttons").firstChild) {
+            document.getElementById("option-buttons").removeChild(document.getElementById("option-buttons").firstChild)
+        }
+        // Loads the Final Card Level with the "finalProtocol" function.
+        finalProtocol();
+```
+
+- The best example of an array is the "membership" array beginning on line (1068). 
+Small - edited - segment included:
+
+```
+let members = {
+    firstname: ["Jim", "Pam", "Steve", "Urkel",]
+    lastname: ["Stevenson", "Björnson", "Lennon",]
+    skill: ["Full-Time Dungeon Master", "Weekend Dog Walker", "Middle School Teacher",]
+     avatar: [
+        "assets/images/avatar/av1.png",
+        "assets/images/avatar/av2.png",]
+```
+
+8. Provide a unique experience for each individual user/player.
+    
+    1. This goal ties into the "user story" (3) of achieving "replayability".
+    
+    2. We can achieve both through the use of random cards and "branching" pathways in the text adventure section.
+
+**The above goal has been met.** 
+As addressed in user story (3), the project provides plenty of positive feedback and incentives for the player to replay the game, such as:
+
+- Achieving a higher score to display on their end card.
+- Wanting to play different Maths questions.
+- Trying different routes through the Obstacle course.
+- Wondering what would happen if they got the `red chip` before the `blue chip` or vice-versa.
+- Was that `rock` useful for something else?
+- I wonder what other membership cards I can chose from on during the `final protocol`?
+
+The random generators all work as intended providing the expected experience for users.
+This is evidenced further in the Manual Testing section below, as is the case with other goals being met above.
+
+The project features:
+- 24 potential First Names 
+- 24 potential Last Names
+- 24 potential Skills
+- 24 potential Avatars.
+
+Running the numbers through a probability calculator has revealed to me there are a total of:
+
+
+**3,321,960 combinations** 
+---
+that can be generated during the `final protocol`. 
+
+<details><summary>Possible Combinations</summary>
+<img src="assets/images/docs/play_session/possible_combos.jpg" alt="Possible Combinations"></details>
+
+With this I can confidently declare that the goal of providing the user with a **UNIQUE** experience has been met.
+
+---
+
+I am confident that the above examples further substantiate the evidence provided in the previous "Plane Analysis" sections and will be strengthened further by the following "Testing" sections. 
+
+I have substantial reason to declare all user and site-owner stories met.
+
+| STORY #      | GOAL          | (X IF) MET     |
+| -------------|:-------------:|:-------------:|
+| #1           | Interactive Elements Function As Expected          | X |
+| #2           | Satisfying Conclusion Provided      | X |
+| #3           | Reasons To Replay Present    | X |
+| #4           | Ensure The App Works As User Expects     | X |
+| #5           | Ensure Interactive Elements Lead To Logical Results    | X |
+| #6           | Ensure The App Is Displayed Correctly On Multiple Devices    | X |
+| #7           | Demonstrate A Variety Of Javascript Functionality Throughout  | X |
+| #8           | Provide A Unique Experience For Each Individual Player | X |
 
 [Back to top ↑](#The-H.U.G.-Protocol)
 
@@ -558,7 +796,7 @@ In this section, we shall revisit out original user & site-owner stories and exa
 
 ---
 
-With all user stories being satisfactorily met, the website being published and user-testing fixes implemented, I then ran the site through several online Validators to confirm it meets best practices and runs as efficiently as possible.
+With all user stories being satisfactorily met, the website being published and user-testing fixes implemented, the next step was to run the site through several online Validators to confirm it meets best practices and runs as efficiently as possible.
 
 ---
 ### HTML Validation
