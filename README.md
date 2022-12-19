@@ -352,6 +352,47 @@ Overall this game will:
 ## Skeleton Plane
 ---
 
+This game will be created entirely with the HTML, CSS and Javascript languages.
+
+The game will dynamically present data and elements to the player as called upon by the stage of the game they have reached.
+
+The elements will all be housed with `<div>` containers present in the HTML pages and populated by Javascript functions. Making use of DOM navigation and targetting in order to add children dynamically to containers. 
+
+To provide user value:
+- The UI will be kept clean and clutter free throughout the game. Only displaying the necessary elements required for interaction at any given time.
+- Immediate interaction and positive feedback will be available to the player at all times.
+- Buttons and cards will be responsively designed to adjust for all screen sizes and provide user interaction on `:hover` and `onClick`.
+- The HUB will provide simple and clear actions to the player, to aid in progression.
+- Typography will be kept simple to aid in the clean UI environment.
+- The players username will display in a different font and colour, portraying the feeling that the Computer-Player is taking an interest in them and reminding them that this is "THEIR UNIQUE ADVENTURE".
+- Interaction is explained by the "Computer-Player" where necessary and kept simplistic enough for all users to interact.
+
+---
+
+### Wireframes
+
+---
+
+Included below are wireframe designs created with [Balsamiq](https://balsamiq.com/).
+
+This imagery demonstrates the positions of features and elements that compose each section of the game.
+
+Providing a simplified demonstration of the game's architecture and the stages the player will advance through as they progress.
+
+Each image is notated to provide further explanation.
+
+<details><summary>Game Levels Wireframe</summary><img src="assets/images/docs/wireframes/game_wireframe.png" alt="Game Levels Wireframe"></details>
+
+<details><summary>Text Adventure Layout Wireframe</summary><img src="assets/images/docs/wireframes/text_adventure_wireframe.png" alt="Text Adventure Layout Wireframe"></details>
+
+^ This provides a more detailed layout of the H.U.G. HUB world the player will navigate. Explaining how player progression works. 
+
+[Back to top ↑](#the-oversights---band-website)
+
+---
+## Surface Plane
+---
+
 
 
 ---
