@@ -56,6 +56,7 @@ It has been tested on a variety of devices and screen resolutions: from mobiles;
     - [Skeleton Plane](#skeleton-plane)
         - [Wireframes](#wireframes)
     - [Surface Plane](#surface-plane)
+1. [Meeting User Stories](#meeting-user-stories)
 1. [Validation Tests](#validation)
     - [HTML Validation](#html-validation)
     - [CSS Validation](#css-validation)
@@ -64,8 +65,7 @@ It has been tested on a variety of devices and screen resolutions: from mobiles;
     - [Screen Reader Accessibility](#screen-reader-accessibility)
     - [Performance Testing](#performance-testing)
     - [Device Testing](#device-testing)
-1. [Manual & User Testing](#manual-&-user-testing)
-    - [Meeting User Stories](#meeting-user-goals)
+1. [Manual & User Testing](#manual--user-testing)
     - [User Feedback](#user-feedback)
     - [Chrome Dev Tools](#chrome-dev-tools)
 1. [Bug Fixes](#bug-fixes)
@@ -92,18 +92,9 @@ I will maintain a clear, justified development path, and establish a defined pri
 ### Strategy Plane
 ---
 
-The following user stories have been numbered sequentially so that they may be referenced in later sections.
+In this section I will define goals and stories for both users/players of the game and the website-owner/game developer. These will serve as a reference point in defining the necessary features and functions of the game.
 
-For example: 
-
-    (User stories met: 1-1, 2-3, 5-1)
-
-Would show that:
-
-    User Stories: #1-1; #2-3;
-    Site Owner Stories: #5-1;
-
-Had been met by the stated example.
+In a later section we will revisit these stories and see how the project has addressed each one.
 
 Each subheading provided expands upon the initial goal, providing further elaboration on ways to achieve it or referencing areas where I expect to meet these goals throughout the development of the project.
 
@@ -348,6 +339,8 @@ Overall this game will:
 - Ensure all text and elements have visual clarity and are readable across many devices.
 - Reward the user with progression for all interactions.
 
+[Back to top ↑](#The-H.U.G.-Protocol)
+
 ---
 ## Skeleton Plane
 ---
@@ -551,10 +544,13 @@ As this game is on a webpage it will be loaded "Top-Bottom" from the HTML file.
 This structure should ensure that the page is loaded quickly and that the user doesn't see an unstyled page or wait for the initial elements to load in. 
 
 ---
-## Features - meetings User Stories
+## Meeting User Stories
 ---
 
+In this section, we shall revisit out original user & site-owner stories and examine if they have been met during the creation of this game.
 
+
+[Back to top ↑](#The-H.U.G.-Protocol)
 
 ---
 
@@ -711,6 +707,8 @@ The website has been tested on up-to-date versions of the following browsers:
 
 The website has also been tested on monitors of 16:9, 16:10 and 21:9 resolutions.
 
+[Back to top ↑](#The-H.U.G.-Protocol)
+
 ---
 ## Manual & User Testing
 ---
@@ -723,31 +721,145 @@ The following would need to all be checked thoroughly and work without error, in
 
 The following would need to be tested to ensure i'd satisfied my brief and provided a fully functional game, fit for consumption by the user:
 
-- Can the game be finished?
-- Will using non-standard letters break the user-name input?
-- - Can you still finish the game like this?
-- Does "GAME OVER" trigger correctly?
-- - Can you trigger a "GAME OVER" from each question within the Maths section?
-- - Can you trigger a "GAME OVER" from each bad answer in the Obstacle Course Section?
-- Do different "members" appear each time this screen is reached by the player?
-- - Are their first names, last names and skills different enough on each reload?
-- Does the players end card display?
-- - Does their score match their failures?
-- Do the math questions accept the correct answers?
-- - Do they correctly update to, and display, the next operand?
-- Do the correct options display in the Obstacle course section based on the `state{}`?
-- - Does keeping a state such as `"rock: true" or "rope:true"` effect the game when kept longer than intended?
-- - Can you still finish the game with these set to `true`? 
+(I have included an image or description proving the testing below each.)
 
-With so many branching story paths, potential areas to game over.
+---
+1. Can the game be finished without encountering errors?
+
+**Passes Testing:** Yes, i've tested the game numerous times since publishing and haven't ran into a single game-breaking or progression-preventing bug. My play-testers also never encountered an issue, meaning the game has been ran over 20x on at least 10 different devices without encountering a single issue.
+
+(Further information on the devices used and play-testing discoveries is documented in their relevant sections.)
+
+---
+
+2. Will using non-standard letters break the user-name input?
+    - Can you still finish the game like this?
+
+**Passes Testing:** I've ran the game with numerous symbols and numbers in the name and not encountered a single issue with this impeding progress or displaying incorrectly when called by functions.
+
+<details><summary>Username Input Testing #1</summary>
+<img src="assets/images/docs/tests/mt_name_test.png" alt="Username Testing #1"></details>
+
+<details><summary>Username Input Testing #2</summary>
+<img src="assets/images/docs/play_session/ps3.png" alt="Username Testing #2"></details>
+
+---
+
+3. Does "GAME OVER" trigger correctly?
+    - Can you trigger a "GAME OVER" from each question within the Maths section?
+    - Can you trigger a "GAME OVER" from each bad answer in the Obstacle Course Section?
+
+**Passes Testing:** I attempted to fail the game from each point within the Obstacle course and from within each equation round of the Maths game. It triggered successfully in each instance, preventing further gameplay without restarting.
+
+<details><summary>GAME OVER Testing #1</summary>
+<img src="assets/images/docs/tests/mt_fail_test_from_math.png" alt="GAME OVERTesting #1"></details>
+
+<details><summary>GAME OVER Testing #2</summary>
+<img src="assets/images/docs/tests/mt_fail_test_from_ob_course.png" alt="GAME OVER Testing #2"></details>
+
+<details><summary>GAME OVER Testing #3</summary>
+<img src="assets/images/docs/tests/mt_fail_test.png" alt="GAME OVER Testing #3"></details>
+
+---
+
+4. Do different "members" appear each time this screen is reached by the player?
+    - Are their first names, last names and skills different enough on each reload?
+    
+**Passes Testing:** Documented three instances of this section of the game below. Different first name and last name parings and skills were shown.
+    
+<details><summary>Card Randomiser #1</summary>
+<img src="assets/images/docs/play_session/ps19.png" alt="Card Randomiser #1"></details>
+
+<details><summary>Card Randomiser #2</summary>
+<img src="assets/images/docs/tests/members_2.png" alt="Card Randomiser #2"></details>
+
+<details><summary>Card Randomiser #3</summary>
+<img src="assets/images/docs/tests/members_1.png" alt="Card Randomiser #3"></details>
+
+---
+
+5. Does the players end card display?
+    - Does their score match their failures?
+    - Does their username match?
+
+**Issue Discovered:** An issue for this was uncovered during user testing. The card displayed incorrectly on small-screened devices. This has been fixed and is discussed within the User Feedback section below.
+
+**Passes Testing:** On all instances of game completion the `failScore` displayed in the footer matched the `FAILURES:(score)` printed on the players card. The `username` also matched in each case of game completion.
+     
+<details><summary>Fail Score Test</summary>
+<img src="assets/images/docs/tests/mt_failscore.png" alt="Fail Score Test #1"></details>
+
+---
+
+6. Do the math questions accept the correct answers?
+    - Do they correctly update to, and display, the next operand?
+
+**Passes Testing:** Correct and Incorrect answers are responded to. If the answer is correct, the game loads the next operand and continues until all three questions have been answered. Otherwise it replays the same operand's questions, adding to the failures of the player and calling a Game Over as tested in Question (3) above.
+     
+<details><summary>Maths Input Tests - Correct - Before Click</summary>
+<img src="assets/images/docs/tests/maths1.png" alt="Maths Correct Tests"></details>
+
+<details><summary>Maths Input Tests - Correct - After Click</summary>
+<img src="assets/images/docs/tests/maths2.png" alt="Maths Correct Tests 2"></details>
+
+<details><summary>Maths Input Tests - Incorrect</summary>
+<img src="assets/images/docs/tests/maths3.png" alt="Maths Incorrect Tests"></details>
+
+<details><summary>Maths Input Tests - Incorrect</summary>
+<img src="assets/images/docs/tests/maths4.png" alt="Maths Incorrect Tests 2"></details>
+
+---
+
+7. Do the correct options display in the Obstacle course section based on the `state{}`?
+    - Does keeping a state such as `"rock: true" or "rope:true"` effect the game when kept longer than intended?   
+    - Can you still finish the game with these set to `true`? 
+
+**Passes Testing:** I was able to complete the game no matter what additional states I had `:true` or `:false`. They didn't prevent progression as long as the correct states were active. The image below is an example from a round where I left both the `rock` and `rope` set to `:true` and was still able to finish the game without issue.
+
+<details><summary>State Change Checking</summary>
+<img src="assets/images/docs/tests/mt_state_change.png" alt="State Change Checking"></details>
+
+[Back to top ↑](#The-H.U.G.-Protocol)
 
 ---
 ### User Feedback
 ---
 
-1 - Empty the Maths Answer Box when the question is answered, rather than the previous answer remaining until the user manually deletes it. Vastly improves the experience.
+Extensive user testing was carried out by friends, family and Slack forum members. Thanks to this external testing I was able to discover and fix two additional issues.
 
-2 - Fix error where the end card was displaying incorrectly - and very squashed - on small screen mobile devices. Fixed with bootstrap code and by removing the ".build" class which set the card to 40% of the container... didn't factor in the container was smaller on smaller devices and therefore the card wouldn't maintain it's shape - as seen in the below example - when shrunk far enough.
+1. The Maths Answer Box didn't empty out the previous answer when the questions advanced, meaning the user had to manually do this themselves when entering the next answer, providing a poor experience.
+
+I solved the issue by adding this additional line of code to the `function checkAnswer(){...}`. So that each time the answer is checked, the input box is cleared, ready for the users next input. Vastly improving the users experience when interacting with this element.
+
+```
+// Clears text from the answer box.
+document.getElementById("answer-box").value = "";
+```
+
+2. The final users card was displaying incorrectly on small screened devices. The image was very squashed and hard to read, which was not the intention. It also wasn't filling much of it's `<div>` container.
+
+<details><summary>The Broken Card Image</summary>
+<img src="assets/images/docs/feedback/feedback_broken_card.png" alt="Broken Card"></details>
+
+This displayed the image fine on larger screens but I hadn't factored in that the container was smaller on smaller devices and therefore the card displaying at 40% it's maximum scale wouldn't look good, or maintain it's shape as the screen size decreased.
+
+<details><summary>The ".build" class</summary>
+<img src="assets/images/docs/feedback/feedback_card_before.png" alt="Build CSS Class"></details>
+
+I fixed this issue by implementing bootstrap containers and removing the custom ".build" css class I had set up. This was setting the card to 40% of the container size. 
+
+<details><summary>The code that replaced ".build"</summary>
+<img src="assets/images/docs/feedback/feedback_card_fix_add_bootstrap.png" alt="Fixed Card Code"></details>
+
+<details><summary>The Fixed Card Image</summary>
+<img src="assets/images/docs/feedback/feedback_card_fixed.png" alt="Fixed Card Image"></details>
+
+I discovered this issue with the ".build" class after testing the project with the use of Chrome Dev Tools.
+
+<details><summary>Chrome Dev Tools Example</summary>
+<img src="assets/images/docs/feedback/feedback_card_removed_build.png" alt="Chrome Dev Tools Example"></details>
+
+[Back to top ↑](#The-H.U.G.-Protocol)
 
 ---
 ### Chrome Dev Tools
