@@ -31,11 +31,11 @@
 I am currently pursuing my **Diploma in Web App Development** from [Code Institute](https://codeinstitute.net/ "code Institute").
 
 The academic aim of this project is to demonstrate my newly developed skills within Javascript by building an interactive front-end site.
-It will be responsive to users actions, allowing them to engage with the presented data, elements and imagery to progress through an engaging "text-adventure" game and reach a satisfying conclusion.
+It will be responsive to users' actions, allowing them to engage with the presented data, elements and imagery to progress through an engaging "text-adventure" game and reach a satisfying conclusion.
 
-The user will be able to interact with the games many elements in order to reach the satisfying conclusion of passing the "H.U.G. Protocol."
+The user will be able to interact with the game's many elements in order to reach the satisfying conclusion of passing the "H.U.G. Protocol."
 
-As the site owner I will achieve my goal of providing an engaging and fast to digest "Text-Adventure" game for multiple users to enjoy.
+As the site owner, I will achieve my goal of providing an engaging and fast-to-digest "Text-Adventure" game for multiple users to enjoy.
 
 I intend to display the above throughout the project via my: coding, comments, commits, and the explanation provided by this README file.
 
@@ -43,7 +43,7 @@ Additional functionality has been provided by the framework [Bootstrap 4.6](http
 
 Great care has been taken, to ensure that the website is designed to meet best practice standards, and is responsive on all screen resolutions.
 
-It has been tested on a variety of devices and screen resolutions: from mobiles; to tablets; and 4k-monitors. It also has proven compatibility with all popular web browsers.
+It has been tested on a variety of devices and screen resolutions: from mobiles; to tablets; and 4k monitors. It also has proven compatibility with all popular web browsers.
 
 ---
 ## Table of Contents
@@ -84,7 +84,7 @@ It has been tested on a variety of devices and screen resolutions: from mobiles;
 
 I have arranged my UX analysis in the style of Jesse James Garrett's philosophy of the "5 Planes" framework - as discussed in his book [The Elements of User Experience](https://www.amazon.co.uk/Elements-User-Experience-User-Centered-Design/dp/0321683684/ref=asc_df_0321683684/?tag=googshopuk-21&linkCode=df0&hvadid=311000051962&hvpos=&hvnetw=g&hvrand=10376246921916888236&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007448&hvtargid=pla-432330338546&psc=1&th=1&psc=1).
 
-I decided to utilise this methodology in order to establish achievable goals for my project, meeting the needs of both the user (or player) and site owner (or developer).
+I decided to utilise this methodology in order to establish achievable goals for my project, meeting the needs of both the user (or player) and the site owner (or developer).
 
 I will maintain a clear, justified development path, and establish a defined priority of tasks and elements for integration. Ensuring the project avoids "feature creep," at this development stage, maintaining its initial scope.
 
@@ -92,9 +92,9 @@ I will maintain a clear, justified development path, and establish a defined pri
 ### Strategy Plane
 ---
 
-In this section I will define goals and stories for both users/players of the game and the website-owner/game developer. These will serve as a reference point in defining the necessary features and functions of the game.
+In this section, I will define goals and stories for both users/players of the game and the website owner/game developer. These will serve as a reference point in defining the necessary features and functions of the game.
 
-In a later section we will revisit these stories and see how the project has addressed each one.
+In a later section, we will revisit these stories and see how the project has addressed each one.
 
 Each subheading provided expands upon the initial goal, providing further elaboration on ways to achieve it or referencing areas where I expect to meet these goals throughout the development of the project.
 
@@ -222,7 +222,7 @@ The following are written with respect to the above user/site-owner stories and 
 7. A reachable victory screen. 
     - validates the users' experience, providing positive feedback.
 
-8. A quit/restart button, available from each section of the game.
+8. A quit/restart button is available from each section of the game.
     - Provides users with an escape if they encounter a page break/error. 
     - Can preemptively restart if they feel they want to try for a better score.
 
@@ -249,7 +249,7 @@ The text-based adventure and states system already works perfectly for navigatio
 In a theoretical "next update", I would make it a priority to improve upon the existing user experience before looking to expand it.
 
 1. The addition of more sound effects to the game, such as: 
-    - Correct and incorrect sounds called by the Maths answer button.
+    - Correct and incorrect sounds are called by the Maths answer button.
     - Sounds for button presses in other areas such as the `name input` field.
     - Relevant sounds for the actions taking place within the choices within the text-adventure section. All to provide additional, audio feedback to the user's interaction.
 
@@ -263,16 +263,16 @@ Beyond this I would continue to expand the game through the implementation of:
 
 3. Adding additional branching pathways and a more elaborate text adventure experience.
     - More areas, tests and states to expand upon the defined in-place framework.
-    - Thankfully my approach to verbose coding would allow this with the game in it's current finished state.
+    - Thankfully my approach to verbose coding would allow this with the game in its current finished state.
 
 4. Implement a more extensive variety of user tests for the player to interact with.
     - Moving the player's mouse through an onscreen maze, where touching the sides increases the "Failures" score.
     - Holding the mouse over an image for a period of time to stop a background timer from resetting and impeding the player's progression.
-    - More sections hinting at a wider narrative of the player entering into an exclusive club, that gradually begins to reveal sinister intentions.
+    - More sections hint at a wider narrative of the player entering into an exclusive club, that gradually begins to reveal sinister intentions.
 
 5. Add a download button for the player's card.
     - Being able to Screenshot works sufficiently within the current version of the game and is suggested to the player by the "Computer-Player" to provide them with the opportunity.
-    - This would serve as a fidelity upgrade for the image, removing the players need to crop or perfectly target the image with a screenshot application.
+    - This would serve as a fidelity upgrade for the image, removing the player's need to crop or perfectly target the image with a screenshot application.
     - It would also add simplicity for users who aren't aware of how to take a screenshot.
 
 6. Add a "leaderboard" of players' cards.
@@ -292,41 +292,41 @@ The first thing the player should be greeted by is a clickable `button` to `"BEG
 
 From here the game should set out to establish the feel of a unique experience by providing the player with automated text from the "Computer-Player" to simulate a conversation. 
 
-It should then provide a `username text input` to set the players `username` to a `global variable` for use throughout the game. 
+It should then provide a `username text input` to set the player's `username` to a `global variable` for use throughout the game. 
 
 These measures will drastically improve the **unique** experience for each player and start things off on the right foot.
 
-Next the player should be introduced to the H.U.B. Text-Adventure area, where they are presented with options to navigate the area in the form of `buttons`. 
+Next, the player should be introduced to the H.U.B. Text-Adventure area, where they are presented with options to navigate the area in the form of `buttons`. 
 
 The interaction design (IXD) of these buttons is as follows:
 
-1. They should change shade on `:hover` to indicate that the player can interact with them.
+1. They should change the shade on `: hover` to indicate that the player can interact with them.
 
 2. `onClick` these elements will (as necessary):
     - Update the Computer-Players text to describe the next area.
     - Move the player to that new area.
     - Provide information on an object the player is examining.
-    - Change the players state by acquiring an item.
+    - Change the player's state by acquiring an item.
     - Launch the Maths game.
     - Launch the Card Selection game.
-    - Update the players failScore.
+    - Update the player's "failScore".
 
 All of these actions will take place on a single webpage, with the elements loading and being removed from `<div>`'s as required to display the correct elements the player needs to interact with at any given time.
 
-The final section will feature a selection of 8 cards. These cards will be populated with data from the `"members" array` and utilise random number generation to ensure they are different for each user and on each subsequent play-through of the game. This is the main method through which the player will be encourage to replay and interact with new elements. 
+The final section will feature a selection of 8 cards. These cards will be populated with data from the `"members" array` and utilise random number generation to ensure they are different for each user and on each subsequent play-through of the game. This is the main method through which the player will be encouraged to replay and interact with new elements. 
 
 The interaction design of the cards is as follows:
 
-1. The cards should increase in scale slightly on `:hover` to provide the user with positive feedback that: they have interaction; and that their cursor is currently hovering over that specific card from the 8 on display.
+1. The cards should increase in scale slightly on `: hover` to provide the user with positive feedback that: they have interaction; and that their cursor is currently hovering over that specific card from the 8 on display.
 
-2. `onClick` a function should be called to remove the 7 other cards and display the selected card in the center.
+2. `onClick` a function should be called to remove the 7 other cards and display the selected card in the centre.
     - Sound should then play as the card is animated to fade out into black & white.
-    - This is to surprise the user and add significant weight to the selection they've just made. Providing a series of shock and feedback that will make the user want to replay the game and see if they made the correct choice.
-    - Variety is provided here with the inclusion of two "death" sound effects. Also adding to the replayability of the experience.
+    - This is to surprise the user and add significant weight to the selection they've just made. Providing a series of shocks and feedback that will make the user want to replay the game and see if they made the correct choice.
+    - Variety is provided here with the inclusion of two "death" sound effects. Also adds to the replayability of the experience.
 
 3. The random generation is to ensure each user has a different experience in the game. The inclusion of funny `"skills"` encourages the user to replay the game in order to see what other options may present themselves.
 
-4. The users card will then generate. Showing their `$(username)` and `$(failScore)` proudly, encouraging them to screenshot it.
+4. The user's card will then generate. Showing their `$(username)` and `$(failScore)` proudly, encouraging them to screenshot it.
     - The user may want to replay for a better score.
     - They are encouraged to send the game to a friend at this point. Enhancing their experience and connection to the game and expanding the experience to more users.
 
@@ -352,12 +352,12 @@ The game will dynamically present data and elements to the player as called upon
 The elements will all be housed with `<div>` containers present in the HTML pages and populated by Javascript functions. Making use of DOM navigation and targetting in order to add children dynamically to containers. 
 
 To provide user value:
-- The UI will be kept clean and clutter free throughout the game. Only displaying the necessary elements required for interaction at any given time.
+- The UI will be kept clean and clutter-free throughout the game. Only displaying the necessary elements required for interaction at any given time.
 - Immediate interaction and positive feedback will be available to the player at all times.
-- Buttons and cards will be responsively designed to adjust for all screen sizes and provide user interaction on `:hover` and `onClick`.
+- Buttons and cards will be responsively designed to adjust for all screen sizes and provide user interaction on `: hover` and `onClick`.
 - The HUB will provide simple and clear actions to the player, to aid in progression.
 - Typography will be kept simple to aid in the clean UI environment.
-- The players username will display in a different font and colour, portraying the feeling that the Computer-Player is taking an interest in them and reminding them that this is "THEIR UNIQUE ADVENTURE".
+- The player's username will display in a different font and colour, portraying the feeling that the Computer-Player is taking an interest in them and reminding them that this is "THEIR UNIQUE ADVENTURE".
 - Interaction is explained by the "Computer-Player" where necessary and kept simplistic enough for all users to interact.
 
 ---
@@ -380,7 +380,7 @@ Each image is notated to provide further explanation.
 
 ^ This provides a more detailed layout of the H.U.G. HUB world the player will navigate. Explaining how player progression works. 
 
-[Back to top ↑](#the-oversights---band-website)
+[Back to top ↑](#The-H.U.G.-Protocol)
 
 ---
 ## Surface Plane
@@ -430,7 +430,7 @@ I have documented images below to provide visual examples of each and confirmati
 For the button I added a subtle text underline and drop shadow, along with lifting the button slightly upwards, providing player feedback upon interaction without impacting the intentionally limited colour palette.
 
 ```
-.btn:hover {
+.btn: hover {
     text-decoration: underline;
     box-shadow: 5px 5px 5px;
     transform: translateY(-0.05em);
@@ -440,12 +440,12 @@ For the button I added a subtle text underline and drop shadow, along with lifti
 
 ---
 
-The quit button at the bottom of the screen required a failsafe to prevent the user accidentally clicking it and restarting the entire game (as happened to me early during manual testing), as such I implemented an `onClick` function that displayed two additional buttons in it's place. Improving the users experience by preventing this disheartening action from happening and providing an additional check to confirm their action.
+The quit button at the bottom of the screen required a failsafe to prevent the user from accidentally clicking it and restarting the entire game (as happened to me early during manual testing), as such I implemented an `onClick` function that displayed two additional buttons in its place. Improving the user's experience by preventing this disheartening action from happening and providing an additional check to confirm their action.
 
 - One to confirm the Quit action.
 - One to cancel the Quit action.
 
-Feedback was provided by using default bootstrap classes to change the `:hover` colour of these buttons to Green and Red (`success` and `warning`).
+Feedback was provided by using default bootstrap classes to change the `: hover` colour of these buttons to Green and Red (`success` and `warning`).
 
 <details><summary>Button Return</summary><img src="assets/images/docs/play_session/button1.png" alt="Button Return"></details>
 
@@ -458,11 +458,9 @@ Feedback was provided by using default bootstrap classes to change the `:hover` 
 
 Visual separation is achieved between sections of the game through the use of bootstrap containers. 
 
-The players area is alway
+The player's area is always displayed below the "Computer-Players" text box, sticking to an ordered hierarchy. At the bottom is a `Sticky Footer` which will maintain its position responsively across all device screen sizes.
 
-s displayed below the "Computer-Players" text box, sticking to an ordered hierarchy. At the bottom is a `Sticky Footer` which will maintain it's position responsively across all device screen sizes.
-
-This simple layout, intuitively conveys the games structure to the user from the beginning.
+This simple layout intuitively conveys the structure of the game to the user from the beginning.
 
 Drop shadows were added to the top of the footer to provide a sleek sense of visual separation. This improves visual clarity between elements of the game and is crucial for the ending card section, where the second row of cards will be overlapped by the footer.
 
@@ -479,11 +477,11 @@ It was taken from [Lospec: AYY4 PALETTE](https://lospec.com/palette-list/ayy4).
 
 The reason I selected this palette was as a tribute to the simple text-based and Gameboy games of the past. These would often use highly limited, 4-colour palettes for their entire games. 
 
-I wanted to emulate this limited style for a number of reason:
+I wanted to emulate this limited style for a number of reasons:
 
-- To provide a sense of familiarity to the user. Who may have experienced a similar game in their past.
-- To achieve a feeling of consistent, branded design throughout the projects many elements.
-- To compliment the games narrative of navigating a Computer-hosted simulation environment.
+- To provide a sense of familiarity to the user. Who may have experienced a similar game in the past.
+- To achieve a feeling of consistent, branded design throughout the project's many elements.
+- To complement the game's narrative of navigating a Computer-hosted simulation environment.
 - The colours compliment a simplistic design philosophy.
 - They provide clean, distinct colours that pass best practice guidelines.
 
@@ -494,24 +492,24 @@ I wanted to emulate this limited style for a number of reason:
 
 The game is devoid of imagery apart from the Avatar images that are used to populate the `members cards`.
 
-[Personas](https://personas.draftbit.com/) was utilised to create the many avatar images.
+[Personas](https://personas.draftbit.com/) was utilised to create many avatar images.
 
-The generator was user friendly and varied enough that I was able to generate 24 individual images for inclusion in this version of the game. In the future this can be increased to allow for even more variety.
+The generator was user-friendly and varied enough that I was able to generate 24 individual images for inclusion in this version of the game. In the future, this can be increased to allow for even more variety.
 
 This art style was selected as it was simplistic and complimented the overall design choices already made.
 
 The layout of each card is as follows:
 - First Name + Last Names (Create more unique combinations than just one name alone.)
 - Special Skill (Included to add interest, humour and personality to each member.)
-- A tag at the bottom of the card that reads `"Replace?"` to reinforce the action the user is about to take, providing further feedback to their interactions.
+- A tag at the bottom of the card that reads `"Replace?"` to reinforce the action the user is about to take, providing further feedback on their interactions.
 
-Below I have included a selection of "VICTORY" Cards from my play testers.
+Below I have included a selection of "VICTORY" Cards from my playtesters.
 
-<details><summary>User #1</summary><img src="assets/images/docs/play_session/user1.png" alt="User #1"></details>
+<details><summary>User #1</summary><img src="assets/images/docs/play_session/user_1.png" alt="User #1"></details>
 
-<details><summary>User #2</summary><img src="assets/images/docs/play_session/user2.png" alt="User #2"></details>
+<details><summary>User #2</summary><img src="assets/images/docs/play_session/user_2.png" alt="User #2"></details>
 
-<details><summary>User #3</summary><img src="assets/images/docs/play_session/user3.png" alt="User #3"></details>
+<details><summary>User #3</summary><img src="assets/images/docs/play_session/user_3.png" alt="User #3"></details>
 
 ---
 
@@ -520,11 +518,11 @@ Below I have included a selection of "VICTORY" Cards from my play testers.
 
 It was important to me that the font was readable on all screen sizes while also representing the fact that it would be mainly used as the onscreen "voice" of the "Computer-Player". 
 
-As such I stuck to [ROBOTO](https://fonts.google.com/specimen/Roboto) for the majority of the onscreen text.
+As such, I stuck to [ROBOTO](https://fonts.google.com/specimen/Roboto) for the majority of the onscreen text.
 
-In order to make the players `username` stand out from the text, I made use of the [VT323](https://fonts.google.com/specimen/VT323?query=vt) font by Peter Hull, which serves to visually emulate the classic computer monitor fonts of days passed. Visually this seemed like a natural choice to reinforce the "Computer-Player's" personality and visually highlight whenever the `username` was used to the player, improving their overall unique experience and connection to the games elements.
+In order to make the players `username` stand out from the text, I made use of the [VT323](https://fonts.google.com/specimen/VT323?query=vt) font by Peter Hull, which serves to visually emulate the classic computer monitor fonts of days passed. Visually this seemed like a natural choice to reinforce the "Computer-Player's" personality and visually highlight whenever the `username` was used by the player, improving their overall unique experience and connection to the elements of the game.
 
-The selection of these fonts and the previous colour palette also helped in conforming to the expected culture of an old-school "text-based" adventure game. As many of these would have originally ran on older gaming systems like MS DOS or Commodore. 
+The selection of these fonts and the previous colour palette also helped in conforming to the expected culture of an old-school "text-based" adventure game. Many of these would have originally run on older gaming systems like MS-DOS or Commodore. 
 
 ---
 
@@ -535,13 +533,13 @@ Bootstrap and Jquery Javascript dependencies are placed at the bottom of the bod
 
 As this game is on a webpage it will be loaded "Top-Bottom" from the HTML file. 
 
-This structure should ensure that the page is loaded quickly and that the user doesn't see an unstyled page or wait for the initial elements to load in. 
+This structure should ensure that the page is loaded quickly and that the user doesn't see an unstyled page or wait for the initial elements to load. 
 
 ---
 ## Meeting User Stories
 ---
 
-In this section, we shall revisit out original user & site-owner stories and examine if they have been met during the creation of this game.
+In this section, we shall revisit our original user & site-owner stories and examine if they have been met during the creation of this game.
 
     As a site user/game player, I want to:
 
@@ -557,7 +555,7 @@ In this section, we shall revisit out original user & site-owner stories and exa
 
 **The above goal has been met** as evidenced - with imagery provided - in the below "Manual & User Testing" section. 
 
-The game features all of the above mentioned elements:
+The game features all of the above-mentioned elements:
 - Username input box. Capable of accepting any symbols or numbers.
 - Math answer input box. Displays the correct and incorrect answer responses as expected.
 - Interactable buttons for navigation of the H.U.G. HUB, submitting requested data and restarting the game.
@@ -570,7 +568,7 @@ The game features all of the above mentioned elements:
 <img src="assets/images/docs/play_session/ps4.png" alt="Username Testing After"></details>
 
 <details><summary>Math Box - Correct</summary>
-<img src="assets/images/docs/play_session/ps9.png" alt="Math Box Correct"></details>
+<img src="assets/images/docs/play_session/ps9L.png" alt="Math Box Correct"></details>
 
 <details><summary>Math Box - Incorrect</summary>
 <img src="assets/images/docs/play_session/ps23.png" alt="Math Box Incorrect"></details>
@@ -582,15 +580,15 @@ The game features all of the above mentioned elements:
         2. Grant users the ability to "recruit" others. Making them feel as if they've achieved true membership within the H.U.G. protocol.
 
 **The above goal has been met.** 
-The player is able to make it to the ending bug-free as evidenced in the following document sections. A unique membership card is generated for the user - as shown above where a sample of play-tester cards were shown. I've included further play-tester cards below, as immediate evidence.
+The player is able to make it to the end bug-free as evidenced in the following document sections. A unique membership card is generated for the user - as shown above where a sample of playtester cards was provided. I've included further play-tester cards below, as immediate evidence.
 
 The recruitment button is provided for players, encouraging them to share the game.
 
-<details><summary>User #4</summary><img src="assets/images/docs/play_session/user4.png" alt="User #4"></details>
+<details><summary>User #4</summary><img src="assets/images/docs/play_session/user_4.png" alt="User #4"></details>
 
-<details><summary>User #5</summary><img src="assets/images/docs/play_session/user5.png" alt="User #5"></details>
+<details><summary>User #5</summary><img src="assets/images/docs/play_session/user_5.png" alt="User #5"></details>
 
-<details><summary>User #6</summary><img src="assets/images/docs/play_session/user6.png" alt="User #6"></details>
+<details><summary>User #6</summary><img src="assets/images/docs/play_session/user_6.png" alt="User #6"></details>
 
 <details><summary>Recruitment Button</summary>
 <img src="assets/images/docs/play_session/ps22.png" alt="Recruitment Button"></details>
@@ -606,7 +604,7 @@ The recruitment button is provided for players, encouraging them to share the ga
             3. different routes are available through the "Text-based" obstacle course section.
 
 **The above goal has been met.** 
-As already seen throughout this document, each maths question generates unique question on each playthrough of the game. The same is true for the user generated cards as evidenced in the last user goal section above and the manual testing section below.
+As already seen throughout this document, each maths question generates a unique question on each playthrough of the game. The same is true for the user-generated cards as evidenced in the last user goal section above and the manual testing section below.
 
 There are a few varied routes on offer through the obstacle course, an image included in user testing - examining if player states have an impact on the game - shows proof of multiple options that only appear if the player collects the `rock` and `rope` objects.
 
@@ -631,7 +629,7 @@ I've included a few images to substantiate these claims further below.
         2. Manual testing of the site's many paths and elements will be crucial to achieving both this goal and the aforementioned user goal, and as such will be documented in its own section later.
 
 **The above goals have been met.** 
-In the above user stories analysis and in the following testing sections, I have proven that the app and all of it's functions and features work as intended. Later in the document I have included the aforementioned Manual testing section. to provide further evidence.
+In the above user stories analysis and in the following testing sections, I have proven that the app and all of its functions and features work as intended. Later in the document, I included the aforementioned Manual testing section. to provide further evidence.
 
     6. Ensure the app and its elements display correctly on any device.
 
@@ -667,13 +665,13 @@ I have included images of touch functionality working on a mobile device below.
 
 
 **The above goal has been met.** 
-The following Javascript functions are all used and viewable within this projects "scripts.js" file. This was important to include from a site-owner perspective in order to provide a varied game experience for the users and to meet the expectations of the assignment by providing a strong knowledge of Javascript.
+The following Javascript functions are all used and viewable within this project's "scripts.js" file. This was important to include from a site-owner perspective in order to provide a varied game experience for the users and to meet the expectations of the assignment by providing a strong knowledge of Javascript.
 
 - As an example of an "onClick" function here are lines (144-147):
 
 ```
     document.getElementById("startBtn").onclick = function () {
-        // Removes nameBox from the "user" div inside of the html file
+        // Removes nameBox from the "user" div inside of the HTML file
         startBtn.remove();
         enterName(); // runs enterName
 ```
@@ -722,7 +720,8 @@ The following Javascript functions are all used and viewable within this project
 ```
 
 - The best example of an array is the "membership" array beginning on line (1068). 
-Small - edited - segment included:
+
+A small segment is included here:
 
 ```
 let members = {
@@ -748,7 +747,7 @@ As addressed in user story (3), the project provides plenty of positive feedback
 - Trying different routes through the Obstacle course.
 - Wondering what would happen if they got the `red chip` before the `blue chip` or vice-versa.
 - Was that `rock` useful for something else?
-- I wonder what other membership cards I can chose from on during the `final protocol`?
+- I wonder what other membership cards I can choose from during the `final protocol`?
 
 The random generators all work as intended providing the expected experience for users.
 This is evidenced further in the Manual Testing section below, as is the case with other goals being met above.
@@ -769,7 +768,7 @@ that can be generated during the `final protocol`.
 <details><summary>Possible Combinations</summary>
 <img src="assets/images/docs/play_session/possible_combos.jpg" alt="Possible Combinations"></details>
 
-With this I can confidently declare that the goal of providing the user with a **UNIQUE** experience has been met.
+With this, I can confidently declare that the goal of providing the user with a **UNIQUE** experience has been met.
 
 ---
 
@@ -796,7 +795,7 @@ I have substantial reason to declare all user and site-owner stories met.
 
 ---
 
-With all user stories being satisfactorily met, the website being published and user-testing fixes implemented, the next step was to run the site through several online Validators to confirm it meets best practices and runs as efficiently as possible.
+With all user stories being satisfactorily met, the website is published and user-testing fixes implemented, the next step was to run the site through several online Validators to confirm it meets best practices and runs as efficiently as possible.
 
 ---
 ### HTML Validation
@@ -812,7 +811,7 @@ I began my validation by running the HTML page through "[W3C's Validation Servic
 
 The errors found can be summarised as follows:
 - Unnecessary /> closing tags on a few HTML Head links.
-- An unnecessary type attribute had been included where i'd linked to my Javascript at the end of the HTML's body.
+- An unnecessary type attribute had been included where I'd linked to my Javascript at the end of the HTML's body.
 
 **Validation Passes**
 
@@ -826,7 +825,7 @@ I fixed the above issues and ran the pages back through W3C's validation service
 ### CSS Validation
 ---
 
-Next I carried out validation on the project's CSS file by running the page through "[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)."
+Next, I carried out validation on the project's CSS file by running the page through "[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)."
 
 <details><summary>CSS Pass</summary>
 <img src="assets/images/docs/validation/w3_css_pass.png" alt="CSS Validation Pass"></details>
@@ -837,7 +836,7 @@ The results came back successfully, allowing me to continue automated testing an
 ### Javascript Validation
 ---
 
-Finally it was time to run the largest, most integral file of this project - scripts.js - through "[JSLint](https://www.jslint.com/)."
+Finally, it was time to run the largest, most integral file of this project - scripts.js - through "[JSLint](https://www.jslint.com/)."
 
 **Initial validation**
 
@@ -849,13 +848,13 @@ Finally it was time to run the largest, most integral file of this project - scr
 <img src="assets/images/docs/validation/jslint_2.png" alt="Javascript Validation 2">
 </details>
 
-I was initially horrified to see there were "138" warnings present. I poured a strong coffee and prepared for a long night... until i realised that I had mistakenly not clicked a few necessary options in JSLint.
+I was initially horrified to see there were "138" warnings present. I poured a strong coffee and prepared for a long night... until I realised that I had mistakenly not clicked a few necessary options in JSLint.
 
-Thankfully it turned out that the bulk of these warning (legitimately around ~133) were to do entirely with the following things:
+Thankfully it turned out that the bulk of these warnings (legitimately around ~133) were to do entirely with the following things:
 - Unnecessary whitespace after comments.
 - Comments running over 80 characters.
 
-Ticking the options for "long" and "white" in the linters options, immediately cleared the bulk of these. Although I still did remove all unnecessary whitespace manually before moving onto the more realistic improvements offered, such as:
+Ticking the options for "long" and "white" in the linters options, immediately cleared the bulk of these. Although I still did remove all unnecessary whitespace manually before moving on to the more realistic improvements offered, such as:
 - Moving global variables to the top of the document.
 - Changing a few "let" globals into "var" globals.
 
@@ -878,7 +877,7 @@ I opted to leave in the ";" at the end of my functions as an added precaution. M
 ### Wave Contrast & Accessibility
 ---
 
-Next I ran the site through [WAVE's Accessibility Evaluator](https://wave.webaim.org/) to test for any issues with contrast or accessibility that may impede the users enjoyment of the game.
+Next, I ran the site through [WAVE's Accessibility Evaluator](https://wave.webaim.org/) to test for any issues with contrast or accessibility that may impede the user's enjoyment of the game.
 
 **Initial Test**
 
@@ -888,13 +887,13 @@ Next I ran the site through [WAVE's Accessibility Evaluator](https://wave.webaim
 <details><summary>Wave Contrast Test</summary>
 <img src="assets/images/docs/validation/wave_contrast.png" alt="Wave Contrast"></details>
 
-Wave returned favourable results in reference to my chosen colour palette. Ensuring all the text being displayed to the user will be visible and positively impact their experience while playing the game.
+Wave returned favourable results in reference to my chosen colour palette. Ensuring all the text is displayed to the user will be visible and positively impact their experience while playing the game.
 
 The only suggested improvement was to include a `<h1>` and `<h3>` tags as the page technically skips these on the initial screen.
 
-As the game loads in and out text constantly and doesn't I didn't feel it was apt to set this as a `<h1>` tag as their is no "Title" present on the page at any point during a game session.
+As the game loads in and out text constantly and doesn't I didn't feel it was apt to set this as a `<h1>` tag as there is no "Title" present on the page at any point during a game session.
 
-The `<h3>` tags also populate the game later on and are featured within the generated cards, meaning that at point in the game there are no structural issues. This seems worth noting and in future improvements I may consider adding in an introductory screen that can include these elements permanently. 
+The `<h3>` tags also populate the game later on and are featured within the generated cards, meaning that at different points in the game there are no structural issues. This seems worth noting and in future improvements, I may consider adding an introductory screen that can include these elements permanently. 
 
 ---
 ### Performance Testing
@@ -951,29 +950,29 @@ The website has also been tested on monitors of 16:9, 16:10 and 21:9 resolutions
 ## Manual & User Testing
 ---
 
-Manual testing played a crucial role in the development of this game. It was present at nearly every step of development with me tracking how each function worked and interconnected - by text document or pen and paper - to ensure their would be no dead ends that effected the users experience and defined goals.
+Manual testing played a crucial role in the development of this game. It was present at nearly every step of development with me tracking how each function worked and interconnected - by text document or pen and paper - to ensure there would be no dead ends that affected the user's experience and defined goals.
 
 Once the project had reached completion I compiled a list of my main concerns for running play-testing.
 
-The following would need to all be checked thoroughly and work without error, in order for me to feel i'd met my previously outlined Site Owner Goals. 
+The following would need to all be checked thoroughly and work without error, in order for me to feel I'd met my previously outlined Site Owner Goals. 
 
-The following would need to be tested to ensure i'd satisfied my brief and provided a fully functional game, fit for consumption by the user:
+The following would need to be tested to ensure I'd satisfied my brief and provided a fully functional game, fit for consumption by the user:
 
 (I have included an image or description proving the testing below each.)
 
 ---
 1. Can the game be finished without encountering errors?
 
-**Passes Testing:** Yes, i've tested the game numerous times since publishing and haven't ran into a single game-breaking or progression-preventing bug. My play-testers also never encountered an issue, meaning the game has been ran over 20x on at least 10 different devices without encountering a single issue.
+**Passes Testing:** Yes, I've tested the game numerous times since publishing and haven't run into a single game-breaking or progression-preventing bug. My play-testers also never encountered an issue, meaning the game has been run over 20x on at least 10 different devices without encountering a single issue.
 
-(Further information on the devices used and play-testing discoveries is documented in their relevant sections.)
+(Further information on the devices used and play-testing discoveries are documented in their relevant sections.)
 
 ---
 
 2. Will using non-standard letters break the user-name input?
     - Can you still finish the game like this?
 
-**Passes Testing:** I've ran the game with numerous symbols and numbers in the name and not encountered a single issue with this impeding progress or displaying incorrectly when called by functions.
+**Passes Testing:** I've run the game with numerous symbols and numbers in the name and have not encountered a single issue with this impeding progress or displaying incorrectly when called by functions.
 
 <details><summary>Username Input Testing #1</summary>
 <img src="assets/images/docs/tests/mt_name_test.png" alt="Username Testing #1"></details>
@@ -1003,7 +1002,7 @@ The following would need to be tested to ensure i'd satisfied my brief and provi
 4. Do different "members" appear each time this screen is reached by the player?
     - Are their first names, last names and skills different enough on each reload?
     
-**Passes Testing:** Documented three instances of this section of the game below. Different first name and last name parings and skills were shown.
+**Passes Testing:** Documented three instances of this section of the game below. Different first-name and last-name parings and skills were shown.
     
 <details><summary>Card Randomiser #1</summary>
 <img src="assets/images/docs/play_session/ps19.png" alt="Card Randomiser #1"></details>
@@ -1016,13 +1015,13 @@ The following would need to be tested to ensure i'd satisfied my brief and provi
 
 ---
 
-5. Does the players end card display?
+5. Does the player's end card display?
     - Does their score match their failures?
     - Does their username match?
 
-**Issue Discovered:** An issue for this was uncovered during user testing. The card displayed incorrectly on small-screened devices. This has been fixed and is discussed within the User Feedback section below.
+**Issue Discovered:** An issue for this was uncovered during user testing. The card is displayed incorrectly on small-screened devices. This has been fixed and is discussed in the User Feedback section below.
 
-**Passes Testing:** On all instances of game completion the `failScore` displayed in the footer matched the `FAILURES:(score)` printed on the players card. The `username` also matched in each case of game completion.
+**Passes Testing:** On all instances of game completion the `failScore` displayed in the footer matched the `FAILURES:(score)` printed on the player's card. The `username` also matched in each case of game completion.
      
 <details><summary>Fail Score Test</summary>
 <img src="assets/images/docs/tests/mt_failscore.png" alt="Fail Score Test #1"></details>
@@ -1030,9 +1029,9 @@ The following would need to be tested to ensure i'd satisfied my brief and provi
 ---
 
 6. Do the math questions accept the correct answers?
-    - Do they correctly update to, and display, the next operand?
+    - Do they correctly update to, and display the next operand?
 
-**Passes Testing:** Correct and Incorrect answers are responded to. If the answer is correct, the game loads the next operand and continues until all three questions have been answered. Otherwise it replays the same operand's questions, adding to the failures of the player and calling a Game Over as tested in Question (3) above.
+**Passes Testing:** Correct and Incorrect answers are responded to. If the answer is correct, the game loads the next operand and continues until all three questions have been answered. Otherwise, it replays the same operand's questions, adding to the failures of the player and calling a Game Over as tested in Question (3) above.
      
 <details><summary>Maths Input Tests - Correct - Before Click</summary>
 <img src="assets/images/docs/tests/maths1.png" alt="Maths Correct Tests"></details>
@@ -1049,10 +1048,10 @@ The following would need to be tested to ensure i'd satisfied my brief and provi
 ---
 
 7. Do the correct options display in the Obstacle course section based on the `state{}`?
-    - Does keeping a state such as `"rock: true" or "rope:true"` effect the game when kept longer than intended?   
+    - Does keeping a state such as `"rock: true" or "rope: true"` affect the game when kept longer than intended?   
     - Can you still finish the game with these set to `true`? 
 
-**Passes Testing:** I was able to complete the game no matter what additional states I had `:true` or `:false`. They didn't prevent progression as long as the correct states were active. The image below is an example from a round where I left both the `rock` and `rope` set to `:true` and was still able to finish the game without issue.
+**Passes Testing:** I was able to complete the game no matter what additional states I had `: true` or `: false`. They didn't prevent progression as long as the correct states were active. The image below is an example from a round where I left both the `rock` and `rope` set to `: true` and was still able to finish the game without issue.
 
 <details><summary>State Change Checking</summary>
 <img src="assets/images/docs/tests/mt_state_change.png" alt="State Change Checking"></details>
@@ -1067,24 +1066,24 @@ Extensive user testing was carried out by friends, family and Slack forum member
 
 1. The Maths Answer Box didn't empty out the previous answer when the questions advanced, meaning the user had to manually do this themselves when entering the next answer, providing a poor experience.
 
-I solved the issue by adding this additional line of code to the `function checkAnswer(){...}`. So that each time the answer is checked, the input box is cleared, ready for the users next input. Vastly improving the users experience when interacting with this element.
+I solved the issue by adding this additional line of code to the `function checkAnswer(){...}`. So that each time the answer is checked, the input box is cleared, ready for the user's next input. Vastly improving the user's experience when interacting with this element.
 
 ```
 // Clears text from the answer box.
 document.getElementById("answer-box").value = "";
 ```
 
-2. The final users card was displaying incorrectly on small screened devices. The image was very squashed and hard to read, which was not the intention. It also wasn't filling much of it's `<div>` container.
+2. The final user's card was displaying incorrectly on small-screened devices. The image was very squashed and hard to read, which was not the intention. It also wasn't filling much of its `<div>` container.
 
 <details><summary>The Broken Card Image</summary>
-<img src="assets/images/docs/feedback/feedback_broken_card.png" alt="Broken Card"></details>
+<img src="assets/images/docs/feedback/feedback_broken_card.jpg" alt="Broken Card"></details>
 
-This displayed the image fine on larger screens but I hadn't factored in that the container was smaller on smaller devices and therefore the card displaying at 40% it's maximum scale wouldn't look good, or maintain it's shape as the screen size decreased.
+This displayed the image fine on larger screens but I hadn't factored in that the container was smaller on smaller devices and therefore the card displaying at 40% of its maximum scale wouldn't look good or maintain its shaping as the screen size decreased.
 
 <details><summary>The ".build" class</summary>
 <img src="assets/images/docs/feedback/feedback_card_before.png" alt="Build CSS Class"></details>
 
-I fixed this issue by implementing bootstrap containers and removing the custom ".build" css class I had set up. This was setting the card to 40% of the container size. 
+I fixed this issue by implementing bootstrap containers and removing the custom ".build" CSS class I had set up. This was setting the card to 40% of the container size. 
 
 <details><summary>The code that replaced ".build"</summary>
 <img src="assets/images/docs/feedback/feedback_card_fix_add_bootstrap.png" alt="Fixed Card Code"></details>
@@ -1104,11 +1103,11 @@ I discovered this issue with the ".build" class after testing the project with t
 ---
 
 Chrome Dev Tools served as one of my most important methods of debugging from start to finish. It allowed me to find numerous errors in the code such as: 
-- noticing discrepancies in my `<div>` arrangements and classes that affected the styles and overall final alignment of generated elements such as the members cards.
-- test out inline style's on numerous elements before typing those up in CSS or Javascript for use.
-- see if an object had unintentional padding or margins being applied to it by Bootstrap or other external classes.
-- diagnose numerous bugs and hierarchical code issues present throughout the project.
-- use the "issues" tab to see any other ongoing problems that - even if not preventing the game from running - may not meet best practice guidelines.
+- Noticing discrepancies in my `<div>` arrangements and classes that affected the styles and overall final alignment of generated elements such as the member's cards.
+- Test out the inline style's on numerous elements before typing those up in CSS or Javascript for use.
+- See if an object had unintentional padding or margins being applied to it by Bootstrap or other external classes.
+- Diagnose numerous bugs and hierarchical code issues present throughout the project.
+- Use the "issues" tab to see any other ongoing problems that - even if not preventing the game from running - may not meet best practice guidelines.
 
 <details><summary>Chrome Dev Tools #1</summary>
 <img src="assets/images/docs/bugs/chromedev_1.png" alt="Chrome Dev #1"></details>
@@ -1189,7 +1188,7 @@ $(span).addClass("noOpacity");
 I eventually decided to simply use the "Animate.css" plugin to animate the text in a satisfying manner.
 
 This is something I would look at reintroducing in a future version of the game.
-At this stage however, it wasn't a core feature for the user experience and was cut from this stage of development.
+At this stage, however, it wasn't a core feature of the user experience and was cut from this stage of development.
 
 ---
 
@@ -1245,7 +1244,7 @@ After some analysis, I found this code to be the culprit.
 <details><summary>Bug #5-3</summary>
 <img src="assets/images/docs/bugs/bug5_3.png" alt="Bug Image 5-3"></details>
 
-Removing the new game button directly from the div itself, seemed to stop the amend that was called in the next function.
+Removing the new game button directly from the div itself, seemed to stop the amendment that was called in the next function.
 
 The solution in this instance was to instead remove the button directly.
 
@@ -1334,7 +1333,7 @@ cText.innerHTML = <h2>textNode.text</h2>
 
 This seemed logical to me as the "cText" was the element being displayed, formatted and working correctly in other areas of the game.
 
-However the code that got me the desired result was:
+However, the code that got me the desired result was:
 
 ```
 game.text = textNode.text;
@@ -1351,7 +1350,7 @@ This change fixed the bug and allowed the game to maintain its animations throug
 
 ---
 
-Originally had card set to `scale: 95%` in order to separate them vertically, as setting their bodies to `h-100` meant their was no gap between the tops and bottoms of each individual card. After passing this through stages of automated validation, I was advised to change the setting to `transform: scale(0.95)` in my CSS. This change didn't effect functionality but is a more correct way to write this style.
+Originally had cards set to `scale: 95%` in order to separate them vertically, as setting their bodies to `h-100` meant there was no gap between the tops and bottoms of each individual card. After passing this through stages of automated validation, I was advised to change the setting to `transform: scale(0.95)` in my CSS. This change didn't affect functionality but is a more correct way to write this style.
 
 <details><summary>Bug #10-1</summary>
 <img src="assets/images/docs/bugs/bug10_1.png" alt="Bug Image 10-1"></details>
@@ -1401,7 +1400,7 @@ The website was deployed on GitHub via the following steps:
 
 - [Bootstrap 4](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - For their responsive grid and container system.
 - [jQuery](https://jquery.com/download/) - For their convenient JavaScript library features.
-- [Animate.css](https://animate.style/) - For their simple to use CSS animations.
+- [Animate.css](https://animate.style/) - For their simple-to-use CSS animations.
 
 ### Validators Used 
 
@@ -1423,7 +1422,7 @@ The website was deployed on GitHub via the following steps:
 
 5. [Google Fonts](https://fonts.google.com/) - For access to their wealth of commercially-available fonts.
 
-6. [Favicon.io](https://favicon.io/) - For providing an emoji based favicon for use in this game.
+6. [Favicon.io](https://favicon.io/) - For providing an emoji-based favicon for use in this game.
 
 7. [Balsamiq](https://balsamiq.com/) - For providing software to create the wireframes seen in this README.
 
@@ -1433,9 +1432,9 @@ The website was deployed on GitHub via the following steps:
 
 10. [FreeCodeCamp Article](https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/) - For a convenient primer on the differences between "Var" "Let" and "Const". Used when checking over my variables to ensure correct choices had been made.
 
-11. [Sitepoint Article](https://www.sitepoint.com/delay-sleep-pause-wait/) - Explained the premise of a "sleep" function and the use of promises to stagger my code for the automated computer player box I implemented throughout the project. This allowed for the integration of a more user friendly experience by reducing the number of button presses required to progress for the user. Creating the illusion of a sentient AI presence.
+11. [Sitepoint Article](https://www.sitepoint.com/delay-sleep-pause-wait/) - Explained the premise of a "sleep" function and the use of promises to stagger my code for the automated computer player box I implemented throughout the project. This allowed for the integration of a more user-friendly experience by reducing the number of button presses required to progress for the user. Creating the illusion of a sentient AI presence.
 
-12. [Youtube: developedbyed](https://www.youtube.com/watch?v=GUEB9FogoP8) - Great tutorial on text animations. Didn't end up implementing as used Animate.css instead but serves as good reference for potential future updates.
+12. [Youtube: developedbyed](https://www.youtube.com/watch?v=GUEB9FogoP8) - Great tutorial on text animations. Didn't end up implemented as I used Animate.css instead. Still serves as a good reference for future updates.
 
 13. [CodeBoxx Article](https://code-boxx.com/allow-one-click-javascript/) - For reference when deciding to disable the "maths-box" submit button onClick to prevent multiple answer submissions. Could cause the score to bug out or the player to accidentally fail the game.
 
@@ -1447,7 +1446,7 @@ The website was deployed on GitHub via the following steps:
 
 17. [w3Schools](https://www.w3schools.com/) - Use for general HTML, CSS & Javascript research and referencing.
 
-18. [CodePen Article](https://codepen.io/gunnarbittersmann/pen/XpqmgJ?editors=0100) - Provided a reference example of an image fading to grey. Used as reference when creating my own "Fade Out" Animation for the "sacrifice" Card.
+18. [CodePen Article](https://codepen.io/gunnarbittersmann/pen/XpqmgJ?editors=0100) - Provided a reference example of an image fading to grey. Used as a reference when creating my own "Fade Out" Animation for the "sacrifice" Card.
 
 19. [Valve: Left4Dead](https://www.youtube.com/watch?v=O8IJepb-hlQ) - Death sounds sampled to make the "destroy" card audio heard at the end of this game.
 
@@ -1455,7 +1454,7 @@ The website was deployed on GitHub via the following steps:
 
 21. [Lospec: AYY4 PALETTE](https://lospec.com/palette-list/ayy4) - Color palette I used for this project.
 
-22. [SpeckyBoy](https://speckyboy.com/css-javascript-animated-backgrounds) - Animated background in project taken directly from here.
+22. [SpeckyBoy](https://speckyboy.com/css-javascript-animated-backgrounds) - Animated background in the project taken directly from here.
 
 ---
 ## Acknowledgements
