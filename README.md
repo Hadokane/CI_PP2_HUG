@@ -31,7 +31,7 @@
 I am currently pursuing my **Diploma in Web App Development** from [Code Institute](https://codeinstitute.net/ "code Institute").
 
 The academic aim of this project is to demonstrate my newly developed skills within Javascript by building an interactive front-end site.
-It will be responsive to users actions, allowing them to engage with the presented data, elements and imagery to progress through an engaging "text-adventure" game.
+It will be responsive to users actions, allowing them to engage with the presented data, elements and imagery to progress through an engaging "text-adventure" game and reach a satisfying conclusion.
 
 The user will be able to interact with the games many elements in order to reach the satisfying conclusion of passing the "H.U.G. Protocol."
 
@@ -49,6 +49,15 @@ It has been tested on a variety of devices and screen resolutions: from mobiles;
 ## Table of Contents
 ---
 
+1. [User Experience (UX)](#user-experience---ux)
+    - [Strategy Plane](#strategy-plane)
+        - [User Stories](#user-stories)
+    - [Scope Plane](#scope-plane)
+    - [Structure Plane](#structure-plane)
+        - [Interaction Design (IXD)](#interaction-design---ixd)
+    - [Skeleton Plane](#skeleton-plane)
+        - [Wireframes](#wireframes)
+    - [Surface Plane](#surface-plane)
 1. [Validation Tests](#validation)
     - [HTML Validation](#html-validation)
     - [CSS Validation](#css-validation)
@@ -57,7 +66,10 @@ It has been tested on a variety of devices and screen resolutions: from mobiles;
     - [Screen Reader Accessibility](#screen-reader-accessibility)
     - [Performance Testing](#performance-testing)
     - [Device Testing](#device-testing)
-    - [Manual Testing](#manual-testing)
+1. [Manual & User Testing](#manual-&-user-testing)
+    - [Meeting User Stories](#meeting-user-goals)
+    - [User Feedback](#user-feedback)
+    - [Chrome Dev Tools](#chrome-dev-tools)
 1. [Bug Fixes](#bug-fixes)
 1. [Deployment](#deployment)
     - [Forking](#forking)
@@ -68,11 +80,127 @@ It has been tested on a variety of devices and screen resolutions: from mobiles;
     - [Technologies Used](#technologies-used)
     - [Acknowledgements](#acknowledgements)
 
+---
+## User Experience - UX
+---
+
+I have arranged my UX analysis in the style of Jesse James Garrett's philosophy of the "5 Planes" framework - as discussed in his book [The Elements of User Experience](https://www.amazon.co.uk/Elements-User-Experience-User-Centered-Design/dp/0321683684/ref=asc_df_0321683684/?tag=googshopuk-21&linkCode=df0&hvadid=311000051962&hvpos=&hvnetw=g&hvrand=10376246921916888236&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007448&hvtargid=pla-432330338546&psc=1&th=1&psc=1).
+
+I decided to utilise this methodology in order to establish achievable goals for my project, meeting the needs of both the user (or player) and site owner (or developer).
+
+I will maintain a clear, justified development path, and establish a defined priority of tasks and elements for integration. Ensuring the project avoids "feature creep," at this development stage, maintaining its initial scope.
+
+---
+### Strategy Plane
+---
+
+The following user stories have been numbered sequentially so that they may be referenced in later sections.
+
+For example: 
+
+    (User stories met: 1-1, 2-3, 5-1)
+
+Would show that:
+
+    User Stories: #1-1; #2-3;
+    Site Owner Stories: #5-1;
+
+Had been met by the stated example.
+
+Each subheading provided expands upon the initial goal, providing further elaboration on ways to achieve it or referencing areas where I expect to meet these goals throughout the development of the project.
+
+**User/Player Stories:**
+
+As a site user/game player, I want to:
+
+1. Be able to interact with the elements of the game and reach a desired result:
+
+    1. Do the buttons work and direct you to an expected place?
+
+    2. Can I enter a name in the `nameBox input` field and have it be displayed correctly throughout the project?
+
+    3. Does the maths answer box accept my answer and tell me if it's correct or incorrect?
+
+    4. Do the options provided in the text-adventure section lead to logical areas?
+
+2. Reach a satisfying conclusion:
+
+    1. Provide users with their own unique membership card.
+
+    2. Grant users the ability to "recruit" others. Making them feel as if they've achieved true membership within the H.U.G. protocol.
+
+3. Have a reason to replay the game:
+
+    1. Is the user greeted with a different experience each time they play? If so how?
+        
+        1. through the use of randomly generated math questions
+        
+        2. through the use of randomly generated user cards
+        
+        3. different routes are available through the "Text-based" obstacle course section.
+
+**Site Owner/Developer Stories:**
+
+As a site owner, I want to:
+
+4. Ensure the app works as intended for the user.
+
+5. Ensure the user/player can interact with all elements to reach a logical and desired result.
+
+    1. This goal will be achieved naturally by achieving all of the standards laid out within "User story" (1).
+    
+    2. Manual testing of the site's many paths and elements will be crucial to achieving both this goal and the aforementioned user goal, and as such will be documented in its own section later.
+
+6. Ensure the app and it's elements display correctly on any device.
+
+    1. Check it on multiple devices and screen sizes. (Documented in the testing section and improved upon by user feedback).
+
+    2. Are all elements can be interacted with by mouse and touch devices? (Include photos of using a each device, before and after).
+
+7. Demonstrate a variety of javascript functionality such as:
+
+    1. "onClick" functions. (Button events).
+
+    2. "promise" functions. (Sleep function).
+
+    3. "if" loops. (To cycle through arrays and generate cards.)
+    
+    4. Arrays. (Members array stores data for card generation.)
+
+8. Provide a unique experience for each individual user/player.
+    
+    1. This goal ties into "user story" (3) of achieving "replayability".
+    
+    2. We can achieve both through the use of random cards and "branching" pathways in the text adventure section.
+
+**Grid Of Opportunities - To Meet User Expectations:**
+
+With the above goals in mind, I have assembled the following "grid of opportunities" to showcase what features to prioritise heading into the next stage of development.
+
+| Opportunity                        | IMPORTANCE | VIABILITY |
+|------------------------------------|------------|-----------|
+| All elements function correctly    | 5          | 5         |
+| Reach a satisfying conclusion      | 5          | 5         |
+| Provide variety with Javascript interaction | 4          | 4        |
+| Replayability for players          | 3          | 3         |
+
+[Back to top ↑](#the-hug-protocol)
+
+---
+
+### Scope Plane 
+---
+
+It is within this plane that I will address, the features required to meet the established by the "User Stories" section of the Strategy Plane. These goals will allow me to avoid "feature creep" and maintain an agile approach to the development of the website.
+
+
+---
 ## Validation
 ---
 
 With all user stories being satisfactorily met, the website being published and user-testing fixes implemented, I then ran the site through several online Validators to confirm it meets best practices and runs as efficiently as possible.
 
+---
 ### HTML Validation
 ---
 
@@ -96,6 +224,7 @@ I fixed the above issues and ran the pages back through W3C's validation service
 <img src="assets/images/docs/validation/w3_html_2.png" alt="Index Validation Pass">
 </details>
 
+---
 ### CSS Validation
 ---
 
@@ -106,6 +235,7 @@ Next I carried out validation on the project's CSS file by running the page thro
 
 The results came back successfully, allowing me to continue automated testing and validation.
 
+---
 ### Javascript Validation
 ---
 
@@ -150,7 +280,7 @@ I opted to leave in the ";" at the end of my functions as an added precaution. M
 ### Wave Contrast & Accessibility
 ---
 
-Next I ran the site through [WAVE's Accessibility Evaluator](https://wave.webaim.org/) to test for any issues with contrast or accessibility.
+Next I ran the site through [WAVE's Accessibility Evaluator](https://wave.webaim.org/) to test for any issues with contrast or accessibility that may impede the users enjoyment of the game.
 
 **Initial Test**
 
@@ -168,6 +298,7 @@ As the game loads in and out text constantly and doesn't I didn't feel it was ap
 
 The `<h3>` tags also populate the game later on and are featured within the generated cards, meaning that at point in the game there are no structural issues. This seems worth noting and in future improvements I may consider adding in an introductory screen that can include these elements permanently. 
 
+---
 ### Performance Testing
 ---
 
@@ -190,8 +321,8 @@ Featured below are the screenshots confirming my results:
 <img src="assets/images/docs/validation/lighthouse_mobile.png" alt="Lighthouse Index Mobile Results"></details>
 
 ---
-
 ### Device Testing
+---
 
 The website was tested and functioned as expected on the following devices:
 
@@ -217,11 +348,64 @@ The website has been tested on up-to-date versions of the following browsers:
 The website has also been tested on monitors of 16:9, 16:10 and 21:9 resolutions.
 
 ---
+## Manual & User Testing
+---
 
-### Manual Testing
+Manual testing played a crucial role in the development of this game. It was present at nearly every step of development with me tracking how each function worked and interconnected - by text document or pen and paper - to ensure their would be no dead ends that effected the users experience and defined goals.
 
---- ADD INFO AND SCREENSHOTS HERE OF FIXES FROM FRIENDS & FAMILY PLAY-TESTING.
+Once the project had reached completion I compiled a list of my main concerns for running play-testing.
 
+The following would need to all be checked thoroughly and work without error, in order for me to feel i'd met my previously outlined Site Owner Goals. 
+
+The following would need to be tested to ensure i'd satisfied my brief and provided a fully functional game, fit for consumption by the user:
+
+- Can the game be finished?
+- Will using non-standard letters break the user-name input?
+- - Can you still finish the game like this?
+- Does "GAME OVER" trigger correctly?
+- - Can you trigger a "GAME OVER" from each question within the Maths section?
+- - Can you trigger a "GAME OVER" from each bad answer in the Obstacle Course Section?
+- Do different "members" appear each time this screen is reached by the player?
+- - Are their first names, last names and skills different enough on each reload?
+- Does the players end card display?
+- - Does their score match their failures?
+- Do the math questions accept the correct answers?
+- - Do they correctly update to, and display, the next operand?
+- Do the correct options display in the Obstacle course section based on the `state{}`?
+- - Does keeping a state such as `"rock: true" or "rope:true"` effect the game when kept longer than intended?
+- - Can you still finish the game with these set to `true`? 
+
+With so many branching story paths, potential areas to game over.
+
+---
+### User Feedback
+---
+
+1 - Empty the Maths Answer Box when the question is answered, rather than the previous answer remaining until the user manually deletes it. Vastly improves the experience.
+
+2 - Fix error where the end card was displaying incorrectly - and very squashed - on small screen mobile devices. Fixed with bootstrap code and by removing the ".build" class which set the card to 40% of the container... didn't factor in the container was smaller on smaller devices and therefore the card wouldn't maintain it's shape - as seen in the below example - when shrunk far enough.
+
+---
+### Chrome Dev Tools
+---
+
+Chrome Dev Tools served as one of my most important methods of debugging from start to finish. It allowed me to find numerous errors in the code such as: 
+- noticing discrepancies in my `<div>` arrangements and classes that affected the styles and overall final alignment of generated elements such as the members cards.
+- test out inline style's on numerous elements before typing those up in CSS or Javascript for use.
+- see if an object had unintentional padding or margins being applied to it by Bootstrap or other external classes.
+- diagnose numerous bugs and hierarchical code issues present throughout the project.
+- use the "issues" tab to see any other ongoing problems that - even if not preventing the game from running - may not meet best practice guidelines.
+
+<details><summary>Chrome Dev Tools #1</summary>
+<img src="assets/images/docs/bugs/chromedev_1.png" alt="Chrome Dev #1"></details>
+
+<details><summary>Chrome Dev Tools #2</summary>
+<img src="assets/images/docs/bugs/chromedev_2.png" alt="Chrome Dev #2"></details>
+
+<details><summary>Chrome Dev Tools #3</summary>
+<img src="assets/images/docs/bugs/chromedev_3.png" alt="Chrome Dev #3"></details>
+
+This is detailed further throughout the below Bug Fixes section (#4, #6, #7 - serving as prime examples.)
 
 [Back to top ↑](#The-H.U.G.-Protocol)
 
@@ -322,7 +506,7 @@ Removing the `parseINT()` from around the following:
 
 ```
 let operator = parseInt(document.getElementById(operator));
-````
+```
 
 This caused the operator to return the correct type of data, allowing the equation to return true when the correct answer was input.
 
@@ -447,6 +631,17 @@ The animations themselves had been tied to the `updateText()` function, which wa
 
 This change fixed the bug and allowed the game to maintain its animations throughout, improving the user's experience by preventing a distracting change.
 
+---
+
+**BUG #10**
+
+---
+
+Originally had card set to `scale: 95%` in order to separate them vertically, as setting their bodies to `h-100` meant their was no gap between the tops and bottoms of each individual card. After passing this through stages of automated validation, I was advised to change the setting to `transform: scale(0.95)` in my CSS. This change didn't effect functionality but is a more correct way to write this style.
+
+<details><summary>Bug #10-1</summary>
+<img src="assets/images/docs/bugs/bug10_1.png" alt="Bug Image 10-1"></details>
+
 [Back to top ↑](#The-H.U.G.-Protocol)
 
 ---
@@ -555,7 +750,7 @@ The website was deployed on GitHub via the following steps:
 With thanks to:
 - My family and friends - For providing some great feedback and user-testing across multiple devices and browsers.
 
-- Code Institute & its slack community - For providing me with the necessary skills, knowledge and guidance to execute this project.
+- Code Institute & their wider "Slack" community - For providing me with the necessary skills, knowledge and guidance to execute this project.
 
 [Back to top ↑](#The-H.U.G.-Protocol)
 
