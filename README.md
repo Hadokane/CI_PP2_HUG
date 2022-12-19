@@ -891,6 +891,8 @@ Wave returned favourable results in reference to my chosen colour palette. Ensur
 
 The only suggested improvement was to include a `<h1>` and `<h3>` tags as the page technically skips these on the initial screen.
 
+[SearchEngineJournal](https://www.searchenginejournal.com/h1-headings-for-google/406720/) dispels the notion that `<h1>` tags improve search engine SEO, so this isn't a major issue in this case.
+
 As the game loads in and out text constantly and doesn't I didn't feel it was apt to set this as a `<h1>` tag as there is no "Title" present on the page at any point during a game session.
 
 The `<h3>` tags also populate the game later on and are featured within the generated cards, meaning that at different points in the game there are no structural issues. This seems worth noting and in future improvements, I may consider adding an introductory screen that can include these elements permanently. 

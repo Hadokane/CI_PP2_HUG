@@ -1002,9 +1002,9 @@ function nextQuestion() {
 };
 
 /** Reads the 2 random numbers and operator.
-*Completes the equation to determine the answer.
-*Called by the checkAnswer function.
-*/
+ *Completes the equation to determine the answer.
+ *Called by the checkAnswer function.
+ */
 function correctAnswer() {
     let operand1 = parseInt(document.getElementById("operand1").innerText);
     let operand2 = parseInt(document.getElementById("operand2").innerText);
@@ -1066,11 +1066,14 @@ function checkAnswer() {
 
 // Array data for generating cards.
 let members = {
-    firstname: ["Jim", "Pam", "Steve", "Urkel", "Johnny", "Benjamin", "Hooper", "Eleanor", "Marge", "Big", "Naruto", "Miyazaki", "Ronald", "Björn", "Golden", "Max", "Julia", "Mr.", "Mrs.", "Senior", "Jacques", "Thelma", ], // 22* fNames
-    lastname: ["Stevenson", "Björnson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubadour", "The Great", "Power", "Radagast", "Drummond", ], // 18* lNames
+    firstname: ["Jim", "Pam", "Steve", "Urkel", "Johnny", "Benjamin", "Hooper", "Eleanor", "Marge", "Big", "Naruto", "Miyazaki", "Ronald", "Björn", "Keanu", "Max", "Julia", "King", "Queen", "Señor", "Jacques", "Thelma", "Stylish", "Detective", ], // 24* fNames
+    lastname: ["Stevenson", "Björnson", "Lennon", "Graham", "Davies", "The Crypt Keeper", "The Fisherman", "Nightingale", "Stalingrad", "Rigby", "John-Johnson", "Simpson", "Benjamin", "Troubadour", "The Great", "Power", "Radagast", "Drummond", "Delonge",
+        "Swanson", "Butts", "The Chosen", "Reeves", "Griffin",
+    ], // 24* lNames
     skill: ["East-End Bartender", "Computer Scientist", "Full-Time Dungeon Master", "Weekend Dog Walker", "Middle School Teacher", "Developer of Indie RPG'S", "Airsoft Enthusiast", "Owns a Katana Collection", "Drives a '67 Chevrolet Impala", "Has Been To France Twice",
-        "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fan Fiction", "Has Eaten a Glass of Water With Chopsticks", "Deep Sea Diver", "Librarian",
-    ], // 17* Skills
+        "Wearer of Vintage Hats", "Only Eats Red M&M's", "'Dynamic Brand Technician'", "Writes Avatar Fan Fiction", "Has Eaten a Glass of Water With Chopsticks", "Deep Sea Diver", "Hot Librarian", "Tamer of Wild Falcons", "Collects Anime Figurines",
+        "Responsible for W.W.4", "Drinks Cocktails With The Little Umbrella", "'Social Media Influencer'", "Owner of 9 Cats", "Loves Pineapple on Pizza",
+    ], // 24* Skills
     avatar: [
         "assets/images/avatar/av1.png",
         "assets/images/avatar/av2.png",
