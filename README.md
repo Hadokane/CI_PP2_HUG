@@ -31,9 +31,7 @@
 I am currently pursuing my **Diploma in Web App Development** from [Code Institute](https://codeinstitute.net/ "code Institute").
 
 The academic aim of this project is to demonstrate my newly developed skills within Javascript by building an interactive front-end site.
-It will be responsive to users' actions, allowing them to engage with the presented data, elements and imagery to progress through an engaging "text-adventure" game and reach a satisfying conclusion.
-
-The user will be able to interact with the game's many elements in order to reach the satisfying conclusion of passing the "H.U.G. Protocol."
+It will be responsive to user actions, allowing them to engage with the presented data, elements and imagery to progress through an engaging "text-adventure" game and reach the satisfying conclusion of passing the "H.U.G. Protocol."
 
 As the site owner, I will achieve my goal of providing an engaging and fast-to-digest "Text-Adventure" game for multiple users to enjoy.
 
@@ -82,7 +80,7 @@ It has been tested on a variety of devices and screen resolutions: from mobiles;
 ## User Experience - UX
 ---
 
-I have arranged my UX analysis in the style of Jesse James Garrett's philosophy of the "5 Planes" framework - as discussed in his book [The Elements of User Experience](https://www.amazon.co.uk/Elements-User-Experience-User-Centered-Design/dp/0321683684/ref=asc_df_0321683684/?tag=googshopuk-21&linkCode=df0&hvadid=311000051962&hvpos=&hvnetw=g&hvrand=10376246921916888236&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007448&hvtargid=pla-432330338546&psc=1&th=1&psc=1).
+I have arranged my UX analysis following the framework of Jesse James Garrett's philosophy of the "5 Planes" - as discussed in his book [The Elements of User Experience](https://www.amazon.co.uk/Elements-User-Experience-User-Centered-Design/dp/0321683684/ref=asc_df_0321683684/?tag=googshopuk-21&linkCode=df0&hvadid=311000051962&hvpos=&hvnetw=g&hvrand=10376246921916888236&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007448&hvtargid=pla-432330338546&psc=1&th=1&psc=1).
 
 I decided to utilise this methodology in order to establish achievable goals for my project, meeting the needs of both the user (or player) and the site owner (or developer).
 
@@ -123,9 +121,9 @@ As a site user/game player, I want to:
 
     1. Is the user greeted with a different experience each time they play? If so how?
         
-        1. through the use of randomly generated math questions
+        1. through the use of randomly generated math questions.
         
-        2. through the use of randomly generated user cards
+        2. through the use of randomly generated user cards.
         
         3. different routes are available through the "Text-based" obstacle course section.
 
@@ -146,7 +144,7 @@ As a site owner, I want to:
 
     1. Check it on multiple devices and screen sizes. (Documented in the testing section and improved upon by user feedback).
 
-    2. Are all elements can be interacted with by mouse and touch devices? (Include photos of using each device, before and after).
+    2. Can all elements be interacted with by mouse and touch devices?
 
 7. Demonstrate a variety of javascript functionality such as:
 
@@ -160,7 +158,7 @@ As a site owner, I want to:
 
 8. Provide a unique experience for each individual user/player.
     
-    1. This goal ties into the "user story" (3) of achieving "replayability".
+    1. This goal ties into "user story" (3) - will be met by achieving "replayability".
     
     2. We can achieve both through the use of random cards and "branching" pathways in the text adventure section.
 
@@ -185,7 +183,7 @@ With the above goals in mind, I have assembled the following "grid of opportunit
 
 ---
 
-In the above User & Site owner stories, I addressed ways in which I could meet the established goals. Establishing required features for the pursuit of these.
+In the above User & Site owner stories, I addressed ways in which I could meet the the defined goals, establishing a list of required features for the pursuit of these.
 
 In the interest of avoiding "feature creep" and maintaining an agile approach to the development of this game, I will further elaborate on the features required below.
 
@@ -213,14 +211,14 @@ The following are written with respect to the above user/site-owner stories and 
     - Varies the gameplay loop on replays.
 
 5. A way to reach a "GAME OVER" screen.
-    - Provides tension for the player.
+    - Provides positive tension to the players experience.
     - Provides feedback and meaning to incorrect answers.
 
 6. Branching "text-adventure" paths. 
     - Allowing the user the ability to make different decisions, improving the appeal of replaying the game.
 
 7. A reachable victory screen. 
-    - validates the users' experience, providing positive feedback.
+    - Validates the user's experience, providing positive feedback.
 
 8. A quit/restart button is available from each section of the game.
     - Provides users with an escape if they encounter a page break/error. 
@@ -236,7 +234,7 @@ The following are written with respect to the above user/site-owner stories and 
 
 By carrying out this section I have also created a Road-Map for future updates that will improve the overall experience of the game. 
 
-These have been deemed non-essential for an initial "proof-of-concept" build and would serve to simply enhance the "core" experience I am creating.
+These have been deemed non-essential for an initial "proof-of-concept" build and would serve to simply enhance the "core" experience I am prioritising.
 
 **Future goals:**
 
@@ -326,7 +324,7 @@ The interaction design of the cards is as follows:
 
 3. The random generation is to ensure each user has a different experience in the game. The inclusion of funny `"skills"` encourages the user to replay the game in order to see what other options may present themselves.
 
-4. The user's card will then generate. Showing their `$(username)` and `$(failScore)` proudly, encouraging them to screenshot it.
+4. The user's card will then generate. Displaying their `$(username)` and `$(failScore)` proudly, encouraging them to screenshot it.
     - The user may want to replay for a better score.
     - They are encouraged to send the game to a friend at this point. Enhancing their experience and connection to the game and expanding the experience to more users.
 
@@ -456,7 +454,7 @@ Feedback was provided by using default bootstrap classes to change the `: hover`
 **Visual Separation**
 ---
 
-Visual separation is achieved between sections of the game through the use of bootstrap containers. 
+Visual separation is achieved between sections of the game through the use of Bootstrap containers. 
 
 The player's area is always displayed below the "Computer-Players" text box, sticking to an ordered hierarchy. At the bottom is a `Sticky Footer` which will maintain its position responsively across all device screen sizes.
 
@@ -503,7 +501,7 @@ The layout of each card is as follows:
 - Special Skill (Included to add interest, humour and personality to each member.)
 - A tag at the bottom of the card that reads `"Replace?"` to reinforce the action the user is about to take, providing further feedback on their interactions.
 
-Below I have included a selection of "VICTORY" Cards from my playtesters.
+Below I have included a selection of "VICTORY" cards from my playtesters.
 
 <details><summary>User #1</summary><img src="assets/images/docs/play_session/user_1.png" alt="User #1"></details>
 
@@ -518,7 +516,7 @@ Below I have included a selection of "VICTORY" Cards from my playtesters.
 
 It was important to me that the font was readable on all screen sizes while also representing the fact that it would be mainly used as the onscreen "voice" of the "Computer-Player". 
 
-As such, I stuck to [ROBOTO](https://fonts.google.com/specimen/Roboto) for the majority of the onscreen text.
+As such, I stuck to [ROBOTO](https://fonts.google.com/specimen/Roboto) for the majority of the onscreen text. Roboto is a faimilar, dependable, well known font, used across the internet. This ensures readability throughout the game will be maintained.
 
 In order to make the players `username` stand out from the text, I made use of the [VT323](https://fonts.google.com/specimen/VT323?query=vt) font by Peter Hull, which serves to visually emulate the classic computer monitor fonts of days passed. Visually this seemed like a natural choice to reinforce the "Computer-Player's" personality and visually highlight whenever the `username` was used by the player, improving their overall unique experience and connection to the elements of the game.
 
@@ -597,11 +595,11 @@ The recruitment button is provided for players, encouraging them to share the ga
 
         1. Is the user greeted with a different experience each time they play? If so how?
             
-            1. through the use of randomly generated math questions
+            1. Through the use of randomly generated math questions.
             
-            2. through the use of randomly generated user cards
+            2. Through the use of randomly generated user cards.
             
-            3. different routes are available through the "Text-based" obstacle course section.
+            3. Different routes are available through the "Text-based" obstacle course section.
 
 **The above goal has been met.** 
 As already seen throughout this document, each maths question generates a unique question on each playthrough of the game. The same is true for the user-generated cards as evidenced in the last user goal section above and the manual testing section below.
@@ -735,7 +733,7 @@ let members = {
 
 8. Provide a unique experience for each individual user/player.
     
-    1. This goal ties into the "user story" (3) of achieving "replayability".
+    1. This goal ties into "user story" (3) - achieving "replayability".
     
     2. We can achieve both through the use of random cards and "branching" pathways in the text adventure section.
 
@@ -749,7 +747,7 @@ As addressed in user story (3), the project provides plenty of positive feedback
 - Was that `rock` useful for something else?
 - I wonder what other membership cards I can choose from during the `final protocol`?
 
-The random generators all work as intended providing the expected experience for users.
+The random generators all work as intended, providing the expected experience for users.
 This is evidenced further in the Manual Testing section below, as is the case with other goals being met above.
 
 The project features:
@@ -954,7 +952,7 @@ The website has also been tested on monitors of 16:9, 16:10 and 21:9 resolutions
 
 Manual testing played a crucial role in the development of this game. It was present at nearly every step of development with me tracking how each function worked and interconnected - by text document or pen and paper - to ensure there would be no dead ends that affected the user's experience and defined goals.
 
-Once the project had reached completion I compiled a list of my main concerns for running play-testing.
+Once the project had reached completion I compiled a list of my main concerns before running play-testing.
 
 The following would need to all be checked thoroughly and work without error, in order for me to feel I'd met my previously outlined Site Owner Goals. 
 
